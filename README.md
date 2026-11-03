@@ -29,7 +29,7 @@ On Windows you can instead double-click **`start.cmd`**, which does steps 2–3 
 `npm test` runs the verification suite (lattice points per cell, packing fractions,
 d-spacings, Bragg angles, volumes, angles, Miller–Bravais conversions, interstitial
 sites per cell and critical radius ratios…) (AI-generated TEST suggestion).
-The same checks also run in the browser every time the app starts (⋯ → Self-check).
+When you run `npm run dev`, the same checks also run in the browser and print their results in the developer console.
 
 ## Privacy
 
