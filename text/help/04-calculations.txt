@@ -1,0 +1,251 @@
+# Help topics: calculations
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Packing fraction
+
+### Popover
+helpPackingScope: All lattices (the π values: cubic only)
+helpPackingExplain: The packing fraction (APF) is the part of the cell volume filled by spheres when every lattice point is a hard sphere touching its nearest neighbours. The spheres touch along the shortest lattice vector, which fixes their radius as half the nearest-neighbour distance.
+helpPackingFormula1: \text{APF} = \frac{N\cdot\tfrac43\pi r^3}{V},\qquad r = \frac{d_\text{nn}}{2}
+helpPackingFormula2: \begin{array}{lll} P: & \dfrac{\pi}{6} & \approx 0.524 \\[6pt] I: & \dfrac{\sqrt3\,\pi}{8} & \approx 0.680 \\[6pt] F: & \dfrac{\pi}{3\sqrt2} & \approx 0.740 \end{array}
+helpPackingSym1: N
+helpPackingSym1Text: lattice points (spheres) per cell
+helpPackingSym2: r
+helpPackingSym2Text: sphere radius
+helpPackingSym3: d_\text{nn}
+helpPackingSym3Text: nearest-neighbour distance
+helpPackingSym4: V
+helpPackingSym4Text: cell volume
+helpPackingNow: On screen: $\text{APF} = {apf}$ ({percent}% filled)
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpPackingStep1: Hard spheres just touch their nearest neighbours, so the radius is half the nearest-neighbour distance.
+helpPackingStep1Tex: r = \frac{d_\text{nn}}{2}
+helpPackingStep2: The cell holds N whole spheres (count the pieces as for lattice points), each of volume ⁴⁄₃πr³. Divide by the cell volume:
+helpPackingStep2Tex: \text{APF} = \frac{N\cdot\frac43\pi r^3}{V}
+helpPackingStep3: <b>Cubic P:</b> the spheres touch along the cell edge, a = 2r, and N = 1.
+helpPackingStep3Tex: \text{APF} = \frac{\frac43\pi r^3}{(2r)^3} = \frac{\pi}{6} \approx 0.524
+helpPackingStep4: <b>Cubic I:</b> they touch along the body diagonal: √3·a = 4r, and N = 2.
+helpPackingStep4Tex: a = \frac{4r}{\sqrt3}\ \Rightarrow\ \text{APF} = \frac{2\cdot\frac43\pi r^3}{\big(\frac{4r}{\sqrt3}\big)^3} = \frac{\sqrt3\,\pi}{8} \approx 0.680
+helpPackingStep5: <b>Cubic F:</b> they touch along the face diagonal: √2·a = 4r, and N = 4.
+helpPackingStep5Tex: a = 2\sqrt2\,r\ \Rightarrow\ \text{APF} = \frac{4\cdot\frac43\pi r^3}{16\sqrt2\,r^3} = \frac{\pi}{3\sqrt2} \approx 0.740
+helpPackingStep6: The value does not depend on the size a, only on the shape of the lattice (and on ratios like c/a in other systems). 0.740 is the highest possible for equal spheres.
+
+### SEE MORE: Your lattice (worked example)
+helpPackingEx1: Nearest-neighbour distance and sphere radius:
+helpPackingEx1Tex: d_\text{nn} = {dnn}\,\text{Å}\ \Rightarrow\ r = {r}\,\text{Å}
+helpPackingEx2: Where they touch: {replace}.
+helpPackingEx3: Volume of the spheres in one cell:
+helpPackingEx3Tex: N\cdot\tfrac43\pi r^3 = {n}\times\tfrac43\pi\times{r}^3 = {spheres}\,\text{Å}^3
+helpPackingEx4: Divide by the cell volume:
+helpPackingEx4Tex: \text{APF} = \frac{{spheres}}{{volume}} = {apf}
+helpPackingExResult: {percent}% of the cell is filled.
+
+
+## Nearest neighbours and coordination number
+
+### Popover
+helpNnTitle: Nearest neighbours and coordination number
+helpNnExplain: The nearest-neighbour distance d_nn is the shortest distance between two lattice points, and the coordination number CN is how many points sit at that distance from any one point. Because the axes can be slanted, distances are worked out with the metric tensor, not with plain Pythagoras on the fractional coordinates.
+helpNnFormula2: \begin{array}{lcc} & d_\text{nn} & \text{CN} \\ P: & a & 6 \\[2pt] I: & \tfrac{\sqrt3}{2}a & 8 \\[2pt] F: & \tfrac{a}{\sqrt2} & 12 \end{array}
+helpNnSym1: \Delta\mathbf f
+helpNnSym1Text: difference of the fractional coordinates of two points
+helpNnSym2: G
+helpNnSym2Text: the metric tensor
+helpNnSym3: \text{CN}
+helpNnSym3Text: coordination number
+helpNnNow: On screen: $d_\text{nn} = {dnn}\,\text{Å}$, CN = {cn}
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpNnStep1: The vector between two lattice points with fractional coordinates f₁ and f₂ is Δf = f₂ − f₁ in units of a, b, c. Its length needs the metric tensor:
+helpNnStep1Tex: d^2 = \Delta\mathbf f^\mathsf T G\,\Delta\mathbf f
+helpNnStep2: Search over the lattice points around one point (in neighbouring cells too) and keep the shortest distance:
+helpNnStep2Tex: d_\text{nn} = \min_{\Delta\mathbf f \ne 0} \sqrt{\Delta\mathbf f^\mathsf T G\,\Delta\mathbf f}
+helpNnStep3: Count how many points have exactly that distance: that is CN.
+helpNnStep4: <b>Cubic P:</b> the neighbours are along the edges.
+helpNnStep4Tex: d_\text{nn} = a,\qquad \text{CN} = 6
+helpNnStep5: <b>Cubic I:</b> the corner and the body centre are half a body diagonal apart.
+helpNnStep5Tex: d_\text{nn} = \tfrac12\sqrt3\,a,\qquad \text{CN} = 8
+helpNnStep6: <b>Cubic F:</b> a corner and a face centre are half a face diagonal apart.
+helpNnStep6Tex: d_\text{nn} = \tfrac12\sqrt2\,a = \frac{a}{\sqrt2},\qquad \text{CN} = 12
+helpNnStep7: In the other systems the answer depends on the parameters, e.g. hexagonal P has 6 neighbours at a when c > a, but 2 at c when c < a.
+
+### SEE MORE: Your lattice (worked example)
+helpNnEx1: The shortest vector found between two lattice points:
+helpNnEx1Tex: \Delta\mathbf f = ({df})
+helpNnEx2: Its length with the metric tensor:
+helpNnEx2Tex: d_\text{nn} = \sqrt{\Delta\mathbf f^\mathsf T G\,\Delta\mathbf f} = {dnn}\,\text{Å}
+helpNnEx3: Points at this distance from the one at the origin:
+helpNnEx3Tex: \text{CN} = {cn}
+helpNnEx4: Slightly different distances count together (within 2%): {shells}.
+
+
+## Interplanar distance d
+
+### Popover
+helpDspacingExplain: The interplanar distance d_hkl is the perpendicular distance between neighbouring planes of the (hkl) set. For cubic cells it is a/√(h² + k² + l²); for every other system the general formula with the reciprocal metric tensor G* is needed, because the planes are not perpendicular to [hkl].
+# Scope, formulas, symbols and SEE MORE are shared with the next topic, Interplanar distance (drawn).
+
+
+## Interplanar distance (drawn)
+
+### Popover
+helpSpacingTitle: Interplanar distance (drawn)
+helpSpacingScope: All lattices (the short a/√… formula: cubic only)
+helpSpacingExplain: The dimension line measures the perpendicular distance between two neighbouring planes of the set. For cubic cells d = a/√(h² + k² + l²); in general d comes from the reciprocal metric tensor G*. In centred lattices extra points can sit between the formula planes, so the planes that really hold points are closer together.
+helpSpacingFormula1: d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}
+helpSpacingFormula2: \frac{1}{d_{hkl}^2} = \mathbf h^\mathsf T G^*\,\mathbf h,\qquad G^* = G^{-1}
+helpSpacingSym1: d_{hkl}
+helpSpacingSym1Text: perpendicular distance between neighbouring (hkl) planes
+helpSpacingSym2: h,\ k,\ l
+helpSpacingSym2Text: the Miller indices; $\mathbf h$ is the column (h, k, l)
+helpSpacingSym3: a
+helpSpacingSym3Text: cubic edge length
+helpSpacingSym4: G^*
+helpSpacingSym4Text: the reciprocal metric tensor, the inverse of G
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpSpacingStep1: <b>Cubic case.</b> The plane of the set nearest the origin cuts the axes at a/h, a/k and a/l.
+helpSpacingStep1Tex: \Big(\frac{a}{h},\ 0,\ 0\Big),\quad \Big(0,\ \frac{a}{k},\ 0\Big),\quad \Big(0,\ 0,\ \frac{a}{l}\Big)
+helpSpacingStep2: In a cubic cell, and only there, the plane is perpendicular to the direction [hkl], so its unit normal is:
+helpSpacingStep2Tex: \hat{\mathbf n} = \frac{(h,\ k,\ l)}{\sqrt{h^2 + k^2 + l^2}}
+helpSpacingStep3: The distance from the origin to the plane is the component of any point of the plane along the normal. Take the intercept on a:
+helpSpacingStep3Tex: d = \Big(\frac{a}{h},\ 0,\ 0\Big)\cdot\hat{\mathbf n} = \frac{a}{h}\cdot\frac{h}{\sqrt{h^2+k^2+l^2}} = \frac{a}{\sqrt{h^2+k^2+l^2}}
+helpSpacingStep4: <b>General case.</b> The reciprocal vectors are defined by $\mathbf a_i\cdot\mathbf a_j^* = \delta_{ij}$, for example $\mathbf a^* = (\mathbf b\times\mathbf c)/V$. Build g from them:
+helpSpacingStep4Tex: \mathbf g = h\,\mathbf a^* + k\,\mathbf b^* + l\,\mathbf c^*
+helpSpacingStep5: g is perpendicular to the plane: two vectors lying in the plane are b/k − a/h and c/l − a/h, and both give 0:
+helpSpacingStep5Tex: \mathbf g\cdot\Big(\frac{\mathbf b}{k} - \frac{\mathbf a}{h}\Big) = \frac{k}{k} - \frac{h}{h} = 0
+helpSpacingStep6: So d is the component of the intercept a/h along g:
+helpSpacingStep6Tex: d = \frac{\mathbf a}{h}\cdot\frac{\mathbf g}{|\mathbf g|} = \frac{1}{h}\cdot\frac{h}{|\mathbf g|} = \frac{1}{|\mathbf g|}
+helpSpacingStep7: The length of g uses the reciprocal metric tensor G* = G⁻¹:
+helpSpacingStep7Tex: \frac{1}{d^2} = |\mathbf g|^2 = \mathbf h^\mathsf T G^*\,\mathbf h
+helpSpacingStep8: Written out for the right-angled and hexagonal systems:
+helpSpacingStep8Tex: \begin{aligned} &\text{tetragonal:} && \tfrac{1}{d^2} = \tfrac{h^2+k^2}{a^2} + \tfrac{l^2}{c^2} \\ &\text{orthorhombic:} && \tfrac{1}{d^2} = \tfrac{h^2}{a^2} + \tfrac{k^2}{b^2} + \tfrac{l^2}{c^2} \\ &\text{hexagonal:} && \tfrac{1}{d^2} = \tfrac43\,\tfrac{h^2+hk+k^2}{a^2} + \tfrac{l^2}{c^2} \end{aligned}
+helpSpacingStep9: In centred lattices extra lattice points can lie between the formula planes, so the planes that really hold points are closer together, e.g. cubic I (100): the points lie on (200) planes, a/2 apart.
+
+### SEE MORE: Your lattice (worked example)
+helpSpacingEx1: Cubic, so the short formula works:
+helpSpacingEx1Tex: d_{{hkl}} = \frac{{a}}{\sqrt{{h} + {k} + {l}}} = \frac{{a}}{\sqrt{{h2}}} = {d}\,\text{Å}
+helpSpacingEx2: The general formula gives the same:
+helpSpacingEx2Tex: \frac{1}{d^2} = \mathbf h^\mathsf T G^*\mathbf h = {q}\,\text{Å}^{-2}
+helpSpacingEx3: G* = G⁻¹ for the lattice on screen (Å⁻²):
+helpSpacingEx3Tex: G^* = {matrix}
+helpSpacingEx4: Multiply out with h = (h, k, l):
+helpSpacingEx4Tex: \mathbf h^\mathsf T G^*\mathbf h = \begin{pmatrix}{hkl}\end{pmatrix}\,G^*\,{column} = {q}\,\text{Å}^{-2}
+helpSpacingEx5Tex: d_{{hkl}} = \frac{1}{\sqrt{{q}}} = {d}\,\text{Å}
+helpSpacingEx6: The {system} form gives the same:
+helpSpacingTexCubic: \frac{1}{d^2} = \frac{h^2 + k^2 + l^2}{a^2}
+helpSpacingTexTetragonal: \frac{1}{d^2} = \frac{h^2 + k^2}{a^2} + \frac{l^2}{c^2}
+helpSpacingTexOrthorhombic: \frac{1}{d^2} = \frac{h^2}{a^2} + \frac{k^2}{b^2} + \frac{l^2}{c^2}
+helpSpacingTexHexagonal: \frac{1}{d^2} = \frac43\,\frac{h^2 + hk + k^2}{a^2} + \frac{l^2}{c^2}
+helpSpacingEx7: The cubic formula would be wrong here: this cell is not a cube.
+helpSpacingEx8: In this {centring} lattice the planes that hold lattice points are the {eq} planes:
+helpSpacingEx8Tex: d_\text{points} = {dLattice}\,\text{Å}
+
+
+## Angle between directions and planes
+
+### Popover
+helpAngleTitle: Angle between directions and planes
+helpAngleScope: All lattices (only in cubic is [hkl] ⟂ (hkl))
+helpAngleExplain: The angle between two directions comes from their dot product, the angle between two planes is the angle between their normals, and a direction and a plane are compared through the plane normal. The metric tensors G and G* make this work in every crystal system; only in cubic lattices is [hkl] perpendicular to (hkl).
+helpAngleFormula1Tag: Two directions
+helpAngleFormula1: \cos\theta = \frac{\mathbf u_1^\mathsf T G\,\mathbf u_2}{|\mathbf u_1|\,|\mathbf u_2|},\qquad |\mathbf u| = \sqrt{\mathbf u^\mathsf T G\,\mathbf u}
+helpAngleFormula2Tag: Two planes
+helpAngleFormula2: \cos\theta = \frac{\mathbf h_1^\mathsf T G^*\,\mathbf h_2}{|\mathbf g_1|\,|\mathbf g_2|},\qquad |\mathbf g| = \sqrt{\mathbf h^\mathsf T G^*\,\mathbf h}
+helpAngleFormula3Tag: Direction and plane
+helpAngleFormula3: \cos\psi = \frac{uh + vk + wl}{|\mathbf u|\,|\mathbf g|},\qquad \text{angle to the plane} = 90^\circ - \psi
+helpAngleSym1: \mathbf u
+helpAngleSym1Text: a direction (u, v, w)
+helpAngleSym2: \mathbf h
+helpAngleSym2Text: plane indices (h, k, l)
+helpAngleSym3: G,\ G^*
+helpAngleSym3Text: metric tensor and its inverse
+helpAngleSym4: \psi
+helpAngleSym4Text: angle between the direction and the plane normal
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpAngleStep1: For any two vectors the dot product gives the angle:
+helpAngleStep1Tex: \cos\theta = \frac{\mathbf r_1\cdot\mathbf r_2}{|\mathbf r_1|\,|\mathbf r_2|}
+helpAngleStep2: Write each direction as r = Σ uᵢ aᵢ. The dot product only needs the dot products of the axes, which is the metric tensor:
+helpAngleStep2Tex: \mathbf r_1\cdot\mathbf r_2 = \sum_{i,j} u_{1i}\,u_{2j}\,\mathbf a_i\cdot\mathbf a_j = \mathbf u_1^\mathsf T G\,\mathbf u_2
+helpAngleStep3: In a cubic cell G = a²·𝟙, and the formula becomes the familiar one with plain indices:
+helpAngleStep3Tex: \cos\theta = \frac{u_1u_2 + v_1v_2 + w_1w_2}{\sqrt{u_1^2+v_1^2+w_1^2}\,\sqrt{u_2^2+v_2^2+w_2^2}}\qquad(\text{cubic})
+helpAngleStep4: Planes: use their normals g = h a* + k b* + l c* and the reciprocal metric tensor. The angle is folded into 0°–90°, because a plane has no front or back.
+helpAngleStep4Tex: \mathbf g_1\cdot\mathbf g_2 = \mathbf h_1^\mathsf T G^*\,\mathbf h_2
+helpAngleStep5: Direction and plane: since aᵢ · aⱼ* is 1 for i = j and 0 otherwise, their dot product needs no metric:
+helpAngleStep5Tex: \mathbf r\cdot\mathbf g = uh + vk + wl
+helpAngleStep6: The angle to the plane itself is 90° minus the angle to its normal. Example of why the cubic shortcut fails: tetragonal a = 1, c = 2, [101] makes 36.87° with the normal of (101), not 0°.
+helpAngleStep6Tex: \cos\psi = \frac{1\cdot1 + 0 + 1\cdot1}{\sqrt5\,\sqrt{1.25}} = 0.8\ \Rightarrow\ \psi = 36.87^\circ
+
+### SEE MORE: Your lattice (worked example)
+helpAngleEx1: Dot product with G:
+helpAngleEx1Tex: \mathbf u_1^\mathsf T G\,\mathbf u_2 = {dotG}\,\text{Å}^2
+helpAngleEx2: Lengths:
+helpAngleEx2Tex: |\mathbf u_1| = {lu}\,\text{Å},\qquad |\mathbf u_2| = {lv}\,\text{Å}
+helpAngleEx3Tex: \cos\theta = \frac{{dotG}}{{lu}\times{lv}} = {dotG2}\ \Rightarrow\ \theta = {angle}^\circ
+helpAngleEx4: Dot product of the normals with G*:
+helpAngleEx4Tex: \mathbf h_1^\mathsf T G^*\,\mathbf h_2 = {dotG}\,\text{Å}^{-2}
+helpAngleEx5: Lengths of the normals (1/d):
+helpAngleEx5Tex: |\mathbf g_1| = {g1},\qquad |\mathbf g_2| = {g2}\ \text{Å}^{-1}
+helpAngleEx6Tex: \cos\theta = {dotG}\ \Rightarrow\ \theta = {angle}^\circ
+helpAngleEx7: Direction times plane indices (no metric needed):
+helpAngleEx7Tex: uh + vk + wl = {uh}
+helpAngleEx8: Lengths:
+helpAngleEx8Tex: |\mathbf u| = {lu}\,\text{Å},\qquad |\mathbf g| = {g}\,\text{Å}^{-1}
+helpAngleEx9Tex: \cos\psi = \frac{{uh}}{{lu}\times{g}}\ \Rightarrow\ \psi = {toNormal}^\circ,\qquad 90^\circ - \psi = {toPlane}^\circ
+
+
+## Bragg's law
+
+### Popover
+helpBraggTitle: Bragg's law
+helpBraggExplain: X-rays scattered by neighbouring lattice planes interfere. The ray from the lower plane travels an extra 2d sin θ, and when that is a whole number of wavelengths the scattered waves add up to a strong reflection. Diffractometers measure 2θ, the angle between the incoming and the diffracted beam.
+helpBraggFormula1: n\lambda = 2d_{hkl}\sin\theta\qquad\Leftrightarrow\qquad \lambda = 2\,\frac{d_{hkl}}{n}\,\sin\theta = 2\,d_{nh\,nk\,nl}\sin\theta
+helpBraggFormula2: 2\theta = 2\arcsin\frac{\lambda}{2d}
+helpBraggSym1: \lambda
+helpBraggSym1Text: X-ray wavelength (Cu Kα: 1.5406 Å)
+helpBraggSym2: d_{hkl}
+helpBraggSym2Text: interplanar distance
+helpBraggSym3: \theta
+helpBraggSym3Text: angle between the beam and the planes
+helpBraggSym4: n
+helpBraggSym4Text: order of the reflection (1, 2, 3 …)
+helpBraggNow: {hkl} with λ = {lambda} Å: {angle}
+helpBraggNoReflection: no reflection (λ/2d > 1)
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpBraggStep1: Parallel X-rays of wavelength λ hit a set of planes, a distance d apart, at a glancing angle θ. Each plane reflects a little of the beam like a mirror (angle in = angle out).
+helpBraggStep2: Compare the ray reflected at the upper plane with the ray reflected at the lower one. Up to the dashed wavefront through A they are in step, and again from the wavefront through C.
+helpBraggStep3: The lower ray travels the extra path AB + BC. Each piece is a side of a right triangle with hypotenuse d and angle θ:
+helpBraggStep3Tex: AB = BC = d\sin\theta\ \Rightarrow\ \Delta = AB + BC = 2d\sin\theta
+helpBraggStep4: The two waves add up (constructive interference) when the extra path is a whole number of wavelengths:
+helpBraggStep4Tex: 2d\sin\theta = n\lambda,\qquad n = 1, 2, 3, \ldots
+helpBraggStep5: The n-th order reflection from (hkl) is the same as a first-order reflection from planes d/n apart, which are the (nh nk nl) planes. That is why reflections are labelled (200), (222) … with n = 1.
+helpBraggStep5Tex: n\lambda = 2d_{hkl}\sin\theta\ \Leftrightarrow\ \lambda = 2d_{nh\,nk\,nl}\sin\theta
+helpBraggStep6: Solve for θ. The detector sits at 2θ from the incoming beam. If λ/2d > 1 there is no solution: the planes are too close for this wavelength.
+helpBraggStep6Tex: 2\theta = 2\arcsin\frac{\lambda}{2d}
+helpBraggStep7: Centred lattices miss some reflections (systematic absences), because the extra points scatter exactly out of step:
+helpBraggStep7Tex: I:\ h+k+l\ \text{odd},\qquad F:\ h, k, l\ \text{mixed odd and even},\qquad C:\ h+k\ \text{odd}
+
+### SEE MORE: Your lattice (worked example)
+helpBraggEx1: Interplanar distance:
+helpBraggEx1Tex: d_{{hkl}} = {d}\,\text{Å}
+helpBraggEx2: With λ = {lam} Å:
+helpBraggEx2Tex: \sin\theta = \frac{\lambda}{2d} = \frac{{lam}}{2\times{d}} = {s}
+helpBraggEx3: sin θ would have to be larger than 1: there is no reflection for this wavelength.
+helpBraggEx4Tex: \theta = {tt2}^\circ\qquad 2\theta = {tt22}^\circ
+helpBraggEx5: But in this {centring} lattice {hkl} is a systematic absence: the reflection is missing.

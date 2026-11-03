@@ -1,0 +1,200 @@
+/* =====================================================================
+   The help system: "?" buttons, the help popover, the SEE MORE panel
+   docked beside the 3D view, diagrams and KaTeX tweaks.
+   ===================================================================== */
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- the "?" button ---------- */
+.help-btn {
+  position: relative; z-index: 1; display: inline-grid; place-items: center; flex: none;
+  width: 20px; height: 20px; padding: 0; margin: 0 0 0 4px; vertical-align: 1px;
+  border: var(--border-w) solid var(--line-strong); border-radius: var(--radius); background: var(--surface);
+  font: 500 11px/1 var(--font-mono); color: var(--ink); cursor: help;
+  transition: color var(--t-fast), border-color var(--t-fast), background-color var(--t-fast);
+}
+.help-btn:hover, .help-btn[aria-expanded="true"] { color: var(--primary-ink); background: var(--primary); border-color: var(--primary); }
+.help-btn:focus-visible { outline-offset: 1px; }
+/* bigger touch target without a bigger circle */
+.help-btn::after { content: ""; position: absolute; inset: -7px; }
+@media (pointer: coarse) { .help-btn { width: 24px; height: 24px; font-size: 13px; } }
+
+.obj-acts .help-btn { margin: 0 4px 0 2px; }
+.mi-text b .help-btn, .menu-title .help-btn, .menu-sub .help-btn, .cf-sec h4 .help-btn, .sys-text b .help-btn { margin-left: 6px; }
+.chip .help-btn { width: 17px; height: 17px; margin: 0 -3px 0 3px; font-size: 10.5px; }
+.field-label .help-btn { margin-left: 6px; }
+.stage-readout .help-btn, .hex-legend .help-btn { pointer-events: auto; }
+.adv-help { margin-left: -4px; }
+@media (max-width: 960px) { .adv-help { display: none; } }
+
+/* + Add menu: the whole row stays one big button, the "?" sits on top of it */
+.menu-item.is-button { position: relative; }
+.mi-hit { position: absolute; inset: 0; z-index: 0; width: 100%; padding: 0; border: 0; border-radius: inherit; background: transparent; cursor: pointer; }
+.mi-hit:focus-visible { outline: none; box-shadow: var(--ring); }
+.menu-item.is-button > :not(.mi-hit) { position: relative; pointer-events: none; }
+.menu-item.is-button .help-btn { pointer-events: auto; }
+
+/* ---------- help popover ---------- */
+/* the rest is shared with .popover in base.css */
+.help-pop {
+  z-index: 60; width: min(360px, calc(100vw - 20px));
+  display: flex; flex-direction: column; gap: 10px; padding: 14px 14px 14px; transform-origin: var(--arrow-x, 50%) top;
+}
+.help-pop.is-above { transform-origin: var(--arrow-x, 50%) bottom; }
+/* flex items, not grid rows: scrollable formula boxes must not be squeezed when the popover scrolls */
+.help-pop > *, .hpn-scroll > *, .hpn-body > * { flex: none; min-width: 0; }
+.help-pop.is-sheet { bottom: calc(8px + env(safe-area-inset-bottom, 0px)); max-height: 75vh; }
+.hp-head { display: flex; align-items: flex-start; gap: 10px; }
+.hp-icon { display: grid; place-items: center; flex: none; width: 34px; height: 34px; border-radius: var(--radius); border: var(--border-w) solid var(--line-strong); color: var(--ink); }
+.hp-icon .ic { width: 19px; height: 19px; }
+.hp-title { display: grid; flex: 1; min-width: 0; gap: 1px; padding-top: 1px; }
+.hp-title b { font: 700 16.5px/1.25 var(--font-display); color: var(--ink); }
+.hp-title small { font: 500 11px/1.4 var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.hp-close { width: 32px; height: 32px; margin: -4px -6px 0 0; }
+.hp-explain { margin: 0; font-size: 13.5px; font-weight: 400; line-height: 1.55; color: var(--ink-2); }
+.hp-explain code { padding: 0 5px; border-radius: var(--radius); background: var(--surface-2); font: 600 12px var(--font-mono); }
+.hp-formula {
+  display: grid; gap: 2px; padding: 8px 12px; border-radius: var(--radius); background: var(--surface-2); border-left: var(--border-w-strong) solid var(--primary); color: var(--ink);
+  overflow-x: auto; scrollbar-width: thin;
+}
+.hp-formula .f-tag { justify-self: start; }
+.hp-formula .katex-display { margin: 4px 0; }
+.hp-symbols { display: grid; gap: 3px; margin: 0; padding: 8px 12px; border-radius: var(--radius); border: var(--border-w) solid var(--line); }
+.hp-where { font: 500 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.hp-symbols > div { display: grid; grid-template-columns: minmax(46px, max-content) 1fr; gap: 10px; align-items: baseline; }
+.hp-symbols dt { font-size: 14px; color: var(--ink); }
+.hp-symbols dd { margin: 0; font-size: 12.5px; font-weight: 400; line-height: 1.45; color: var(--muted); }
+.hp-now {
+  display: flex; align-items: flex-start; gap: 8px; margin: 0; padding: 8px 10px; border-radius: var(--radius);
+  background: var(--highlight-soft); border-left: var(--border-w-strong) solid var(--highlight); font-size: 12.5px; font-weight: 500; line-height: 1.45; color: var(--ink-2);
+}
+.hp-now .ic { flex: none; width: 16px; height: 16px; margin-top: 1px; color: var(--highlight); }
+.hp-more { align-self: flex-end; letter-spacing: 0.08em; font-weight: 600; }
+
+/* ---------- SEE MORE panel ---------- */
+.help-panel {
+  position: absolute; z-index: 5; top: 10px; right: 10px; bottom: 10px; width: var(--help-w);
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--surface); border: var(--border-w) solid var(--line-strong); border-radius: var(--radius);
+}
+.help-panel.is-open { animation: rise var(--t-fast) var(--ease-out); }
+.hpn-head { display: flex; align-items: center; gap: 10px; padding: 12px 10px 10px 14px; border-bottom: 1px solid var(--line); }
+.hpn-head .hp-title small { font: 500 11px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary-text); }
+.hpn-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 12px; padding: 12px 14px 18px; }
+.hpn-scope { margin: 0; }
+.hpn-sub { margin: 4px 0 0; font: 700 15px var(--font-display); }
+.hpn-tabs { width: 100%; }
+.hpn-tabs button { flex: 1; justify-content: center; }
+.hpn-body { display: flex; flex-direction: column; gap: 12px; }
+.hpn-hl { display: grid; gap: 8px; padding: 10px 12px; border-radius: var(--radius); border: var(--border-w) solid var(--line); background: var(--surface-2); }
+.hpn-hl.is-on { border-color: var(--highlight); background: var(--highlight-soft); }
+.hpn-hl.is-off { display: flex; gap: 10px; align-items: flex-start; font-size: 12.5px; font-weight: 400; color: var(--muted); }
+.hpn-hl.is-off p { margin: 0; }
+.hpn-hl.is-off .ic { flex: none; width: 18px; height: 18px; }
+.hpn-hl .switch-text b { font-weight: 600; }
+.hpn-hl .switch-text small { line-height: 1.45; }
+.hpn-hl .btn { justify-self: start; }
+
+.hp-steps { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: hp-step; }
+.hp-steps > li { position: relative; display: grid; gap: 4px; padding: 0 0 0 36px; counter-increment: hp-step; }
+.hp-steps > li::before {
+  content: counter(hp-step); position: absolute; left: 0; top: -1px; display: grid; place-items: center; width: 25px; height: 25px;
+  border-radius: var(--radius); background: var(--ink); color: var(--surface); font: 500 12px/1 var(--font-mono);
+}
+.hp-steps > li:not(:last-child)::after { content: ""; position: absolute; left: 12px; top: 28px; bottom: -8px; width: 1px; background: var(--line-strong); }
+.hp-step-text { font-size: 13.5px; font-weight: 400; line-height: 1.55; color: var(--ink-2); }
+.hp-step-tex { padding: 2px 10px; border-radius: var(--radius); border: var(--border-w) solid var(--line); background: var(--surface-2); overflow-x: auto; scrollbar-width: thin; }
+.hp-step-tex .katex-display { margin: 6px 0; }
+.hp-ex-head { display: flex; }
+.hp-ex-head .chip { font-size: 12.5px; }
+.hp-ex-intro, .hp-result { margin: 0; font-size: 13px; font-weight: 400; line-height: 1.5; color: var(--muted); }
+.hp-result { padding: 9px 12px; border-radius: var(--radius); background: var(--good-soft); border-left: var(--border-w-strong) solid var(--good); color: var(--ink-2); font-weight: 500; }
+.hpn-related { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-top: 8px; border-top: var(--border-w) solid var(--line); }
+.hpn-related > span { margin-right: 2px; }
+
+/* The 3D / 2D view moves aside so the panel never covers the crystal */
+.workspace.help-open .stage-gl-host, .workspace.help-open .stage-labels, .workspace.help-open .flat-host { right: calc(var(--help-w) + 20px); }
+.workspace.help-open .stage-status, .workspace.help-open .stage-readout { right: calc(var(--help-w) + 32px); }
+.workspace.help-open .view-toolbar { left: calc((100% - var(--help-w) - 20px) / 2); max-width: calc(100% - var(--help-w) - 44px); }
+.workspace.help-open .stage-hint { left: calc((100% - var(--help-w) - 20px) / 2); }
+
+@container stage (max-width: 780px) {
+  .help-panel { top: auto; left: 8px; right: 8px; bottom: 8px; width: auto; height: 58%; }
+  .workspace.help-open .stage-gl-host, .workspace.help-open .stage-labels, .workspace.help-open .flat-host { right: 0; bottom: calc(58% + 8px); }
+  .workspace.help-open .stage-status, .workspace.help-open .stage-readout { right: 12px; }
+  .workspace.help-open .view-toolbar, .workspace.help-open .stage-hint, .workspace.help-open .hex-legend { display: none; }
+}
+
+/* ---------- 3D labels from a highlight ---------- */
+.lbl.lbl-help { background: var(--highlight); color: #0B0B0C; box-shadow: none; }
+.lbl.lbl-help .idx { font-size: 13px; }
+
+/* ---------- diagrams ---------- */
+.hp-diagram { margin: 0; padding: 10px; border-radius: var(--radius); background: var(--stage); border: var(--border-w) solid var(--line); }
+.hd { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; overflow: hidden; }
+.hd-line, .hd-thin { stroke: var(--ink-2); stroke-width: 1.5; fill: none; }
+.hd-thin { stroke-width: 1.2; }
+.hd-plane { stroke: var(--cell-line); stroke-width: 2.2; }
+.hd-plane.is-faint, .hd-plane-line.is-faint { opacity: 0.35; }
+.hd-plane-line { stroke: var(--primary); stroke-width: 2.6; }
+.hd-atom { fill: var(--lattice-point); }
+.hd-atom.is-faint { opacity: 0.35; }
+.hd-ray { stroke: var(--primary); stroke-width: 2; fill: none; }
+.hd-head { fill: var(--ink-2); }
+.hd-head-hl { fill: var(--highlight); }
+.hd-dash { stroke: var(--muted); stroke-width: 1.3; stroke-dasharray: 4 4; fill: none; }
+.hd-hl { stroke: var(--highlight); stroke-width: 4.5; stroke-linecap: square; fill: none; }
+.hd-dim, .hd-axisline { stroke: var(--ink-2); stroke-width: 1.4; fill: none; }
+.hd-arc { stroke: var(--axis-angle); stroke-width: 1.6; fill: none; }
+.hd-arc-hl { stroke: var(--highlight); stroke-width: 2.4; fill: none; }
+.hd-text, .hd-small, .hd-caption, .hd-axis-label { font-family: var(--font-ui); font-weight: 600; fill: var(--ink-2); }
+.hd-text { font-size: 14px; }
+.hd-small { font-size: 12px; fill: var(--muted); }
+.hd-caption { font-size: 12.5px; fill: var(--muted); }
+.hd-hl-text { fill: var(--highlight); }
+.hd-it { font-family: var(--font-math); font-style: italic; font-weight: 600; }
+.hd-sub { font-size: 0.72em; }
+.hd-cell { fill: none; stroke: var(--cell-line); stroke-width: 2; }
+.hd-ball-a { fill: color-mix(in srgb, var(--lattice-point) 30%, transparent); stroke: var(--lattice-point); stroke-width: 1.5; }
+.hd-hole { fill: color-mix(in srgb, var(--highlight) 55%, transparent); stroke: var(--highlight); stroke-width: 1.5; }
+.hd-hex { fill: color-mix(in srgb, var(--primary) 8%, transparent); stroke: var(--line-strong); stroke-width: 1.5; }
+.hd-axis { stroke-width: 3; stroke-linecap: square; }
+.hd-ax-a { stroke: var(--axis-a); fill: var(--axis-a); }
+.hd-ax-b { stroke: var(--axis-b); fill: var(--axis-b); }
+.hd-ax-a3 { stroke: var(--axis-a3); fill: var(--axis-a3); }
+.hd-axis-label { font-size: 16px; font-style: italic; font-family: var(--font-math); }
+.hd-c-out { fill: var(--surface); stroke: var(--axis-c); stroke-width: 2; }
+.hd-c-dot { fill: var(--axis-c); }
+.hd-vec-1 { stroke: var(--axis-a); stroke-width: 2.6; }
+.hd-vec-2 { stroke: var(--axis-b); stroke-width: 2.6; }
+.hd-note { margin: 6px 2px 0; font-size: 12px; font-weight: 500; color: var(--faint); line-height: 1.45; }
+
+.hd-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.hd-tile { display: grid; justify-items: center; gap: 2px; padding: 8px 6px; border-radius: var(--radius); background: var(--surface); border: var(--border-w) solid var(--line); text-align: center; }
+.hd-tile.is-current { border-color: var(--primary); background: var(--primary-soft); }
+.hd-tile .thumb { width: 60px; height: 60px; }
+.hd-tile b { font-size: 12.5px; font-weight: 600; }
+.hd-tile small { font-size: 11px; font-weight: 500; color: var(--muted); line-height: 1.35; }
+.bt { width: 100%; border-collapse: separate; border-spacing: 3px; font-size: 12.5px; }
+.bt th { padding: 2px 4px; text-align: left; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.bt thead th { text-align: center; }
+.bt td { height: 52px; padding: 2px; border-radius: var(--radius); text-align: center; vertical-align: middle; }
+.bt-yes { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.bt-yes.is-current { background: var(--primary-soft); box-shadow: inset 0 0 0 1px var(--primary); }
+.bt-yes .thumb { display: block; width: 36px; height: 36px; margin: 0 auto -2px; }
+.bt-yes small { font: 600 10.5px var(--font-mono); color: var(--primary-text); }
+.bt-no { background: var(--surface-2); color: var(--faint); font-weight: 600; cursor: help; }
+
+/* ---------- KaTeX inside the interface ---------- */
+.katex { font-size: 1.08em; }
+.hp-symbols .katex, .hp-now .katex, .hp-step-text .katex, .hp-explain .katex { font-size: 1.02em; }
+.lbl .katex { font-size: 1em; }
+/* block formulas that wrap after = or + when the box is narrow (src/help/tex.js texWrap) */
+.tex-wrap { display: block; padding: 5px 0; text-align: center; line-height: 1.5; }
+.tex-wrap .katex { font-size: 1.12em; }
+.formula .tex-wrap { padding: 3px 0 1px; }
+.formula .tex-wrap .katex { font-size: 1.06em; }
+.hp-symbols .tex-wrap { display: inline; }
+
+/* diagram text stays readable where it crosses lines */
+.hd text { paint-order: stroke; stroke: var(--stage); stroke-width: 3.5px; stroke-linejoin: round; }

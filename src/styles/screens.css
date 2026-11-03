@@ -1,0 +1,134 @@
+/* Screen transitions, the title screen and the mode-select screen.
+   Flat paper background, ink type, hard borders, one accent. */
+
+.screen {
+  position: fixed; inset: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity var(--t-slide) ease-out, visibility 0s linear var(--t-slide);
+}
+.screen.is-active { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+.screen-top {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 3;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: calc(16px + env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px));
+}
+.title-top { justify-content: flex-end; }
+
+/* ---------- title ---------- */
+.title-screen { overflow: hidden; background: var(--bg); }
+.title-stage { position: absolute; inset: 0; }
+.title-canvas { display: block; width: 100%; height: 100%; }
+/* a flat block behind the text keeps it readable over the rotating lattice */
+.title-content {
+  position: relative; z-index: 2; height: 100%; overflow-y: auto;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 80px 24px; text-align: center;
+}
+/* auto margins centre it and, unlike justify-content, keep the top reachable when open boxes make it taller than the screen */
+.title-main { display: grid; gap: 10px; margin: auto 0; }
+.title-card {
+  display: flex; flex-direction: column; align-items: center; padding: 34px clamp(20px, 5vw, 56px) 30px;
+  background: var(--surface); border: var(--border-w-strong) solid var(--line-strong);
+}
+.title-kicker {
+  display: inline-flex; align-items: center; gap: 8px; margin: 0 0 22px; padding: 4px 10px;
+  border: var(--border-w) solid var(--line-strong); border-radius: var(--radius);
+  font: 500 12px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+}
+.kicker-dot { width: 8px; height: 8px; background: var(--primary); }
+.title-name { margin: 0; font: 700 clamp(44px, 8vw, 96px)/0.95 var(--font-ui); letter-spacing: -0.035em; color: var(--ink); }
+.title-name span { color: var(--primary); }
+.title-tagline { max-width: 34ch; margin: 20px 0 30px; font-size: clamp(15px, 1.8vw, 18px); font-weight: 400; color: var(--ink-2); text-wrap: balance; }
+.btn-start {
+  display: inline-flex; align-items: center; gap: 12px;
+  height: 60px; padding: 0 40px 0 30px; border: var(--border-w-strong) solid var(--primary); border-radius: var(--radius);
+  background: var(--primary); color: var(--primary-ink);
+  font: 600 20px var(--font-ui); letter-spacing: 0.02em; text-transform: uppercase;
+  transition: background-color var(--t-fast), color var(--t-fast);
+}
+.btn-start .ic { width: 20px; height: 20px; }
+.btn-start:hover { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.btn-start:focus-visible { outline-offset: 4px; }
+.title-hint { margin: 16px 0 0; font-size: 13px; font-weight: 500; color: var(--muted); }
+/* width 0 + min-width 100%: the boxes take the card's width and long text wraps instead of widening it */
+.title-boxes { display: grid; gap: 10px; width: 0; min-width: 100%; text-align: left; }
+.title-box { background: var(--surface); border: var(--border-w-strong) solid var(--line-strong); }
+.title-box > summary {
+  display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+  font-size: 15px; font-weight: 600; transition: background-color var(--t-fast);
+}
+.title-box > summary:hover { background: var(--surface-2); }
+.title-box-name { flex: 1; }
+.title-box-body { max-height: 32vh; overflow-y: auto; padding: 0 16px 14px 46px; color: var(--ink-2); animation: rise var(--t-fast) var(--ease-out); }
+.title-box-body:empty { display: none; }
+.title-box-body a { color: var(--primary-text); }
+.title-foot {
+  position: absolute; z-index: 2; left: 0; right: 0; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 12px; padding: 0 16px;
+  font: 500 12px var(--font-mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted);
+}
+.dot-sep { width: 4px; height: 4px; background: var(--faint); }
+.screen.is-active .title-content > * { animation: rise var(--t-slide) ease-out both; }
+
+/* ---------- mode select ---------- */
+.mode-screen { overflow-y: auto; background: var(--bg); }
+.home-pill { height: 42px; padding: 0 16px 0 12px; border-color: var(--line-strong); }
+.mode-content {
+  min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: calc(92px + env(safe-area-inset-top, 0px)) 20px 40px;
+}
+.mode-kicker { margin: 0 0 8px; font: 500 12px var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary-text); }
+.mode-title { margin: 0 0 32px; font: 700 clamp(28px, 4.4vw, 44px)/1.1 var(--font-ui); letter-spacing: -0.02em; text-align: center; text-wrap: balance; }
+.mode-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 350px)); gap: 24px; width: 100%; max-width: 1098px; justify-content: center; }
+.mode-card {
+  position: relative; display: flex; flex-direction: column; padding: 0; text-align: left;
+  border: var(--border-w-strong) solid var(--line-strong); border-radius: var(--radius); background: var(--surface); overflow: hidden;
+  transition: border-color var(--t-fast);
+}
+.mode-card:hover { border-color: var(--primary); }
+.mode-num {
+  position: absolute; top: 14px; left: 14px; z-index: 1; padding: 2px 8px;
+  border: var(--border-w) solid var(--line-strong); border-radius: var(--radius); background: var(--surface);
+  font: 500 13px var(--font-mono); color: var(--ink);
+}
+.mode-art { display: grid; place-items: center; height: 210px; background: var(--surface-2); border-bottom: var(--border-w) solid var(--line-strong); }
+.mode-art svg { width: 156px; height: 156px; }
+.mode-body { display: grid; gap: 8px; padding: 20px 22px 6px; }
+.mode-name { display: flex; align-items: center; gap: 8px; font: 700 22px/1.15 var(--font-ui); letter-spacing: -0.01em; }
+.mode-desc { color: var(--muted); font-size: 14px; font-weight: 400; line-height: 1.5; }
+.mode-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.mode-tags span {
+  display: inline-flex; align-items: center; height: 24px; padding: 0 8px;
+  border: var(--border-w) solid var(--line); border-radius: var(--radius); font: 500 11.5px var(--font-mono); color: var(--ink-2);
+}
+.mode-cta {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin: 16px 22px 22px;
+  height: 42px; padding: 0 14px 0 18px; border-radius: var(--radius); background: var(--primary); color: var(--primary-ink);
+  font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.mode-card:hover .mode-cta { background: var(--ink); color: var(--surface); }
+.mode-card.is-locked { cursor: not-allowed; }
+.mode-card.is-locked, .mode-card.is-locked:hover { border-color: var(--line); }
+.mode-card.is-locked .mode-art { border-bottom-color: var(--line); }
+.mode-card.is-locked .mode-art svg { opacity: 0.55; filter: grayscale(0.8); }
+.mode-card.is-locked .mode-cta, .mode-card.is-locked:hover .mode-cta { background: var(--surface-3); color: var(--muted); gap: 8px; padding: 0 16px; }
+.mode-card.is-locked .mode-cta .ic, .mode-ribbon .ic { width: 16px; height: 16px; }
+.mode-ribbon {
+  position: absolute; top: 14px; right: 14px; z-index: 1; display: inline-flex; align-items: center; gap: 6px;
+  height: 26px; padding: 0 10px; border: var(--border-w) solid var(--warn); border-radius: var(--radius); background: var(--warn-soft); color: var(--warn);
+  font-weight: 600; font-size: 12px;
+}
+.mode-card.shake { animation: shake 0.3s; }
+.art-atom { fill: var(--thumb-corner); }
+.art-vacancy { fill: none; stroke: var(--faint); stroke-width: 2; stroke-dasharray: 4 4; }
+.art-interstitial { fill: var(--primary); }
+.mode-svg { overflow: visible; }
+.mode-art .ic { width: 120px; height: 120px; stroke-width: 0.8; }
+.screen.is-active .mode-content > * { animation: rise var(--t-slide) ease-out both; }
+
+@media (max-width: 760px) {
+  .mode-cards { grid-template-columns: minmax(0, 440px); }
+  .mode-art { height: 170px; }
+  .mode-art svg { width: 130px; height: 130px; }
+}

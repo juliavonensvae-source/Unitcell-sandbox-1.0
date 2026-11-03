@@ -1,0 +1,31 @@
+# Plane intercepts card
+interceptsTitle: Intercepts
+interceptsMenu: Plane intercepts a/h, b/k, c/l
+interceptsPicker: Intercepts of the plane
+interceptsNote: Plane n cuts the axes at n/h, n/k and n/l (in units of a, b and c). An index of 0 means the plane never meets that axis: it is parallel to it.
+interceptsNoteFour: Plane n cuts each axis at n/h, n/k, n/i and n/l (in units of a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> and c). An index of 0 means the plane never meets that axis: it is parallel to it.
+
+## Steps table
+interceptsStep1: 1 · Intercepts
+interceptsStep2: 2 · Reciprocals
+interceptsStep3: 3 · Clear fractions <small>({factor})</small>
+interceptsWhole: already whole numbers
+interceptsStep4: 4 · Miller indices: <b>{indices}</b>
+interceptsSameSet: Plane n = {n} of {indices} is also a plane of the {cleared} set: {indices} has the same planes plus extra ones in between. Plane n = 1 gives back {indices}.
+
+## Plane number and origin
+interceptsLevel: Plane number n
+interceptsNearest: (nearest)
+interceptsWhereCell: O = ({origin}), a corner of cell ({cell})
+interceptsWherePrism: O = ({origin}) in prism ({cell})
+interceptsPrismOrigin: The origin O is the centre of the bottom face of the highlighted prism, {where}. A negative intercept simply lies on the other side of O.
+interceptsAuto: Choose the best corner automatically
+interceptsAutoHint: {where}: the corner of the highlighted cell that brings plane n = 1 inside it.
+interceptsManualHint: {where}: the origin chosen in the Add cells drawer (right edge).
+interceptsOriginNote: Planes with a negative index cut that axis behind the origin. Moving O to another corner of the cell brings plane n = 1 inside the cell. A larger n shows how fractions appear and are cleared.
+interceptsOutside: With this origin the plane meets some axes outside the cell. Turn on the automatic corner, or pick another corner in the Add cells drawer.
+interceptsPrismHint: Choose <b>Hexagonal prism</b> in the Add cells drawer (right edge) to see the a<sub>3</sub> intercept drawn as well.
+
+## Labels in the view (also used by 2D lines)
+interceptsParallel: ∞ – parallel to <i>{axis}</i>
+cmdHelpIntercepts: Where a plane cuts the axes, and the steps to (hkl)

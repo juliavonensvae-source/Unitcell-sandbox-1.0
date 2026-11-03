@@ -1,0 +1,85 @@
+# Text used in more than one place
+# Changing an entry here changes it everywhere it appears.
+
+## Names
+crystalStructures: Crystal Structures
+objects: Objects
+hexAxes: Hexagonal axes
+status2DName: {name} (2D)
+
+## Buttons and labels
+add: Add
+advanced: Advanced
+close: Close
+closeEsc: Close (Esc)
+cancel: Cancel
+ok: OK
+undo: Undo
+hide: Hide
+show: Show
+delete: Delete
+deleteConfirm: Delete {name}
+moreOptions: More options
+colour: Colour
+pickAnyColour: Pick any colour
+defaultColour: Default colour
+appearance: Appearance
+transparency: Transparency
+indicesLabel: Indices
+topHomeLabel: Home
+
+## Small words used inside messages (e.g. "p1 is already a plane")
+wordA: a {thing}
+wordADirection: a direction
+wordAPlane: a plane
+wordALine: a line
+wordAVector: a vector
+wordACalculation: a calculation
+countAtDistance: {count} at {d} Å
+wordAnd: and
+
+
+## Formula tags (the small label above a formula)
+formulaTagAll: All systems
+formulaTagCubic: Cubic
+formulaTagParallelepiped: Parallelepiped cells
+allLattices: All lattices
+cubicOnly: Cubic only
+
+## Formulas used in a card and in a help topic
+formulaVolCubic: V = a^3
+formulaVolTetragonal: V = a^2c
+formulaVolOrthorhombic: V = abc
+formulaVolMonoclinic: V = abc\sin\beta
+formulaPoints: N = \tfrac18 N_\text{corner} + \tfrac14 N_\text{edge} + \tfrac12 N_\text{face} + N_\text{inside}
+formulaVolGeneral: \begin{aligned} V = abc\,\big(1 &- \cos^2\alpha - \cos^2\beta - \cos^2\gamma \\ &+ 2\cos\alpha\cos\beta\cos\gamma\big)^{1/2} \end{aligned}
+formulaVolRhombohedral: V = a^3\sqrt{1 - 3\cos^2\alpha + 2\cos^3\alpha}
+formulaNN: d = \sqrt{\Delta\mathbf f^\mathsf T G\,\Delta\mathbf f},\qquad d_\text{nn} = \min d
+formulaCrystalStructure: \text{crystal structure} = \text{Bravais lattice} + \text{basis}
+formulaFitDelta: \delta_i = r + R - d_i
+formulaFitRatio: \text{fits} \iff \frac{r}{R} \le \Big(\frac{r}{R}\Big)_\text{crit}
+
+## Object names: card title and help topic title
+calcVolume: Cell volume
+calcPacking: Packing fraction
+calcMetricMenu: Metric tensor G
+calcDSpacingMenu: Interplanar distance d
+componentsTitle: Direction components
+directionMenu: Direction [uvw]
+fitTitle: Atom fit
+latticePointsTitle: Lattice points
+
+## Add cells drawer: section title and help topic title
+cellsSupercell: Supercell
+cellsHighlightedCell: Highlighted cell and origin
+cellsPrism: Hexagonal prism
+
+## Advanced mode: switch label and help topic title
+topAdvancedLabel: Advanced mode
+
+## Groups: + Add menu category and input-bar command list heading
+catDirections: Directions
+catPlanes: Planes
+catCalculations: Calculations
+catIonic: Ionic structures
+catSites: Interstitial sites

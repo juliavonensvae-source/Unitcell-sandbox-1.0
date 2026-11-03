@@ -1,0 +1,31 @@
+# Input bar (bottom of the Objects panel)
+cmdInputLabel: Input bar: create objects or run a command
+cmdSuggestions: Suggestions
+cmdAllTitle: All commands
+cmdAllLabel: Show all commands
+cmdRunTitle: Run (Enter)
+cmdRun: Run
+cmdEditHint: Change the definition and press Enter. Everything that uses it updates.
+
+## Suggestions when the bar is empty
+cmdExDir: Create a direction
+cmdExPlane: Create a plane
+cmdExPlaneFour: Create a plane (four indices allowed here)
+cmdExDir2D: Create a 2D direction
+cmdExLine2D: Create a 2D line
+
+# Command list (the list button)
+cmdListTitle: Input bar commands
+cmdListSub: Click one to put it in the input bar. Write <code>x = …</code> to name the result; using an existing name changes that object. Arguments can be names or indices, e.g. <code>Spacing((1 1 1))</code>.
+
+## Group headings
+cmdGroupCreate: Create
+cmdGroupPlaneViews: Plane views
+cmdGroup2D: 2D
+
+## The "Create" rows
+cmdListDir: A direction [uvw] (four indices on hexagonal axes, Advanced)
+cmdListPlane: A plane (hkl) (four indices on hexagonal axes, Advanced)
+cmdListDir2D: A 2D direction [uv]
+cmdListLine2D: A 2D line (hk)
+

@@ -1,0 +1,140 @@
+# Help topics: the 2D view, the input bar and Advanced mode
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## The five 2D Bravais lattices
+
+### Popover
+helpLattices2dTitle: The five 2D Bravais lattices
+helpLattices2dExplain: In a plane, two vectors a and b with the angle γ between them make a lattice. The possible rotation symmetries (2-, 4-, 3- and 6-fold) give four 2D crystal systems, and adding a centred point only gives one new lattice, the centred rectangular one. So there are exactly five 2D Bravais lattices.
+helpLattices2dFormula1: G = \begin{pmatrix} a^2 & ab\cos\gamma \\ ab\cos\gamma & b^2 \end{pmatrix},\qquad A = ab\sin\gamma
+helpLattices2dFormula2: \text{oblique}\ \cdot\ \text{rectangular}\ \cdot\ \text{centred rectangular}\ \cdot\ \text{square}\ \cdot\ \text{hexagonal} = 5
+helpLattices2dSym1: a,\ b
+helpLattices2dSym1Text: edge lengths
+helpLattices2dSym2: \gamma
+helpLattices2dSym2Text: angle between a and b
+helpLattices2dSym3: A
+helpLattices2dSym3Text: cell area
+helpLattices2dSym4: G
+helpLattices2dSym4Text: 2D metric tensor
+helpLattices2dNow: {name}: ${params2d}$
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpLattices2dStep1: The same argument as in 3D allows only 1-, 2-, 3-, 4- and 6-fold rotations in a plane lattice.
+helpLattices2dStep1Tex: 2\cos\varphi \in \mathbb Z
+helpLattices2dStep2: Every 2D lattice has a 2-fold axis. The extra symmetry decides the shape of the cell:
+helpLattices2dStep2Tex: \begin{aligned} &\text{oblique:} && a \ne b,\ \gamma \text{ free} \\ &\text{rectangular:} && \gamma = 90^\circ \\ &\text{square:} && a = b,\ \gamma = 90^\circ \\ &\text{hexagonal:} && a = b,\ \gamma = 120^\circ \end{aligned}
+helpLattices2dStep3: Centring the rectangle gives a lattice whose primitive cell is a rhombus, but the rectangle shows its mirror lines. It is a new lattice: centred rectangular.
+helpLattices2dStep4: Centring the others gives nothing new: a centred square is a smaller square turned by 45°, a centred oblique cell has a smaller oblique cell, and centring the hexagonal cell breaks its 6-fold symmetry.
+helpLattices2dStep4Tex: \text{centred square} = \text{square with } a' = a/\sqrt2
+helpLattices2dStep5: Total: 4 primitive lattices + 1 centred = 5.
+
+### SEE MORE: Your lattice (worked example)
+helpLattices2dEx1: Parameters:
+helpLattices2dEx2: Area of the cell:
+helpLattices2dEx2Tex: A = ab\sin\gamma = {a}\times{b}\times\sin{gamma}^\circ = {area}\,\text{Å}^2
+helpLattices2dEx3: Points per cell:
+helpLattices2dEx3Tex: N = {total}
+helpLattices2dEx4: Nearest-neighbour distance:
+helpLattices2dEx4Tex: d_\text{nn} = {dnn}\,\text{Å}
+
+
+## 2D direction [uv]
+
+### Popover
+helpDirection2dTitle: 2D direction [uv]
+helpDirection2dScope: 2D view (length formula: all 2D lattices)
+helpDirection2dExplain: A 2D direction [uv] is the arrow u·a + v·b from the origin, with the smallest whole numbers u and v. Its length uses the 2D metric, so the angle γ between a and b counts; plain Pythagoras only works when γ = 90°.
+helpDirection2dFormula1: \mathbf r = u\,\mathbf a + v\,\mathbf b,\qquad |\mathbf r| = \sqrt{u^2a^2 + v^2b^2 + 2uv\,ab\cos\gamma}
+helpDirection2dSym1: u,\ v
+helpDirection2dSym1Text: whole numbers
+helpDirection2dSym2: \gamma
+helpDirection2dSym2Text: angle between a and b
+
+### SEE MORE: Derivation
+helpDirection2dStep1: The direction is a sum of whole steps along the cell edges:
+helpDirection2dStep1Tex: \mathbf r = u\,\mathbf a + v\,\mathbf b
+helpDirection2dStep2: Its squared length is r · r. Expand the dot product:
+helpDirection2dStep2Tex: |\mathbf r|^2 = u^2\,\mathbf a\cdot\mathbf a + 2uv\,\mathbf a\cdot\mathbf b + v^2\,\mathbf b\cdot\mathbf b = u^2a^2 + 2uv\,ab\cos\gamma + v^2b^2
+helpDirection2dStep3: For γ = 90° the middle term vanishes and Pythagoras is left; for any other γ it matters.
+
+### SEE MORE: Your lattice (worked example)
+helpDirection2dExTitle: {uv} in {name}
+helpDirection2dExIntroElse: Using {uv} as an example.
+helpDirection2dEx2Tex: |\mathbf r| = {value}\,\text{Å}
+
+
+## 2D line (hk)
+
+### Popover
+helpLine2dTitle: 2D line (hk)
+helpLine2dExplain: A line (hk) is the 2D version of a plane: it cuts the a axis at a/h and the b axis at b/k, and an index 0 means it is parallel to that axis. All lines hx + ky = n form a family of parallel lines, a distance d apart.
+helpLine2dFormula1: \text{intercepts}\ \ \frac{a}{h},\ \frac{b}{k},\qquad hx + ky = n
+helpLine2dFormula2: \frac{1}{d_{hk}^2} = \mathbf h^\mathsf T G^{-1}\,\mathbf h = \frac{1}{\sin^2\gamma}\Big(\frac{h^2}{a^2} + \frac{k^2}{b^2} - \frac{2hk\cos\gamma}{ab}\Big)
+helpLine2dSym1: h,\ k
+helpLine2dSym1Text: line indices
+helpLine2dSym2: d_{hk}
+helpLine2dSym2Text: spacing of the lines
+helpLine2dSym3: G
+helpLine2dSym3Text: 2D metric tensor
+
+### SEE MORE: Derivation
+helpLine2dStep1: The line nearest the origin passes through the intercepts:
+helpLine2dStep1Tex: \Big(\frac{1}{h},\ 0\Big)\ \text{and}\ \Big(0,\ \frac{1}{k}\Big)\ \text{in units of } a, b
+helpLine2dStep2: In fractional coordinates every line of the family satisfies:
+helpLine2dStep2Tex: hx + ky = n,\qquad n \in \mathbb Z
+helpLine2dStep3: As in 3D, the spacing comes from the inverse metric tensor. Inverting the 2 × 2 matrix G gives:
+helpLine2dStep3Tex: G^{-1} = \frac{1}{a^2b^2\sin^2\gamma}\begin{pmatrix} b^2 & -ab\cos\gamma \\ -ab\cos\gamma & a^2 \end{pmatrix}
+helpLine2dStep4Tex: \frac{1}{d^2} = \mathbf h^\mathsf T G^{-1}\mathbf h = \frac{1}{\sin^2\gamma}\Big(\frac{h^2}{a^2} + \frac{k^2}{b^2} - \frac{2hk\cos\gamma}{ab}\Big)
+helpLine2dStep5: For a square lattice this is the familiar d = a/√(h² + k²).
+
+### SEE MORE: Your lattice (worked example)
+helpLine2dExTitle: {hk} in {name}
+helpLine2dExIntroElse: Using {hk} as an example.
+helpLine2dEx1: Intercepts:
+helpLine2dEx1Tex: {h},\qquad {k}
+helpLine2dEx2: Spacing:
+helpLine2dEx2Tex: \frac{1}{d^2} = {inv}\,\text{Å}^{-2}\ \Rightarrow\ d = {value}\,\text{Å}
+
+
+## 2D vector
+
+### Popover
+helpVector2dTitle: 2D vector
+helpVector2dExplain: A vector joins any two points. Its components are the differences of their coordinates in units of a and b, e.g. 1a + 2b, and its length uses the 2D metric with the angle γ.
+helpVector2dFormula1: \mathbf v = \Delta x\,\mathbf a + \Delta y\,\mathbf b,\qquad |\mathbf v| = \sqrt{\Delta x^2a^2 + \Delta y^2b^2 + 2\,\Delta x\,\Delta y\,ab\cos\gamma}
+helpVector2dSym1: \Delta x,\ \Delta y
+helpVector2dSym1Text: end minus start, in units of a and b
+helpVector2dSym2: \gamma
+helpVector2dSym2Text: angle between a and b
+
+### SEE MORE: Derivation
+helpVector2dStep1: Subtract the start from the end point:
+helpVector2dStep1Tex: (\Delta x,\ \Delta y) = (x_2 - x_1,\ y_2 - y_1)
+helpVector2dStep2: The vector in terms of the cell edges:
+helpVector2dStep2Tex: \mathbf v = \Delta x\,\mathbf a + \Delta y\,\mathbf b
+helpVector2dStep3: Its length with the 2D metric (γ included):
+helpVector2dStep3Tex: |\mathbf v|^2 = \Delta x^2a^2 + \Delta y^2b^2 + 2\,\Delta x\,\Delta y\,ab\cos\gamma
+helpVector2dStep4: Check: from (0, 0) to (1, 2) with a = b = 1 gives √5 ≈ 2.236 for γ = 90°, but √3 ≈ 1.732 for γ = 120°.
+helpVector2dStep4Tex: 1 + 4 + 2\cdot2\cos120^\circ = 5 - 2 = 3
+
+### SEE MORE: Your lattice (worked example)
+helpVector2dExIntroElse: Using the vector from (0, 0) to (1, 2) as an example.
+helpVector2dEx1: Components:
+helpVector2dEx1Tex: \mathbf v = {d}\,\mathbf a {sign} {d2}\,\mathbf b
+helpVector2dEx3Tex: |\mathbf v| = {value}\,\text{Å}
+
+
+## Input bar
+
+### Popover
+helpInputBarTitle: Input bar
+helpInputBarScope: 3D and 2D
+helpInputBarExplain: Type a definition to create an object, e.g. <code>d1 = [1 1 0]</code> or <code>p1 = (1 1 1)</code>, or a command such as <code>Angle(d1, p1)</code> or <code>Intersection(p1, p2)</code>. Typing a new definition for an existing name changes that object, and everything that uses it updates. The list button shows every command.
+
+
+## Advanced mode
+
+### Popover
+helpAdvancedScope: 3D view
+helpAdvancedExplain: Advanced mode unlocks lattice-parameter editing, four-index input on hexagonal axes, the X-ray wavelength and the Bragg angle, the metric tensor, the angles α, β, γ on the axes and the orthographic projection.

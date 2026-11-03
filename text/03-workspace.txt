@@ -1,0 +1,166 @@
+# Explorer: top bar
+topHomeTitle: Back to the start screen
+topDimLabel: 3D or 2D view
+topDim3D: 3D
+topDim3DTitle: Three-dimensional lattices
+topDim2D: 2D
+topDim2DTitle: The five two-dimensional lattices
+topPickerTitle: Choose a Bravais lattice
+latticeButton2D: 2D · {system}
+topAddTitle: Add directions, planes, calculations…
+topMoreTitle: More
+themeTitle: Switch light / dark mode
+themeLabel: Switch light or dark mode
+
+# Objects panel (left)
+panelHide: Hide the objects panel
+panelShow: Show the objects panel
+panelScene: Scene
+panelAdded: Added
+panelFlatNote: The 2D view has its own objects: directions [uv], vectors and lines (hk). The 3D objects are kept and come back when you switch to 3D.
+
+## When nothing is added yet
+emptyTitle: Nothing added yet
+emptyText: Use <b>+ Add</b> in the top bar, or type in the input bar below, e.g. <code>p1 = (1 1 1)</code>.
+
+# The view (canvas)
+
+## Status line at the top
+sizePrisms: prisms {size}
+statusOne: <b>{name}</b> · {size}{cell} · {count} point
+statusMany: <b>{name}</b> · {size}{cell} · {count} points
+statusPrism: prism ({cell})
+statusCell: cell ({cell})
+
+## Hint at the bottom
+stageHint3D: Drag to rotate · scroll or pinch to zoom · right-drag to pan
+stageHint2D: Drag to pan · scroll or pinch to zoom
+stageNoWebGL: WebGL is not available in this browser, so the 3D view cannot be drawn. Everything in the Objects panel still works.
+
+## Cut spheres readout
+readoutPerCell: Points per cell
+readoutPerPrism: Points per prism
+
+## Hexagonal axes legend
+hexLegendHideTitle: Hide this legend (Axes settings bring it back)
+hexLegendHideLabel: Hide the legend
+hexLegendAxes: {a1} = <i>a</i>, {a2} = <i>b</i>, {a3} = −(<i>a</i> + <i>b</i>).
+hexLegendIndices: The indices <i>h</i>, <i>k</i>, <i>i</i>, <i>l</i> belong to {a1}, {a2}, {a3}, <i style="color:var(--axis-c)">c</i> (for directions: <i>u</i>, <i>v</i>, <i>t</i>, <i>w</i>).
+
+## Ions legend (read aloud by screen readers)
+ionLegendLabel: Ions
+
+## Placing a 2D vector by clicking
+pickStart: Click the start point of the vector.
+pickNowEnd: Start ({start}). Now click the end point.
+pickSnap: Snap to lattice points, centres and edge midpoints
+pickCancel: Cancel (Esc)
+
+# View toolbar (bottom of the view)
+toolbarLabel: View
+toolbarReset: Reset view
+toolbarResetTitle: Reset the view
+toolbarLookLabel: Look along an axis
+toolbarLookAlong: Look along {axis}
+toolbarProjection: Projection
+toolbarPersp: Persp
+toolbarPerspTitle: Perspective projection
+toolbarOrtho: Ortho
+toolbarOrthoTitle: Orthographic projection: parallel lines stay parallel
+
+# Add cells drawer (right edge)
+cellsTab: Add cells
+cellsTitle: Cells
+cellsSub: Cell type, how many cells to show and which one is highlighted.
+
+## Cell type (hexagonal P)
+cellsType: Cell type
+cellsPrimitive: Primitive cell
+cellsPrimitiveHint: The rhombus-based cell with γ = 120°. Three of them make the hexagonal prism.
+cellsPrismHint: The prism is 3 primitive cells: 12 corners plus a point in the centre of the top and bottom faces.
+
+## Axes (rhombohedral R, Advanced)
+cellsAxes: Axes
+cellsRhomb: Rhombohedral
+cellsHex: Hexagonal
+cellsRhombSettingHint: Primitive rhombohedral cell: 1 point per cell.
+cellsHexSettingHint: R-centred hexagonal cell: 3 points per cell.
+
+## Size (2D)
+cellsSize: Size
+cellsSize2DHint: Repeat the 2D cell n × n times.
+cellsAlongAB: cells along a and b
+cellsSmaller: Smaller
+cellsBigger: Bigger
+
+## Supercell
+cellsPrismSupercellHint: Prisms sit side by side in a honeycomb and share their faces: one step along a<sub>1</sub> moves 2a<sub>1</sub> + a<sub>2</sub>, one along a<sub>2</sub> moves a<sub>2</sub> − a<sub>1</sub>. Along c they stack.
+cellsCellsAlong: cells along {axis}
+cellsPrismsAlong: prisms along {axis}
+cellsFewerCells: Fewer cells along {axis}
+cellsMoreCells: More cells along {axis}
+cellsFewerPrisms: Fewer prisms along {axis}
+cellsMorePrisms: More prisms along {axis}
+cellsUnitCell: unit cell
+cellsOnePrism: one prism
+
+## Highlighted cell and origin
+cellsCellHead: <b>Cell ({cell})</b> – origin at ({origin})
+cellsHighlightedPrism: Highlighted prism
+cellsPrismHead: <b>Prism ({cell})</b> – origin at ({origin}), the centre of its bottom face
+cellsPrismNoCorner: A prism's natural origin is the centre of its bottom face, so there is no corner to choose here.
+cellsPickHintCell: While this drawer is open, click a cell in the {view} view to choose it. Hovering shows which one. Click empty space to close the drawer.
+cellsPickHintPrism: While this drawer is open, click a prism in the {view} view to choose it. Hovering shows which one. Click empty space to close the drawer.
+cellsBiggerCell: Make the supercell bigger to choose another cell.
+cellsBiggerPrism: Make the field of prisms bigger to choose another prism.
+cellsLayer: Layer along c
+cellsLayerOf: {value} of {max}
+cellsGridCells: Cells in this layer (a across, b up)
+cellsGridPrisms: Prisms in this layer (a across, b up)
+cellName: Cell ({cell})
+prismName: Prism ({cell})
+cellsCornerLabel: Origin: corner of the cell
+cellsOriginNote3D: Directions, planes, intercepts and direction components start from this origin.
+cellsOriginNote2D: Directions [uv] and lines (hk) start from this origin.
+
+# ⋯ menu (top right)
+moreControls: Mouse &amp; touch controls
+moreClear: Remove all added objects
+
+## Mouse & touch controls window
+controlsTitle: Mouse & touch controls
+controlsRotate: Rotate
+controlsRotateHow: Drag · one finger
+controlsZoom: Zoom
+controlsZoomHow: Scroll wheel · pinch
+controlsPan: Pan
+controlsPanHow: Right-drag · two fingers
+controlsLook: Look along a, b or c
+controlsLookHow: Toolbar letters <i>a b c</i>
+controlsRename: Rename an object
+controlsRenameHow: Double-click its name
+controlsCloseMenu: Close a menu
+controlsCloseMenuHow: <kbd>Esc</kbd>
+controlsCloseDrawer: Close the Add cells drawer
+controlsCloseDrawerHow: Click empty space · <kbd>Esc</kbd>
+
+## Delete window (when other objects use the one you delete)
+deleteTitle: Delete {name}?
+deleteUsedBy: <b>{name}</b> is used by {users}. If you delete it, {which} will ask you to pick another object. You can undo straight after.
+deleteWhichOne: that calculation
+deleteWhichMany: those calculations
+
+# Help popover and SEE MORE panel (the topics themselves are in help/)
+helpBtnTitle: What is this? {title}
+helpBtnLabel: Help: {title}
+helpWhere: where
+helpSeeMore: SEE MORE
+helpSeeMoreSmall: See more
+helpPanelLabel: Explanation
+helpPanelClose: Close the explanation
+helpShow3D: Show in the 3D view
+helpLook: Look straight at it
+helpTabsLabel: Derivation or worked example
+helpDerivation: Derivation
+helpYourLattice: Your lattice
+helpRelated: Related

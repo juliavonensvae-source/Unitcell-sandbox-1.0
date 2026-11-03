@@ -1,0 +1,272 @@
+# Help topics: directions, planes and their indices
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Direction [uvw]
+
+### Popover
+helpDirectionScope: All lattices (the short length formula: cubic only)
+helpDirectionExplain: A direction [uvw] is the vector u·a + v·b + w·c, drawn from the origin. The indices are the smallest whole numbers with the right ratio, and a negative index is written with a bar, e.g. [1̄10]. Angle brackets ⟨uvw⟩ mean all directions that are equivalent by symmetry.
+helpDirectionFormula1: \mathbf r = u\,\mathbf a + v\,\mathbf b + w\,\mathbf c,\qquad |\mathbf r| = \sqrt{\mathbf u^\mathsf T G\,\mathbf u}
+helpDirectionFormula2: |\mathbf r| = a\sqrt{u^2 + v^2 + w^2}
+helpDirectionSym1: u,\ v,\ w
+helpDirectionSym1Text: whole numbers: steps along a, b, c
+helpDirectionSym2: \mathbf u
+helpDirectionSym2Text: the column (u, v, w)
+helpDirectionSym3: G
+helpDirectionSym3Text: the metric tensor (all dot products of a, b, c)
+helpDirectionSym4: \overline{1}
+helpDirectionSym4Text: minus one, written with a bar
+helpDirectionNow: {name}{uvw}: $|\mathbf r| = {length}\,\text{Å}$
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpDirectionStep1: Take two points on the line, the tail and the head, in fractional coordinates, and subtract tail from head.
+helpDirectionStep1Tex: [uvw] \propto (x_2 - x_1,\ y_2 - y_1,\ z_2 - z_1)
+helpDirectionStep2: Multiply out fractions and divide by any common factor, to get the smallest whole numbers.
+helpDirectionStep2Tex: (\tfrac12,\ 1,\ 0)\ \xrightarrow{\ \times 2\ }\ [120]
+helpDirectionStep3: Write them in square brackets without commas. Negative numbers get a bar.
+helpDirectionStep3Tex: (-1,\ 1,\ 0)\ \to\ [\overline{1}10]
+helpDirectionStep4: The axes need not be perpendicular or equally long, so the length uses the metric tensor G, which holds every dot product of the axes:
+helpDirectionStep4Tex: |\mathbf r|^2 = u^2a^2 + v^2b^2 + w^2c^2 + 2uv\,ab\cos\gamma + 2uw\,ac\cos\beta + 2vw\,bc\cos\alpha
+helpDirectionStep5: In a cubic cell every cosine is 0 and a = b = c, which leaves Pythagoras. This short form is only valid for cubic lattices.
+helpDirectionStep5Tex: |\mathbf r| = a\sqrt{u^2 + v^2 + w^2}\qquad(\text{cubic})
+helpDirectionStep6: [uvw] and [ūv̄w̄] point in opposite directions along the same line. ⟨uvw⟩ collects all symmetry-equivalent directions; in cubic lattices these are all orders and signs of u, v, w:
+helpDirectionStep6Tex: \langle 100\rangle = \{[100],\,[010],\,[001],\,[\overline{1}00],\,[0\overline{1}0],\,[00\overline{1}]\}
+
+### SEE MORE: Your lattice (worked example)
+helpDirectionEx1: The vector, in units of the cell edges and in Cartesian coordinates (Å):
+helpDirectionEx1Tex: \mathbf r = {uvw}\,\mathbf a + {uvw2}\,\mathbf b + {uvw3}\,\mathbf c = {r}
+helpDirectionEx2: Its length with the metric tensor:
+helpDirectionEx3Tex: |\mathbf r| = {length}\,\text{Å}
+helpDirectionEx4: Cubic check with the short formula:
+helpDirectionEx4Tex: a\sqrt{u^2+v^2+w^2} = {a}\sqrt{{uvw}} = {length}\,\text{Å}
+helpDirectionExTitle: {uvw} in {lattice}
+
+
+## Plane (hkl): Miller indices
+
+### Popover
+helpPlaneTitle: Plane (hkl): Miller indices
+helpPlaneExplain: Miller indices (hkl) name a set of parallel lattice planes. Find where one plane cuts the axes in units of a, b and c, take the reciprocals and clear the fractions. An index 0 means the plane is parallel to that axis; (hkl) stands for the whole set, and {hkl} for all symmetry-equivalent sets: tick “Show equivalent planes {hkl}” on a plane to draw and list them.
+helpPlaneFormula1: (hkl):\quad \text{intercepts}\ \ \frac{a}{h},\ \frac{b}{k},\ \frac{c}{l}
+helpPlaneFormula2Tag: Every plane of the set
+helpPlaneFormula2: hx + ky + lz = n,\qquad n \in \mathbb Z
+helpPlaneSym1: h,\ k,\ l
+helpPlaneSym1Text: the Miller indices (whole numbers)
+helpPlaneSym2: x,\ y,\ z
+helpPlaneSym2Text: fractional coordinates along a, b, c
+helpPlaneSym3: n
+helpPlaneSym3Text: which plane of the set: n = 1 is the one nearest the origin
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpPlaneStep1: Choose an origin that does not lie on the plane (move it to another corner of the cell if needed).
+helpPlaneStep2: Read off where the plane cuts the a, b and c axes, in units of the cell edges. A plane parallel to an axis never meets it: the intercept is ∞.
+helpPlaneStep2Tex: x_0 = 1,\qquad y_0 = \tfrac12,\qquad z_0 = \infty
+helpPlaneStep3: Take the reciprocals (1/∞ = 0):
+helpPlaneStep3Tex: \frac{1}{x_0},\ \frac{1}{y_0},\ \frac{1}{z_0} = 1,\ 2,\ 0
+helpPlaneStep4: Clear any fractions by multiplying with the common denominator, and write the result in round brackets:
+helpPlaneStep4Tex: (120)
+helpPlaneStep5: In fractional coordinates every plane of the set satisfies one equation. The plane through the intercepts above is n = 1; n = 0 goes through the origin, and so on.
+helpPlaneStep5Tex: hx + ky + lz = n
+helpPlaneStep6: The planes are perpendicular to the reciprocal lattice vector g, not to the direction [hkl]. Only in cubic lattices do the two coincide.
+helpPlaneStep6Tex: \mathbf g_{hkl} = h\,\mathbf a^* + k\,\mathbf b^* + l\,\mathbf c^* \ \perp\ (hkl)
+
+### SEE MORE: Your lattice (worked example)
+helpPlaneEx1: Intercepts of plane n = 1, in units of the edges and in Å:
+helpPlaneEx2: Reciprocals:
+helpPlaneEx3: No fractions left to clear, so:
+helpPlaneEx4: Spacing of the set (see “Interplanar distance”):
+helpPlaneEx4Tex: d_{hkl} = \frac{1}{\sqrt{\mathbf h^\mathsf T G^*\mathbf h}} = {dSpacing}\,\text{Å}
+helpPlaneEx5: Cubic lattice: the direction with the same indices is perpendicular to the plane.
+helpPlaneEx5Tex: \angle({hkl},\ \text{normal}) = 0^\circ
+helpPlaneEx6: Not cubic: the direction with the same indices is <b>not</b> perpendicular to the plane.
+helpPlaneEx6Tex: \angle({hkl},\ \text{normal of } {hkl2}) = {ang}^\circ
+
+
+## Parallel planes (hkl)
+
+### Popover
+helpPlaneFamilyTitle: Parallel planes (hkl)
+helpPlaneFamilyExplain: All planes hx + ky + lz = n with whole n form the set (hkl), spaced d apart. In centred lattices some lattice points can lie between these planes, so extra planes appear, e.g. a plane through the body centre at x = ½ for (100) in cubic I. The planes that really hold points are then those of (200).
+helpPlaneFamilyFormula1: hx + ky + lz = n,\qquad n \in \mathbb Z
+helpPlaneFamilyFormula2Tag: Planes that hold lattice points
+helpPlaneFamilyFormula2: \mathbf h\cdot\mathbf r \in s\,\mathbb Z,\qquad s = \gcd\big(h,\ k,\ l,\ \mathbf h\cdot\mathbf t_j\big)
+helpPlaneFamilySym1: \mathbf h
+helpPlaneFamilySym1Text: the indices (h, k, l)
+helpPlaneFamilySym2: \mathbf r
+helpPlaneFamilySym2Text: a lattice point, in fractional coordinates
+helpPlaneFamilySym3: \mathbf t_j
+helpPlaneFamilySym3Text: the centring vectors
+helpPlaneFamilySym4: s
+helpPlaneFamilySym4Text: step between the levels of planes that hold points
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpPlaneFamilyStep1: For a lattice point at whole-number coordinates, hx + ky + lz is a whole number. With h, k, l sharing no factor, every whole number occurs.
+helpPlaneFamilyStep1Tex: \mathbf h\cdot\mathbf r = hx + ky + lz \in \mathbb Z
+helpPlaneFamilyStep2: So the planes n = …, −1, 0, 1, 2, … each hold lattice points, and together they hold all of them.
+helpPlaneFamilyStep3: A centring vector can give a fraction. In cubic I the body centre has h·t = ½ for (100): there is a plane of points halfway between the formula planes.
+helpPlaneFamilyStep3Tex: \text{cubic } I,\ (100):\quad \mathbf h\cdot\mathbf t = 1\times\tfrac12 = \tfrac12
+helpPlaneFamilyStep4: The planes with points are then the planes of (200), half as far apart:
+helpPlaneFamilyStep4Tex: d_\text{points} = s\,d_{hkl} = \tfrac12\,d_{100} = d_{200}
+helpPlaneFamilyStep5: If h, k, l share a factor, e.g. (200) in a P lattice, it is the other way round: only every second formula plane holds points.
+helpPlaneFamilyStep5Tex: P,\ (200):\ s = 2,\qquad d_\text{points} = 2\,d_{200} = d_{100}
+
+### SEE MORE: Your lattice (worked example)
+helpPlaneFamilyEx1: Values of h·t for the centring vectors:
+helpPlaneFamilyEx1TexElse: \text{no centring vectors}
+helpPlaneFamilyEx2: Step between planes that hold points:
+helpPlaneFamilyEx2Tex: s = {pp}
+helpPlaneFamilyEx3: Spacings:
+helpPlaneFamilyEx3Tex: d_{hkl} = {dFormula}\,\text{Å},\qquad d_\text{points} = {dLattice}\,\text{Å}
+helpPlaneFamilyEx4: So the planes with points are the {eq} planes; {n} of them cut the highlighted cell (including its faces).
+
+
+## Plane intercepts
+
+### Popover
+helpInterceptsTitle: Plane intercepts
+helpInterceptsExplain: The Intercepts object marks where plane n of a set meets the a, b and c axes, measured from the chosen origin, and shows the three steps intercepts → reciprocals → clear fractions that give (hkl). A negative index means the plane meets that axis behind the origin, so moving the origin to another corner brings the plane into the cell.
+helpInterceptsFormula1: \frac{n}{h},\ \frac{n}{k},\ \frac{n}{l}\ \ \longrightarrow\ \ \frac{h}{n},\ \frac{k}{n},\ \frac{l}{n}\ \ \xrightarrow{\ \times n\ }\ \ (hkl)
+helpInterceptsSym1: n
+helpInterceptsSym1Text: plane number: 1 is the plane nearest the origin
+helpInterceptsSym2: n/h
+helpInterceptsSym2Text: the intercept on a, in units of a (∞ when h = 0)
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpInterceptsStep1: With the origin O at a cell corner, plane n of the set is:
+helpInterceptsStep1Tex: h(x - O_x) + k(y - O_y) + l(z - O_z) = n
+helpInterceptsStep2: On the a axis y and z stay at the origin, so the plane meets it at:
+helpInterceptsStep2Tex: x - O_x = \frac{n}{h}\qquad(\text{and similarly } \tfrac{n}{k},\ \tfrac{n}{l})
+helpInterceptsStep3: Reciprocals of the intercepts:
+helpInterceptsStep3Tex: \frac{h}{n},\ \frac{k}{n},\ \frac{l}{n}
+helpInterceptsStep4: Multiplying by n clears the fractions and gives back (hkl). For n = 1 there is nothing to clear.
+helpInterceptsStep4Tex: n\cdot\Big(\frac{h}{n},\ \frac{k}{n},\ \frac{l}{n}\Big) = (h,\ k,\ l)
+helpInterceptsStep5: A negative index gives a negative intercept: the plane meets the axis behind O. Choosing the corner at 1 along each negative axis puts plane 1 inside the cell.
+helpInterceptsStep5Tex: \mathbf O = (1\ \text{if}\ h<0,\ 1\ \text{if}\ k<0,\ 1\ \text{if}\ l<0)
+
+### SEE MORE: Your lattice (worked example)
+helpInterceptsEx1: A corner that keeps plane 1 inside the cell:
+helpInterceptsEx1Tex: \mathbf O = {o}
+helpInterceptsEx2: Intercepts (units of a, b, c):
+helpInterceptsEx3: Reciprocals:
+helpInterceptsEx4: Cleared:
+
+
+## Direction components
+
+### Popover
+helpDirectionComponentsExplain: To reach the tip of [uvw], walk u steps along a, then v along b, then w along c. The order does not matter: you always end at the same point. On hexagonal axes the same walk can use the four axes a₁, a₂, a₃ and c.
+helpDirectionComponentsFormula1: \mathbf r = u\,\mathbf a + v\,\mathbf b + w\,\mathbf c
+helpDirectionComponentsFormula2Tag: Hexagonal, four axes
+helpDirectionComponentsFormula2: \mathbf r = U\mathbf a_1 + V\mathbf a_2 + T\mathbf a_3 + W\mathbf c,\qquad T = -(U+V)
+helpDirectionComponentsSym1: u,\ v,\ w
+helpDirectionComponentsSym1Text: the indices of the direction
+helpDirectionComponentsSym2: U, V, T, W
+helpDirectionComponentsSym2Text: Miller–Bravais indices [uvtw]
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpDirectionComponentsStep1: Start at the origin O.
+helpDirectionComponentsStep2: Walk u times along a, then v times along b, then w times along c. The corners of the path are:
+helpDirectionComponentsStep2Tex: \mathbf O \to \mathbf O + u\mathbf a \to \mathbf O + u\mathbf a + v\mathbf b \to \mathbf O + u\mathbf a + v\mathbf b + w\mathbf c
+helpDirectionComponentsStep3: Vector addition does not care about the order, so any order of the steps reaches the same tip.
+helpDirectionComponentsStep4: On hexagonal axes a₃ = −(a₁ + a₂). A walk along all four axes ends at the same point when T = −(U + V):
+helpDirectionComponentsStep4Tex: U\mathbf a_1 + V\mathbf a_2 + T\mathbf a_3 = (U - T)\,\mathbf a_1 + (V - T)\,\mathbf a_2
+
+### SEE MORE: Your lattice (worked example)
+helpDirectionComponentsEx1: Origin:
+helpDirectionComponentsEx1Tex: \mathbf O = {o}
+helpDirectionComponentsEx2: {n} × {axis}:
+helpDirectionComponentsEx2Tex: {from}\ \to\ {to}
+
+
+## Miller–Bravais notation (hkil)
+
+### Popover
+helpMillerBravaisTitle: Miller–Bravais notation (hkil)
+helpMillerBravaisScope: Hexagonal axes only
+helpMillerBravaisExplain: Hexagonal lattices use three axes a₁, a₂, a₃ at 120° in the basal plane plus c. With four indices, planes and directions related by the 6-fold symmetry also look alike: (100), (010) and (1̄10) become (101̄0), (011̄0) and (1̄100). Because a₃ = −(a₁ + a₂), the extra index always follows from the first two.
+helpMillerBravaisFormula1Tag: Planes
+helpMillerBravaisFormula1: (hkl)\ \to\ (h\,k\,i\,l),\qquad i = -(h + k)
+helpMillerBravaisFormula2Tag: Directions
+helpMillerBravaisFormula2: \begin{aligned} [uvw] \to [UVTW]:\quad & U = \tfrac{2u - v}{3},\quad V = \tfrac{2v - u}{3}, \\ & T = -\tfrac{u + v}{3},\quad W = w \end{aligned}
+helpMillerBravaisSym1: \mathbf a_1, \mathbf a_2, \mathbf a_3
+helpMillerBravaisSym1Text: the basal axes at 120°, with a₃ = −(a₁ + a₂)
+helpMillerBravaisSym2: h, k, i, l
+helpMillerBravaisSym2Text: plane indices on a₁, a₂, a₃, c
+helpMillerBravaisSym3: U, V, T, W
+helpMillerBravaisSym3Text: direction indices on a₁, a₂, a₃, c (scaled to whole numbers)
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpMillerBravaisStep1: The third basal axis is not independent:
+helpMillerBravaisStep1Tex: \mathbf a_3 = -(\mathbf a_1 + \mathbf a_2)
+helpMillerBravaisStep2: <b>Planes.</b> A plane hx + ky + lz = 1 (three-index coordinates) meets the a₃ axis at t·a₃, which has x = y = −t, z = 0:
+helpMillerBravaisStep2Tex: h(-t) + k(-t) = 1\ \Rightarrow\ t = -\frac{1}{h+k}
+helpMillerBravaisStep3: The reciprocal of that intercept is the extra index:
+helpMillerBravaisStep3Tex: i = \frac{1}{t} = -(h + k)
+helpMillerBravaisStep4: <b>Directions.</b> We need U a₁ + V a₂ + T a₃ + W c = u a₁ + v a₂ + w c, with the extra rule U + V + T = 0 that makes the four indices unique:
+helpMillerBravaisStep4Tex: U - T = u,\qquad V - T = v,\qquad T = -(U + V)
+helpMillerBravaisStep5: Solving these three equations:
+helpMillerBravaisStep5Tex: U = \frac{2u - v}{3},\quad V = \frac{2v - u}{3},\quad T = -\frac{u + v}{3},\quad W = w
+helpMillerBravaisStep6: Multiply by 3 (and divide by any common factor) to get whole numbers. Example: [100] → (2, −1, −1, 0)/3 → [2 1̄ 1̄ 0].
+helpMillerBravaisStep6Tex: [100] = [2\,\overline{1}\,\overline{1}\,0],\qquad (100) = (1\,0\,\overline{1}\,0)
+helpMillerBravaisStep7: Back to three indices: drop i for planes; for directions u = U − T, v = V − T, w = W.
+
+### SEE MORE: Your lattice (worked example)
+helpMillerBravaisExTitleElse: Hexagonal indices
+helpMillerBravaisExIntroElse: The lattice on screen does not use hexagonal axes, but the conversion only needs the indices.
+helpMillerBravaisEx1: Direction {uvw}:
+helpMillerBravaisEx1Tex: \begin{aligned} U &= \tfrac{2({u}) - ({v})}{3} = \tfrac{{value}}{3}, & V &= \tfrac{2({v}) - ({u})}{3} = \tfrac{{value2}}{3}, \\ T &= -\tfrac{{u} + ({v})}{3} = \tfrac{{value3}}{3}, & W &= {w} \end{aligned}
+helpMillerBravaisEx2: Multiply by 3 and reduce:
+helpMillerBravaisEx2Tex: {uvw} = {four}
+helpMillerBravaisEx3: Plane {hkl}:
+helpMillerBravaisEx3Tex: i = -({h} + {k}) = {i}\ \Rightarrow\ {hkl} = {planeToFour}
+
+
+## Direction where two planes meet
+
+### Popover
+helpIntersectionTitle: Direction where two planes meet
+helpIntersectionExplain: Two planes that are not parallel meet in a line. Its direction [uvw] is the cross product of the two sets of Miller indices. This works in every crystal system, because it only uses the rule that a direction lies in a plane when uh + vk + wl = 0.
+helpIntersectionFormula1: [uvw] = (h_1k_1l_1)\times(h_2k_2l_2) = [\,k_1l_2 - l_1k_2,\ \ l_1h_2 - h_1l_2,\ \ h_1k_2 - k_1h_2\,]
+helpIntersectionFormula2Tag: Weiss zone law
+helpIntersectionFormula2: [uvw] \subset (hkl)\ \Leftrightarrow\ uh + vk + wl = 0
+helpIntersectionSym1: (h_1k_1l_1),\ (h_2k_2l_2)
+helpIntersectionSym1Text: the two planes
+helpIntersectionSym2: [uvw]
+helpIntersectionSym2Text: the common direction (zone axis)
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpIntersectionStep1: The plane (hkl) is perpendicular to g = h a* + k b* + l c*. A direction r = u a + v b + w c lies in the plane exactly when r · g = 0.
+helpIntersectionStep2: Because aᵢ · aⱼ* is 1 for i = j and 0 otherwise, the dot product needs no metric at all:
+helpIntersectionStep2Tex: \mathbf r\cdot\mathbf g = uh + vk + wl
+helpIntersectionStep3: The direction must lie in both planes, so it must satisfy two equations:
+helpIntersectionStep3Tex: uh_1 + vk_1 + wl_1 = 0,\qquad uh_2 + vk_2 + wl_2 = 0
+helpIntersectionStep4: The cross product of the two index triples is perpendicular to both (as plain number triples), so it solves both equations:
+helpIntersectionStep4Tex: [uvw] = \mathbf h_1 \times \mathbf h_2
+helpIntersectionStep5: Divide by any common factor. If the cross product is zero the planes are parallel and never meet. On hexagonal axes, convert the result to four indices afterwards.
+
+### SEE MORE: Your lattice (worked example)
+helpIntersectionExTitle: Parallel planes
+helpIntersectionEx1: The cross product is zero: these planes are parallel, so they don’t meet.
+helpIntersectionEx1Tex: \mathbf h_1\times\mathbf h_2 = (0,\ 0,\ 0)
+helpIntersectionEx2: Cross product, one component at a time:
+helpIntersectionEx2Tex: u = {k1}\cdot{l2} - {l1}\cdot{k2} = {raw},\quad v = {l1}\cdot{h2} - {h1}\cdot{l2} = {raw2},\quad w = {h1}\cdot{k2} - {k1}\cdot{h2} = {raw3}
+helpIntersectionEx3: Divide by the common factor {g}:
+helpIntersectionEx3Else: Already the smallest whole numbers:
+helpIntersectionEx4: Check with the zone law (both must be 0):
+helpIntersectionEx4Tex: {uvw}\cdot{h1} + {uvw2}\cdot{k1} + {uvw3}\cdot{l1} = 0,\qquad {uvw}\cdot{h2} + {uvw2}\cdot{k2} + {uvw3}\cdot{l2} = 0
+helpIntersectionEx5: In four-index form:
+helpIntersectionEx5Tex: {uvw} = {directionToFour}
+helpIntersectionExTitle2: {h1} ∩ {h2}

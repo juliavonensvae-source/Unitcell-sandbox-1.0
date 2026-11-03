@@ -1,0 +1,42 @@
+# Help topics: text used by many topics
+
+## The small grey line under a topic's title, when the topic does not set its own
+helpCubicPIF: Cubic P, I and F
+help2DView: 2D view
+
+## Lattice names in worked examples
+latticeNameHRHex: Rhombohedral R on hexagonal axes
+latticeNameHRPrimitive: Rhombohedral R (primitive cell)
+helpIndicesIn: {indices} in {lattice}
+
+## Where the numbers of a worked example come from
+wordPlane: plane
+wordDirection: direction
+helpUsingNamed: Using <b>{name}</b> {text}.
+helpUsing: Using {text}.
+helpUsingFirstNamed: Using <b>{name}</b> {text}, the first {what} in the scene.
+helpUsingFirst: Using {text}, the first {what} in the scene.
+helpUsingExample: Using {text} as an example. Add a {what} to see the numbers for it.
+helpUsingTwoPlanes: Using <b>{nameA}</b> {a} and <b>{nameB}</b> {b}.
+helpUsingTwoPlanesExample: Using {a} and {b} as an example. Add two planes to see the numbers for them.
+helpUsingAnglePair: Using <b>{a}</b> and <b>{b}</b>.
+helpUsingAngleExample: Using {a} and {b} as an example. Open the “?” of an Angle object to see its own numbers.
+helpUsingNamedOnly: Using <b>{name}</b>.
+
+## The lattice parameters (symbols list of several topics)
+helpParamSymLengthsTex: a,\ b,\ c
+helpParamSymLengths: the edge lengths of the unit cell (Å)
+helpParamSymAnglesTex: \alpha,\ \beta,\ \gamma
+helpParamSymAngles: the angles between b and c, a and c, a and b
+
+## The rule of each crystal system, as a formula
+helpRuleCubic: a = b = c,\quad \alpha = \beta = \gamma = 90^\circ
+helpRuleTetragonal: a = b \ne c,\quad \alpha = \beta = \gamma = 90^\circ
+helpRuleOrthorhombic: a \ne b \ne c,\quad \alpha = \beta = \gamma = 90^\circ
+helpRuleHexagonal: a = b \ne c,\quad \alpha = \beta = 90^\circ,\ \gamma = 120^\circ
+helpRuleRhombohedral: a = b = c,\quad \alpha = \beta = \gamma \ne 90^\circ
+helpRuleMonoclinic: a \ne b \ne c,\quad \alpha = \gamma = 90^\circ,\ \beta \ne 90^\circ
+helpRuleTriclinic: a \ne b \ne c,\quad \alpha \ne \beta \ne \gamma
+
+## Interstitial topics on a lattice that is not cubic P, I or F
+helpNotAvailableCubic: {lattice}: not available yet (cubic P, I and F only).

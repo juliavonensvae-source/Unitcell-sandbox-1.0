@@ -1,0 +1,58 @@
+# Ionic structures: names and descriptions
+ionicNameNaCl: rock salt
+ionicHolesNaCl: Na⁺ fills every octahedral hole of the Cl⁻ array
+ionicOthersNaCl: MgO, LiF, KCl, AgCl
+ionicNameCsCl: caesium chloride
+ionicHolesCsCl: Cs⁺ sits in the cubic hole at the centre of each Cl⁻ cube
+ionicOthersCsCl: CsBr, CsI, TlCl
+ionicNameZnS: zinc blende
+ionicHolesZnS: Zn²⁺ fills half of the tetrahedral holes of the S²⁻ array
+ionicOthersZnS: GaAs, CuCl, β-SiC
+ionicNameCaF2: fluorite
+ionicHolesCaF2: F⁻ fills every tetrahedral hole of the Ca²⁺ array
+ionicOthersCaF2: UO₂, ZrO₂ (cubic), BaF₂
+
+# Ionic structure card
+ionicTitle: Ionic structure
+ionicMenuDesc: {lattice} + {count}-ion basis. {holes}.
+ionicAddNote: {lattice} with a = {a} Å, and every lattice point carries the basis {basis}.
+ionicShownOn: Shown on {lattice} only
+ionicPerCell: {ions} per cell
+ionicWrongLattice: {formula} is built on the {lattice} lattice, and {current} is on screen now. Switch back to see it.
+ionicShowAgain: Show {formula} again ({lattice}, a = {a} Å)
+ionicBasisLine: {lattice} lattice + a basis of {count} ions: {ions}
+ionicOthers: {holes}. Other {name} crystals: {others}.
+ionicIonPerCell: {ion} per cell
+ionicInside: inside
+ionicCoordination: {ion} coordination
+ionicCoordValue: <b>{cn}</b> {with} at {d} Å
+ionicZ: Formula units per cell <i>Z</i>
+ionicRadiusOf: Radius of {ion}
+ionicRadiiNote: Ionic radii in Å (Shannon), so their ratio is realistic. Real ions are not hard spheres: {why}
+ionicZnSNote: in ZnS they overlap a little, because the bond is partly covalent.
+ionicModelNote: treat touching as a model.
+ionicResetRadii: Reset the radii
+ionicUseRealA: Use the real a = {a} Å
+ionicRatio: Radius ratio <i>r</i><sub>+</sub>/<i>r</i><sub>−</sub>
+ionicRulePredicts: Radius-ratio rule predicts
+ionicStructureHas: this structure has {actual}
+ionicDistance: {cation}–{anion} distance
+ionicTouch: they just touch
+ionicOverlap: they overlap by {by} Å
+ionicGap: there is a gap of {gap} Å
+ionicDraw: Draw the ions
+ionicFull: Full size
+ionicSmall: Small (see inside)
+ionicBonds: Bonds to the nearest neighbours
+ionicBondsHint: Each {cation} to its {cn} nearest {anion}
+ionicLabelBasis: Label the basis
+ionicLabelBasisHint: The {count} ions that every lattice point carries, at the origin of the highlighted cell
+ionicLegend: Show the legend on the canvas
+ionicIons: {ion} ions
+ionicColourOf: Colour of the {ion} ions
+
+## Legend and readout on the canvas
+ionicLegendSub: {lattice} + basis · <i>Z</i> = {z}
+ionicLegendCount: {count} per cell · CN {cn}
+ionicReadoutLabel: Ions per cell
+cmdHelpIonic: An ionic structure, lattice + basis: {names}

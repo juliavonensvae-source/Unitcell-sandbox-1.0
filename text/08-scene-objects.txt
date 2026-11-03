@@ -1,0 +1,49 @@
+# Lattice points card
+pointsDrawnOne: {count} point drawn
+pointsDrawnMany: {count} points drawn
+pointsSummarySpheres: {count} touching spheres · r = {radius} Å
+pointsSummaryCircles: {count} touching circles · r = {radius} Å
+pointsShowAs: Show as
+pointsPoints: Points
+pointsSpheres: Touching spheres
+pointsRadiusNote: Radius r = d<sub>nn</sub>/2 = {radius} Å, so each sphere just touches its nearest neighbours.
+pointsSize: Size
+pointsSizeTouching: Size (100% = touching)
+pointsCut: Cut spheres at cell boundary
+pointsCutHint: Cut at the highlighted cell: corners show as ⅛, edges ¼, faces ½. In slanted cells the pieces differ in size but still add up to whole spheres.
+pointsCutFaces: Cut faces
+pointsSolid: Solid
+pointsHollow: Hollow
+pointsSolidHint: Solid: each cut face is filled, like a cut apple.
+pointsHollowHint: Hollow: you look into the empty shell of each cut sphere.
+pointsCutLater: Takes effect when spheres are cut.
+pointsBonds: Bonds to nearest neighbours
+
+# Cell edges card
+edgesTitle: Cell edges
+edgesOneCell: One unit cell
+edgesSupercell: {a} × {b} × {c} supercell · {count} cells
+edgesOnePrism: One hexagonal prism
+edgesPrismsStacked: {count} prisms stacked along c
+edgesPrismField: {a} × {b} × {c} field of prisms · {count} prisms
+edgesOne2D: One 2D unit cell
+edges2DSize: {n} × {n} cells
+edgesThickness: Thickness
+edgesHighlight: Highlight the chosen cell
+edgesHighlightHint: Cell ({cell}) · choose it in the Add cells drawer. Points outside it are faded.
+edgesTakesEffect: Takes effect when the supercell is bigger than 1 × 1 × 1
+edgesAllCells: Show the edges of every cell
+edgesAllCellsHint: Lines between the lattice points, so you can tell the cells of the supercell apart
+edgesGridThickness: Thickness of the cell lines
+edgesGridColour: Colour of the cell lines
+
+# Axes card
+axesTitle: Axes
+axesSummary: {axes} from the origin
+axesSummaryAngles: {axes} from the origin · with angles
+axesSummary2D: {a}, {b} and the angle γ
+axesNote: Arrows along the lattice vectors, starting at the origin of the cell. Each axis has the same colour everywhere in the app.
+axesLegend: Show the hexagonal axis legend
+axesLegendHint: How a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, c relate to a, b and to the indices
+axesAngles: Show the angles α, β, γ
+axesAnglesHint: Arcs between the axes (Advanced mode)

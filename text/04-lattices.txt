@@ -1,0 +1,107 @@
+# Lattice picker (3D)
+pickerSub: 14 lattices in 7 crystal systems{helpSystems}. Centring: P primitive · I body · F face · C base · R rhombohedral{helpCentring}
+pickerPointsOne: {count} point / cell
+pickerPointsMany: {count} points / cell
+
+## Crystal systems: name and rule
+systemCubic: Cubic
+ruleCubic: a = b = c, α = β = γ = 90°
+systemTetragonal: Tetragonal
+ruleTetragonal: a = b ≠ c, α = β = γ = 90°
+systemOrthorhombic: Orthorhombic
+ruleOrthorhombic: a ≠ b ≠ c, α = β = γ = 90°
+systemHexagonal: Hexagonal
+ruleHexagonal: a = b ≠ c, α = β = 90°, γ = 120°
+systemRhombohedral: Rhombohedral
+ruleRhombohedral: a = b = c, α = β = γ ≠ 90°
+systemMonoclinic: Monoclinic
+ruleMonoclinic: a ≠ b ≠ c, α = γ = 90°, β ≠ 90°
+systemTriclinic: Triclinic
+ruleTriclinic: a ≠ b ≠ c, α ≠ β ≠ γ
+
+## Crystal systems: description in the lattice picker
+blurbCubic: Three equal edges, all at right angles.
+blurbTetragonal: A cube stretched or squashed along c.
+blurbOrthorhombic: Three different edges, all at right angles.
+blurbHexagonal: Two equal edges at 120°, with c perpendicular to both.
+blurbRhombohedral: A cube pushed along its body diagonal: equal edges, equal angles ≠ 90°.
+blurbMonoclinic: Only one angle (β) differs from 90°.
+blurbTriclinic: No constraints at all: the least symmetric lattice.
+
+## Centring
+centringP: Primitive
+centringI: Body-centred
+centringF: Face-centred
+centringC: Base-centred
+centringR: Rhombohedral
+
+## The 14 Bravais lattices: short name and long name
+latticeCP: Cubic P
+latticeCPLong: Simple cubic
+latticeCI: Cubic I
+latticeCILong: Body-centred cubic
+latticeCF: Cubic F
+latticeCFLong: Face-centred cubic
+latticeTP: Tetragonal P
+latticeTPLong: Simple tetragonal
+latticeTI: Tetragonal I
+latticeTILong: Body-centred tetragonal
+latticeOP: Orthorhombic P
+latticeOPLong: Simple orthorhombic
+latticeOC: Orthorhombic C
+latticeOCLong: Base-centred orthorhombic
+latticeOI: Orthorhombic I
+latticeOILong: Body-centred orthorhombic
+latticeOF: Orthorhombic F
+latticeOFLong: Face-centred orthorhombic
+latticeHP: Hexagonal P
+latticeHPLong: Hexagonal
+latticeHR: Rhombohedral R
+latticeHRLong: Rhombohedral
+latticeMP: Monoclinic P
+latticeMPLong: Simple monoclinic
+latticeMC: Monoclinic C
+latticeMCLong: Base-centred monoclinic
+latticeAP: Triclinic P
+latticeAPLong: Triclinic
+
+# Lattice picker (2D)
+picker2DTitle: Choose a 2D Bravais lattice
+picker2DSub: 5 lattices in 4 crystal systems. p = primitive, c = centred.
+picker2DPrimitive: Primitive
+picker2DCentred: Centred
+
+## 2D crystal systems: name, rule and description
+system2DOblique: Oblique
+rule2DOblique: a ≠ b, γ ≠ 90°
+blurb2DOblique: No special lengths or angles: the least symmetric 2D lattice.
+system2DRectangular: Rectangular
+rule2DRectangular: a ≠ b, γ = 90°
+blurb2DRectangular: Right angles, two different edge lengths. Comes primitive or centred.
+system2DSquare: Square
+rule2DSquare: a = b, γ = 90°
+blurb2DSquare: Equal edges at right angles.
+system2DHexagonal: Hexagonal
+rule2DHexagonal: a = b, γ = 120°
+blurb2DHexagonal: Equal edges at 120°: the pattern of a honeycomb or graphene.
+
+## The five 2D lattices: short name and long name (centred rectangular uses one entry for both)
+lattice2DMP: Oblique
+lattice2DMPLong: Primitive oblique
+lattice2DOP: Rectangular
+lattice2DOPLong: Primitive rectangular
+lattice2DOC: Centred rectangular
+lattice2DTP: Square
+lattice2DTPLong: Primitive square
+lattice2DHP: Hexagonal
+lattice2DHPLong: Primitive hexagonal
+
+# Lattice card (first card in the Objects panel)
+latticeTitle: Lattice
+latticePointsPrism: 3 points / prism
+latticeAdvancedHint: Turn on <b>Advanced</b> to edit the lattice parameters.
+latticeTiedHint: Values tied by the lattice rule (shown as “= a” or “fixed”) follow automatically.
+resetDefaults: Reset to defaults
+paramFixed: fixed
+paramInAngstrom: {symbol} in ångström
+paramInDegrees: {symbol} in degrees

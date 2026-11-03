@@ -1,0 +1,37 @@
+# 2D direction [uv] card
+direction2DMenu: Direction [uv]
+direction2DDesc: An arrow from the origin to u·a + v·b.
+indexHint2D: Two whole numbers, e.g. 1 2 or 1 -1.
+formulaLength2D: \sqrt{u^2a^2 + v^2b^2 + 2uv\,ab\cos\gamma} = \sqrt{{uVal}^2\cdot{aVal}^2 + {vVal}^2\cdot{bVal}^2 + 2\cdot{uVal}\cdot{vVal}\cdot{aVal}\cdot{bVal}\cos{gammaVal}^\circ}
+formulaLengthResult: \begin{aligned}|\mathbf r| &= {formula} \\ &= \mathbf{{value}}\,\text{Å}\end{aligned}
+
+# 2D line (hk) card
+lineTitle: Line
+lineMenu: Line (hk)
+lineDesc: The 2D version of a plane: it cuts a at a/h and b at b/k (parallel to an axis when an index is 0).
+lineFamilyMenu: Parallel lines (hk)
+lineFamilyDesc: Every line of the (hk) set that holds lattice points, through the displayed cells.
+lineCuts: cuts {a}, {b}
+lineFamily: Show all parallel lines
+lineFamilyHint: Every line of this set that holds lattice points, through the displayed cells
+lineCutsA: Cuts a at
+lineCutsB: Cuts b at
+lineSpacing: Spacing
+lineWithPoints: Lines with lattice points
+lineWithPointsValue: {lines}: {d} Å apart
+formulaD2D: \frac{1}{d_{{hk}}^2} = \mathbf h^\mathsf T G^{-1}\,\mathbf h\quad(\text{2D metric, }\gamma\text{ included})
+lineMovedNote: From the origin the intercept would lie outside the highlighted cell, so the line is drawn from the corner ({corner}) of the cell.
+lineExtraNote: The centre point lies between these lines, so there is an extra line of lattice points between each pair (drawn dashed).
+
+# 2D vector card
+vectorTitle: Vector
+vectorMenu: Vector between two points
+vectorDesc: A free arrow from one point to another. Click two points in the view (they snap to lattice points, cell centres and edge midpoints), or type them in units of a and b.
+vectorFromTo: From → to (units of a and b)
+vectorDragHint: Or drag the round ends in the view.
+vectorComponents: Components
+formulaLengthResultV: \begin{aligned}|\mathbf v| &= {formula} \\ &= \mathbf{{value}}\,\text{Å}\end{aligned}
+vectorLengthNote: The length uses the 2D metric, so the angle γ between a and b counts. Plain Pythagoras only works when γ = 90°.
+vectorSnap: Snap the ends when dragging
+vectorSnapHint: To lattice points, cell centres and edge midpoints
+cmdHelpVector: An arrow between two points (units of a and b)

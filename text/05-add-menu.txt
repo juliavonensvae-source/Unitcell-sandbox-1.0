@@ -1,0 +1,57 @@
+# + Add menu
+addMenuTitle: Add to the scene
+addMenuSub: Everything you add appears in the Objects panel.
+addMenuMore: Turn on Advanced for more.
+
+## Category headers
+addAvailable: {count} available
+addSoon: Soon
+
+## Categories: name and the line under it
+catDirectionsBlurb: Arrows along lattice vectors [uvw] (2D: [uv])
+catVectors: Vectors
+catVectorsBlurb: Free arrows between two points
+catLines: Lines (hk)
+catLinesBlurb: The 2D version of planes, and their families
+catPlanesBlurb: Lattice planes (hkl) and the distance d between them
+catIntercepts: Intercepts
+catInterceptsBlurb: Where a plane cuts the a, b and c axes
+catSitesBlurb: The empty spaces between lattice spheres
+catIonicBlurb: A Bravais lattice plus a basis of ions: NaCl, CsCl, ZnS, CaF₂
+catCalculationsBlurb: Live values for the lattice on screen
+
+## Entries
+addEntryLabel: Add {title}
+addNotAvailable: Not available yet
+addIndicesLabel: {title}: indices
+addQuick: Quick:
+addHint: Type {count} whole numbers{four}, e.g. {example}.
+addTwo: two
+addThree: three
+addFourDirection: or four [u v t w]
+addFourPlane: or four (h k i l)
+addInputBar: Input bar: <code>{command}</code>
+
+## 2D vector entry
+addPickPoints: Click two points in the view
+addVectorHint: Coordinates in units of a and b. Input bar: <code>{command}</code>
+
+# Short descriptions
+# Shown under an entry in the + Add menu, and at the top of the matching card.
+descLatticePoints: Every lattice point has identical surroundings. Show them as small dots, or as spheres just large enough to touch their nearest neighbours.
+descSupercell: Repeat the unit cell along a, b and c to see how cells stack together into the lattice.
+descDirection: An arrow from the origin to the point u·a + v·b + w·c. Negative indices are written with a bar, e.g. [1̅10].
+descPlane: A lattice plane that cuts the axes at a/h, b/k and c/l. An index of 0 means the plane is parallel to that axis.
+descSpacing: The perpendicular distance between two neighbouring planes of a set, drawn as a dimension line. In centred lattices extra lattice points can lie between the planes from the formula, so the planes that really hold points are closer together.
+descIntercepts: Where a plane cuts the a, b and c axes, measured from an origin at a cell corner, and how intercepts → reciprocals → clear fractions gives (hkl). An index of 0 means the plane is parallel to that axis.
+descComponents: Walk u steps along a, then v along b, then w along c to reach the tip of [uvw]. Each corner of the path is labelled with its coordinates.
+descInterstitials: The empty spaces between lattice spheres: octahedral and tetrahedral holes (cubic sites in cubic P) where smaller atoms can sit. Shows how many there are per cell and per lattice point.
+descAtomFit: Put an atom of radius r in a hole: green when it fits (r/R up to the critical ratio), red with the overlap shown when it is too big.
+descVolume: The space enclosed by the unit cell. The general formula works for every crystal system; it simplifies a lot when the angles are 90°.
+descPoints: A point on a corner is shared by 8 cells, on an edge by 4, on a face by 2; a point inside belongs to this cell alone.
+descPacking: The fraction of the cell filled by touching spheres, with radius half the nearest-neighbour distance.
+descNN: The distance to the closest lattice points (d_nn) and how many there are (the coordination number, CN).
+descDSpacing: The perpendicular distance between neighbouring planes of the (hkl) set. For cubic cells d = a / √(h² + k² + l²).
+descBragg: X-rays reflect strongly from a set of planes when the path difference between neighbouring planes is a whole number of wavelengths.
+descMetric: G collects all dot products of the cell vectors, Gij = ai · aj. Lengths, angles and d-spacings in any system follow from G and its inverse G*.
+descAdvanced: Unlocks lattice parameter editing, Miller–Bravais notation, the X-ray wavelength, projection settings and extra calculations.

@@ -1,0 +1,23 @@
+{
+  "name": "unit-cell-explorer",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Interactive, playful learning tool for crystallography: the 14 Bravais lattices.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "@fontsource/jetbrains-mono": "^5.1.1",
+    "katex": "0.16.47",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "happy-dom": "15.11.7",
+    "vite": "5.4.11",
+    "vitest": "2.1.8"
+  }
+}

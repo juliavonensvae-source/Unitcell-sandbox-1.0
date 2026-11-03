@@ -1,0 +1,104 @@
+# Calculations: shared
+calcTotal: Total
+calcTablePlane: Plane
+calcTableWithPoints: with points (Å)
+calcNoPlanes: No planes yet
+calcNoPlanesLower: no planes yet
+calcPlaneOne: {count} plane
+calcPlanesCount: {count} planes
+calcQuickPlanes: Add (100), (110) and (111)
+
+# Cell volume card
+calcVolumePrism: prism 3<i>V</i> = {volume} Å³
+calcVolumeWorked: {formula} = {numbers} = \mathbf{{volume}}\,\text{Å}^3
+calcVolumePrismNote: The hexagonal prism is made of 3 primitive cells, so its volume is 3<i>V</i> = {volume} Å³.
+calcVolHexagonal: V = \tfrac{\sqrt3}{2}a^2c
+volNumbersCubic: {a}^3
+volNumbersTetragonal: {a}^2\times{c}
+volNumbersOrthorhombic: {a}\times{b}\times{c}
+volNumbersHexagonal: 0.8660\times{a}^2\times{c}
+volNumbersRhombohedral: {a}^3\sqrt{1 - 3\cos^2{alpha}^\circ + 2\cos^3{alpha}^\circ}
+volNumbersMonoclinic: {a}\times{b}\times{c}\times\sin{beta}^\circ
+
+# Lattice points per cell card
+calcPoints: Lattice points per cell
+calcPointsLabel: Points per cell
+calcPointsPerCell: <i>N</i> = {n} per cell
+calcPointsPerPrism: <i>N</i> = {n} per prism
+calcPointsRowOne: {count} point × {share}
+calcPointsRowMany: {count} points × {share}
+calcPointsPrismNote: Each corner of the hexagonal prism is shared by 6 prisms (3 around it, above and below) and each face centre by 2.
+calcPointsHexNote: On hexagonal axes the cell is three times larger than the primitive rhombohedral cell, so it holds 3 points.
+calcPointsRhombNote: This is the primitive rhombohedral cell. On hexagonal axes (Advanced) the same lattice has 3 points per cell.
+
+# Packing fraction card
+calcPackingSummary: APF = {apf} · {percent}% filled
+formulaPacking: \text{APF} = \dfrac{N\cdot\frac43\pi r^3}{V},\qquad r = \dfrac{d_\text{nn}}{2}
+calcPackingN: Points per cell <i>N</i>
+calcPackingR: Radius <i>r</i> = <i>d</i><sub>nn</sub>/2
+calcPackingV: Cell volume <i>V</i>
+calcPackingAPF: APF
+calcPackingNote: The 3D view shows only the parts of each sphere that lie inside the cell; together they fill exactly this fraction.
+
+# Nearest neighbours card
+calcNN: Nearest neighbours
+calcNNMenu: Nearest neighbours & coordination
+calcNNDistance: Nearest-neighbour distance
+calcNNCN: Coordination number
+calcNNShell: Shell
+calcNNNote: Neighbours within 2% of the nearest distance count towards CN. In the 3D view the highlighted point is joined to all of them; points outside the drawn block appear too.
+
+# Angle card
+angleTitle: Angle
+angleDesc: Between two directions, two planes, or a direction and a plane. Pick the objects by name.
+angleBetween: Angle between
+angleModeDD: Direction + direction
+angleModePP: Plane + plane
+angleModeDP: Direction + plane
+angleFirst: First object
+angleSecond: Second object
+angleChooseDirections: Choose two directions
+angleChoosePlanes: Choose two planes
+angleChooseObjects: Choose two objects
+angleNeedTwoDirections: You need two directions first.
+angleNeedTwoPlanes: You need two planes first.
+angleNeedBoth: You need a direction and a plane first.
+angleQuickDD: Add [100] and [111]
+angleQuickPP: Add (100) and (111)
+angleQuickDP: Add [111] and (111)
+angleSummaryDP: {a} ∠ {b}: {toPlane} to the plane · {toNormal} to its normal
+formulaAngleDD: \cos\theta = \dfrac{\mathbf u_1^\mathsf T G\,\mathbf u_2}{|\mathbf u_1|\,|\mathbf u_2|},\qquad |\mathbf u| = \sqrt{\mathbf u^\mathsf T G\,\mathbf u}
+formulaAnglePP: \cos\theta = \dfrac{\mathbf h_1^\mathsf T G^*\,\mathbf h_2}{|\mathbf g_1|\,|\mathbf g_2|},\qquad |\mathbf g| = \sqrt{\mathbf h^\mathsf T G^*\,\mathbf h} = \dfrac1d
+anglePPNote: The angle between two planes is the angle between their normals, taken between 0° and 90°.
+formulaAngleDP: \cos\psi = \dfrac{uh + vk + wl}{|\mathbf u|\,|\mathbf g|},\qquad \psi = \text{angle to the plane normal}
+angleToNormal: To the plane normal ψ
+angleToPlane: To the plane itself, 90° − ψ
+angleNotPerp: [{uvw}] and ({hkl}) have the same indices, but here the direction is <b>not</b> perpendicular to the plane: that only happens in cubic lattices.
+angleNormalOf: normal of {name}
+angleResultDP: {toPlane} to the plane, {toNormal} to its normal
+cmdHelpAngle: Angle between two directions, two planes, or a direction and a plane
+
+# Interplanar distance table card
+calcDSpacing: Interplanar distance
+formulaDCubic: d_{hkl} = \dfrac{a}{\sqrt{h^2 + k^2 + l^2}}
+formulaDGeneral: \dfrac{1}{d_{hkl}^2} = \mathbf h^\mathsf T G^*\,\mathbf h
+calcAddPlaneSpacing: Add a plane to see its spacing.
+calcDSpacingNote: “With points” is the spacing of the planes that actually hold lattice points. In centred lattices extra points can sit between the formula planes, so the real planes are closer together. Open a plane for the details.
+
+# Bragg angle card
+calcBragg: Bragg angle
+calcBraggMenu: Bragg angle 2θ
+calcBraggLambda: X-ray wavelength λ
+calcBraggLambdaLabel: Wavelength in ångström
+formulaBragg: \lambda = 2d\sin\theta\ \Rightarrow\ 2\theta = 2\arcsin\dfrac{\lambda}{2d}
+calcAddPlaneBragg: Add a plane to see its Bragg angle.
+calcAllowed: <span class="chip chip-good">allowed</span>
+calcExtinct: extinct
+calcExtinctTitle: Structure factor is zero
+calcNoReflection: no reflection
+calcBraggNote: “Extinct” means the centred lattice’s structure factor is zero, so the reflection is missing (for example h + k + l odd in an I lattice).
+
+# Metric tensor card
+calcMetric: Metric tensor
+calcMetricReciprocal: Reciprocal metric tensor
+calcMetricVectors: Lattice vectors <b>a</b>, <b>b</b>, <b>c</b> as rows, Cartesian

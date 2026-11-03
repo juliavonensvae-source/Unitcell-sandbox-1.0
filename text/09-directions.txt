@@ -1,0 +1,33 @@
+# Direction [uvw] card
+directionTitle: Direction
+directionVector: Vector
+directionLength: Length
+directionLook: Look down this direction
+
+# Intersection of two planes
+intersectionMenu: Intersection of two planes
+intersectionDesc: The direction where two planes meet, [uvw] = (h₁k₁l₁) × (h₂k₂l₂). It is added as a direction you can rename and use.
+intersectionNote: The direction where two planes meet. It is the cross product of their Miller indices, which works in every crystal system.
+intersectionFirst: First plane
+intersectionSecond: Second plane
+intersectionAddTwo: Add two planes first.
+intersectionQuick: Add (111) and (1 −1 0)
+intersectionFormula: \begin{aligned}[uvw] &= (h_1k_1l_1)\times(h_2k_2l_2) \\ &= [\,k_1l_2 - l_1k_2,\ \ l_1h_2 - h_1l_2,\ \ h_1k_2 - k_1h_2\,]\end{aligned}
+intersectionWorked: \begin{aligned}({h1}\ {k1}\ {l1})\times({h2}\ {k2}\ {l2}) &= [\,{k1b}\cdot{l2b} - {l1b}\cdot{k2b},\ \ldots\,] \\ &= [{result}]\ \to\ \mathbf{{uvw}}\end{aligned}
+intersectionDrawn: The dashed line in the 3D view is where the two planes, as drawn, cross inside the cell. It runs along this direction.
+intersectionNotDrawn: The two planes as drawn don’t cross inside this cell, but every plane of each set meets the other along this direction.
+cmdHelpIntersection: The direction where two planes meet
+
+# Direction components card
+componentsMenu: Direction components u·a → v·b → w·c
+componentsPicker: Components of the direction
+summaryChooseDirection: Choose a direction
+componentsNote: Start at the origin and walk along one axis at a time. The order does not matter: you always end at the tip of the direction vector.
+componentsFormula: \mathbf r = u\,\mathbf a + v\,\mathbf b + w\,\mathbf c = {sum}
+componentsFormulaFour: \mathbf r = {sum}
+componentsFourNote: The four-index vector {four} ends at {end}, which is {scale} × {uvw}: the same direction, {scale} times as long. Corner coordinates are given on the three axes a<sub>1</sub>, a<sub>2</sub>, c.
+componentsByAxis: Colour each step by its axis
+componentsByAxisHint: Off: every step uses this object’s colour
+componentsFour: Walk along the four axes a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>, c
+componentsFourHint: Uses the Miller–Bravais indices [uvtw]
+cmdHelpComponents: The path u·a → v·b → w·c to the tip of a direction

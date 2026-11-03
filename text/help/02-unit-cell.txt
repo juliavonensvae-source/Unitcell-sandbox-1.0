@@ -1,0 +1,274 @@
+# Help topics: the unit cell
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Lattice points
+
+### Popover
+helpLatticePointsExplain: A lattice point is a position with exactly the same surroundings as every other one. It is a mathematical point, not necessarily an atom: in a real crystal the same group of atoms (the basis) sits at every lattice point.
+helpLatticePointsFormula1: \mathbf r = n_1\mathbf a + n_2\mathbf b + n_3\mathbf c + \mathbf t_j
+helpLatticePointsFormula2: \text{crystal structure} = \text{lattice} + \text{basis}
+helpLatticePointsSym1: n_1, n_2, n_3
+helpLatticePointsSym1Text: whole numbers
+helpLatticePointsSym2: \mathbf t_j
+helpLatticePointsSym2Text: a centring vector (only 0 for a P lattice)
+helpLatticePointsNow: {drawn} lattice points drawn, {total} per cell.
+
+
+## Points or touching spheres
+
+### Popover
+helpDisplayModeTitle: Points or touching spheres
+helpDisplayModeExplain: “Points” marks where the lattice points are. “Touching spheres” makes each point a sphere just big enough to touch its nearest neighbours, so the radius is half the nearest-neighbour distance. This hard-sphere model is the one used for packing fractions and interstitial holes.
+helpDisplayModeFormula1: r = \frac{d_\text{nn}}{2}
+helpDisplayModeSym1: r
+helpDisplayModeSym1Text: radius of the touching spheres
+helpDisplayModeSym2: d_\text{nn}
+helpDisplayModeSym2Text: nearest-neighbour distance
+helpDisplayModeNow: On screen: $d_\text{nn} = {dnn}\,\text{Å}$, so $r = {radius}\,\text{Å}$.
+
+
+## Cut spheres at the cell boundary
+
+### Popover
+helpCutSpheresTitle: Cut spheres at the cell boundary
+helpCutSpheresExplain: Cutting every sphere at the faces of the highlighted cell shows how much of each lattice point belongs to that cell: ⅛ of a corner point, ¼ of an edge point, ½ of a face point. The pieces add up to the number of lattice points per cell.
+helpCutSpheresSym1: N
+helpCutSpheresSym1Text: lattice points per cell
+helpCutSpheresSym2: N_\text{corner}, \ldots
+helpCutSpheresSym2Text: how many points sit on corners, edges, faces, inside
+helpCutSpheresNow: Highlighted cell: ${count} = {total}$
+
+
+## The unit cell
+
+### Popover
+helpCellEdgesTitle: The unit cell
+helpCellEdgesExplain: The unit cell is the parallelepiped spanned by a, b and c. Copies of it, shifted by whole lattice vectors, fill all of space without gaps or overlaps. In a supercell, “Show the edges of every cell” draws the lines between the lattice points so you can see each copy.
+helpCellEdgesFormula1: V = \mathbf a\cdot(\mathbf b\times\mathbf c)
+helpCellEdgesSym1: V
+helpCellEdgesSym1Text: volume of the cell
+helpCellEdgesSym2: \mathbf a,\ \mathbf b,\ \mathbf c
+helpCellEdgesSym2Text: the lattice vectors
+helpCellEdgesNow: $V = {volume}\,\text{Å}^3$
+
+
+## Supercell
+
+### Popover
+helpSupercellExplain: A supercell repeats the unit cell n₁ times along a, n₂ times along b and n₃ times along c, to show how the cells stack into the lattice. Every copy is the first cell shifted by a lattice vector.
+helpSupercellFormula1: \mathbf T = m_1\mathbf a + m_2\mathbf b + m_3\mathbf c,\qquad 0 \le m_i < n_i
+helpSupercellFormula2Tag: P lattice
+helpSupercellFormula2: \text{points drawn} = (n_1+1)(n_2+1)(n_3+1)
+helpSupercellFormula3Tag: Hexagonal prisms
+helpSupercellFormula3: \mathbf T = m_1(2\mathbf a_1 + \mathbf a_2) + m_2(\mathbf a_2 - \mathbf a_1) + m_3\mathbf c
+helpSupercellSym1: n_1, n_2, n_3
+helpSupercellSym1Text: number of cells along a, b, c
+helpSupercellSym2: \mathbf T
+helpSupercellSym2Text: the shift of one copy
+helpSupercellNow: {repeats} hexagonal prisms side by side in a honeycomb, {drawn} points drawn: a point shared by neighbouring prisms is drawn once.
+helpSupercellNowElse: {repeats} cells, {drawn} points drawn.
+
+
+## Highlighted cell and origin
+
+### Popover
+helpOriginExplain: Cells in a supercell are numbered from 1 along a, b and c, so cell (i, j, k) starts at (i − 1, j − 1, k − 1). The corner you choose of the highlighted cell is the origin that directions, planes, intercepts and direction components start from.
+helpOriginFormula1: \mathbf O = (i-1,\ j-1,\ k-1) + (c_1,\ c_2,\ c_3),\qquad c_n \in \{0, 1\}
+helpOriginFormula2: \mathbf O = (i-1)(2\mathbf a_1 + \mathbf a_2) + (j-1)(\mathbf a_2 - \mathbf a_1) + (k-1)\,\mathbf c
+helpOriginSym1: (i, j, k)
+helpOriginSym1Text: number of the highlighted cell
+helpOriginSym2: (c_1, c_2, c_3)
+helpOriginSym2Text: which corner of it is the origin
+helpOriginSym3: \mathbf O
+helpOriginSym3Text: the origin, in fractional coordinates
+helpOriginNow: Prism ({cell}): origin at the centre of its bottom face.
+helpOriginNowElse: Cell ({cell}), origin at ({origin}).
+
+
+## Cell volume
+
+### Popover
+helpVolumeScope: General formula: all lattices
+helpVolumeExplain: The volume of the unit cell is its base area times its height, which is the scalar triple product of the three lattice vectors. Written with the lattice parameters it becomes one general formula that works for every crystal system and simplifies a lot when the angles are 90°.
+helpVolumeFormula2Tag: {system} only
+# The formula itself comes from 00-shared.txt (formulaVol…), except hexagonal:
+helpVolumeHexagonal: V = \tfrac{\sqrt3}{2}\,a^2c
+helpVolumeSym2: V
+helpVolumeSym2Text: cell volume (Å³)
+helpVolumeNow: On screen: $V = {volume}\,\text{Å}^3$
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpVolumeStep1: The volume of a parallelepiped is the area of its base times its height. The cross product $\mathbf b \times \mathbf c$ has the base area as its length and points straight out of the base, so a dot product with $\mathbf a$ picks out the height:
+helpVolumeStep1Tex: V = \mathbf a\cdot(\mathbf b\times\mathbf c) = \det\begin{pmatrix}\mathbf a & \mathbf b & \mathbf c\end{pmatrix}
+helpVolumeStep2: Put the three vectors as columns of a matrix A. Then the matrix of all dot products, the metric tensor G, is AᵀA, so its determinant is V².
+helpVolumeStep2Tex: G = A^\mathsf T A\ \Rightarrow\ \det G = (\det A)^2 = V^2
+helpVolumeStep3: Write G with the lattice parameters ($\mathbf a\cdot\mathbf b = ab\cos\gamma$ and so on):
+helpVolumeStep3Tex: G = \begin{pmatrix} a^2 & ab\cos\gamma & ac\cos\beta \\ ab\cos\gamma & b^2 & bc\cos\alpha \\ ac\cos\beta & bc\cos\alpha & c^2 \end{pmatrix}
+helpVolumeStep4: Expanding the determinant and taking the square root gives the general formula:
+helpVolumeStep4Tex: V^2 = a^2b^2c^2\,(1 - \cos^2\alpha - \cos^2\beta - \cos^2\gamma + 2\cos\alpha\cos\beta\cos\gamma)
+helpVolumeStep5: With right angles every cosine is 0. Hexagonal has γ = 120°, monoclinic only β ≠ 90°:
+helpVolumeStep5Tex: \text{cubic } a^3,\quad \text{tetragonal } a^2c,\quad \text{orthorhombic } abc,\quad \text{hexagonal } \tfrac{\sqrt3}{2}a^2c,\quad \text{monoclinic } abc\sin\beta
+helpVolumeStep6: Rhombohedral: all three angles equal α.
+
+### SEE MORE: Your lattice (worked example)
+helpVolumeEx1: The parameters on screen:
+helpVolumeEx2: The cosines of the angles:
+helpVolumeEx2Tex: \cos\alpha = {ca},\quad \cos\beta = {cb},\quad \cos\gamma = {cg}
+helpVolumeEx3: The bracket under the square root:
+helpVolumeEx3Tex: 1 - ({ca})^2 - ({cb})^2 - ({cg})^2 + 2({ca})({cb})({cg}) = {root}
+helpVolumeEx4: Multiply by abc:
+helpVolumeEx4Tex: V = {a}\times{b}\times{c}\times\sqrt{{root}} = {volume}\,\text{Å}^3
+helpVolumeEx5: The hexagonal prism on screen is three of these cells:
+helpVolumeEx5Tex: 3V = {prism}\,\text{Å}^3
+
+
+## Lattice points per unit cell
+
+### Popover
+helpPointsTitle: Lattice points per unit cell
+helpPointsExplain: A point inside the cell belongs to it alone, but a point on a face is shared with the neighbouring cell, a point on an edge with 4 cells and a point on a corner with 8. Adding up the shares gives the number of lattice points per cell: 1 for P, 2 for I and C, 4 for F.
+helpPointsFormula1: N = N_\text{inside} + \tfrac12 N_\text{face} + \tfrac14 N_\text{edge} + \tfrac18 N_\text{corner}
+helpPointsFormula2: N = \tfrac16 N_\text{corner} + \tfrac12 N_\text{face} = 12\times\tfrac16 + 2\times\tfrac12 = 3
+helpPointsSym1: N
+helpPointsSym1Text: lattice points per cell
+helpPointsSym2: N_\text{corner},\ N_\text{edge},\ \ldots
+helpPointsSym2Text: how many points sit on the corners, edges, faces or inside
+helpPointsNow: On screen: ${count} = {total}$
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpPointsStep1: Count how many cells meet at each kind of position. Around a corner there are 8 cells (2 × 2 × 2), along an edge 4, across a face 2. This is true for every parallelepiped, also for slanted cells.
+helpPointsStep1Tex: \text{corner: } \tfrac18,\qquad \text{edge: } \tfrac14,\qquad \text{face: } \tfrac12,\qquad \text{inside: } 1
+helpPointsStep2: Add up the shares of all points of one cell:
+helpPointsStep3: The four centring types:
+helpPointsStep3Tex: P:\ 8\times\tfrac18 = 1\qquad I:\ 8\times\tfrac18 + 1 = 2\qquad C:\ 8\times\tfrac18 + 2\times\tfrac12 = 2\qquad F:\ 8\times\tfrac18 + 6\times\tfrac12 = 4
+helpPointsStep4: In a slanted cell the 8 corner pieces have different shapes, but moved to one corner they fit together into exactly one whole sphere (the 8 cells around a point fill all the space around it). So the counting still works.
+helpPointsStep5: The hexagonal prism is different: 3 prisms meet at each vertical edge, so a corner is shared by 3 × 2 = 6 prisms. With 12 corners and 2 face centres:
+helpPointsStep5Tex: N = 12\times\tfrac16 + 2\times\tfrac12 = 3
+helpPointsStep6: N also tells you how many times larger the cell is than a primitive cell:
+helpPointsStep6Tex: N = \frac{V_\text{cell}}{V_\text{prim}}
+
+### SEE MORE: Your lattice (worked example)
+helpPointsExTitlePrism: {lattice}, hexagonal prism
+helpPointsExResult: Turn on “Cut spheres at cell boundary” in the Lattice points settings to see the pieces.
+helpPointsEx1: {count} points {where}:
+helpPointsEx1One: {count} point {where}:
+helpPointsInside: inside the cell, each counting fully
+helpPointsPrismCorners: on prism corners, ⅙ each
+helpPointsShare: {place}, {share} each
+helpPointsOnCorners: on corners
+helpPointsOnEdges: on edges
+helpPointsOnFaces: on faces
+helpPointsOnBoundary: on the boundary
+helpPointsEx1Tex: {count}\times{share} = {result}
+helpPointsEx2: Total:
+helpPointsEx2Tex: N = {count} = {total}
+
+
+## Metric tensor G
+
+### Popover
+helpMetricExplain: The metric tensor G collects all dot products of the lattice vectors. With it, lengths, angles and volumes can be worked out straight from the indices, in any crystal system, without Cartesian coordinates. Its inverse G* does the same for the reciprocal lattice, which gives plane spacings and angles between planes.
+helpMetricFormula1: G_{ij} = \mathbf a_i\cdot\mathbf a_j = \begin{pmatrix} a^2 & ab\cos\gamma & ac\cos\beta \\ ab\cos\gamma & b^2 & bc\cos\alpha \\ ac\cos\beta & bc\cos\alpha & c^2 \end{pmatrix}
+helpMetricFormula2: G^* = G^{-1},\qquad \det G = V^2
+helpMetricSym1: \mathbf a_1, \mathbf a_2, \mathbf a_3
+helpMetricSym1Text: the lattice vectors a, b, c
+helpMetricSym2: G^*
+helpMetricSym2Text: the reciprocal metric tensor
+helpMetricSym3: V
+helpMetricSym3Text: cell volume
+
+### SEE MORE: Derivation
+helpMetricStep1: Write a vector with its components: $\mathbf r = \sum_i u_i\mathbf a_i$. The dot product of two such vectors only needs the dot products of the axes:
+helpMetricStep1Tex: \mathbf r_1\cdot\mathbf r_2 = \sum_{i,j} u_{1i}\,u_{2j}\,(\mathbf a_i\cdot\mathbf a_j) = \mathbf u_1^\mathsf T G\,\mathbf u_2
+helpMetricStep2: So lengths and angles of directions follow directly:
+helpMetricStep2Tex: |\mathbf r| = \sqrt{\mathbf u^\mathsf T G\,\mathbf u},\qquad \cos\theta = \frac{\mathbf u_1^\mathsf T G\,\mathbf u_2}{|\mathbf r_1|\,|\mathbf r_2|}
+helpMetricStep3: The reciprocal vectors $\mathbf a_i^*$ are defined by $\mathbf a_i\cdot\mathbf a_j^* = \delta_{ij}$ (1 if i = j, else 0). Writing $\mathbf a_i^* = \sum_k X_{ik}\mathbf a_k$ gives XG = 1, so X = G⁻¹, and their metric tensor is G* = G⁻¹:
+helpMetricStep3Tex: \mathbf a_i^* = \sum_k (G^{-1})_{ik}\,\mathbf a_k\ \Rightarrow\ G^*_{ij} = \mathbf a_i^*\cdot\mathbf a_j^* = (G^{-1})_{ij}
+helpMetricStep4: G* gives plane normals g = h a* + k b* + l c*, whose length is 1/d:
+helpMetricStep4Tex: \frac{1}{d_{hkl}^2} = \mathbf h^\mathsf T G^*\,\mathbf h
+helpMetricStep5: And the determinant is the squared volume, because G = AᵀA with the lattice vectors as the columns of A:
+helpMetricStep5Tex: \det G = (\det A)^2 = V^2
+
+### SEE MORE: Your lattice (worked example)
+helpMetricEx1: G from the parameters on screen (Å²):
+helpMetricEx1Tex: G = {matrix}
+helpMetricEx2: Its inverse (Å⁻²):
+helpMetricEx2Tex: G^* = G^{-1} = {matrix}
+helpMetricEx3: The determinant and the volume:
+helpMetricEx3Tex: \det G = {detG}\,\text{Å}^6\ \Rightarrow\ V = \sqrt{\det G} = {volume}\,\text{Å}^3
+helpMetricEx4: Example: the length of [110] = a + b.
+helpMetricEx4Tex: |\mathbf a + \mathbf b| = \sqrt{G_{11} + 2G_{12} + G_{22}} = \sqrt{{g11} + 2({g12}) + {g22}} = {length}\,\text{Å}
+
+
+## Hexagonal prism
+
+### Popover
+helpHexPrismScope: Hexagonal P
+helpHexPrismExplain: Three primitive hexagonal cells, rhombi with γ = 120°, fit together into a hexagonal prism that shows the 6-fold symmetry at a glance. It has 12 corner points plus one point in the centre of the top and bottom faces, and holds 3 lattice points.
+helpHexPrismFormula1: N = 12\times\tfrac16 + 2\times\tfrac12 = 3
+helpHexPrismFormula2: V_\text{prism} = 3V = \tfrac{3\sqrt3}{2}\,a^2c
+helpHexPrismSym1: a,\ c
+helpHexPrismSym1Text: hexagonal lattice parameters
+helpHexPrismSym2: V
+helpHexPrismSym2Text: volume of one primitive cell
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+helpHexPrismHighlight: Choose <b>Hexagonal P</b> and <b>Hexagonal prism</b> in the <b>Add cells</b> drawer (right edge) to see the shares highlighted.
+
+### SEE MORE: Derivation
+helpHexPrismStep1: The base of the primitive cell is a rhombus with sides a and an angle of 120°:
+helpHexPrismStep1Tex: A_\text{prim} = a^2\sin120^\circ = \tfrac{\sqrt3}{2}\,a^2
+helpHexPrismStep2: Three rhombi around a common corner fill a full turn, because each has 120° there. Together they form a regular hexagon.
+helpHexPrismStep2Tex: 3\times120^\circ = 360^\circ
+helpHexPrismStep3: Hexagonal prisms tile space like a honeycomb: 3 prisms meet at each vertical edge, and there are prisms above and below. A corner is shared by 6 prisms.
+helpHexPrismStep3Tex: \text{corner share} = \frac{1}{3\times2} = \frac16
+helpHexPrismStep4: The centres of the top and bottom faces are shared by 2 prisms each. Adding up:
+helpHexPrismStep4Tex: N = 12\times\tfrac16 + 2\times\tfrac12 = 2 + 1 = 3
+helpHexPrismStep5: Three cells, so three times the volume:
+helpHexPrismStep5Tex: V_\text{prism} = 3\times\tfrac{\sqrt3}{2}a^2c = \tfrac{3\sqrt3}{2}a^2c
+
+### SEE MORE: Your lattice (worked example)
+helpHexPrismExTitleElse: Hexagonal P with a = {a} Å, c = {c} Å
+helpHexPrismExIntroElse: The lattice on screen is not hexagonal, so this example uses the default hexagonal lattice.
+helpHexPrismEx1: One primitive cell:
+helpHexPrismEx1Tex: V = \tfrac{\sqrt3}{2}\,a^2c = 0.8660\times{a}^2\times{c} = {volume}\,\text{Å}^3
+helpHexPrismEx2: The prism:
+helpHexPrismEx2Tex: V_\text{prism} = 3V = {vPrism}\,\text{Å}^3
+helpHexPrismEx3: Points per prism:
+helpHexPrismEx3Tex: 12\times\tfrac16 + 2\times\tfrac12 = 3
+
+
+## Rhombohedral or hexagonal axes
+
+### Popover
+helpRhombohedralSettingTitle: Rhombohedral or hexagonal axes
+helpRhombohedralSettingScope: Rhombohedral R
+helpRhombohedralSettingExplain: The rhombohedral lattice can be drawn with its primitive cell (three equal edges a_R at equal angles α, 1 point per cell) or with a hexagonal cell three times larger that has extra points at (⅔, ⅓, ⅓) and (⅓, ⅔, ⅔). Both describe exactly the same lattice points.
+helpRhombohedralSettingFormula1: a_H = 2a_R\sin\frac{\alpha}{2},\qquad c_H = a_R\sqrt{3(1+2\cos\alpha)}
+helpRhombohedralSettingFormula2: V_H = 3V_R
+helpRhombohedralSettingSym1: a_R,\ \alpha
+helpRhombohedralSettingSym1Text: rhombohedral parameters
+helpRhombohedralSettingSym2: a_H,\ c_H
+helpRhombohedralSettingSym2Text: hexagonal parameters of the same lattice
+
+### SEE MORE: Derivation
+helpRhombohedralSettingStep1: The 3-fold axis of the rhombohedron runs along the sum of its three equal edge vectors. That sum is the hexagonal c axis.
+helpRhombohedralSettingStep1Tex: \mathbf c_H = \mathbf a_R + \mathbf b_R + \mathbf c_R
+helpRhombohedralSettingStep2: Its length, using $\mathbf a_R\cdot\mathbf b_R = a_R^2\cos\alpha$ for each of the 3 pairs (counted twice):
+helpRhombohedralSettingStep2Tex: c_H^2 = 3a_R^2 + 6a_R^2\cos\alpha = 3a_R^2(1 + 2\cos\alpha)
+helpRhombohedralSettingStep3: A hexagonal a axis is the difference of two rhombohedral vectors. It is perpendicular to $\mathbf c_H$:
+helpRhombohedralSettingStep3Tex: \mathbf a_H = \mathbf a_R - \mathbf b_R,\qquad a_H^2 = 2a_R^2(1-\cos\alpha) = 4a_R^2\sin^2\tfrac{\alpha}{2}
+helpRhombohedralSettingStep4: The hexagonal cell contains 3 lattice points, at (0, 0, 0), (⅔, ⅓, ⅓) and (⅓, ⅔, ⅔), so it is 3 times larger than the primitive cell.
+helpRhombohedralSettingStep4Tex: V_H = \tfrac{\sqrt3}{2}\,a_H^2c_H = 3V_R
+
+### SEE MORE: Your lattice (worked example)
+helpRhombohedralSettingExTitle: a_R = {a} Å, α = {alpha}°
+helpRhombohedralSettingExIntroElse: The lattice on screen is not rhombohedral, so this example uses the default rhombohedral lattice.
+helpRhombohedralSettingEx1Tex: a_H = 2\times{a}\times\sin{alpha}^\circ = {aH}\,\text{Å}
+helpRhombohedralSettingEx2Tex: c_H = {a}\sqrt{3(1 + 2\cos{alpha}^\circ)} = {c}\,\text{Å}
+helpRhombohedralSettingEx3: Volumes:
+helpRhombohedralSettingEx3Tex: V_R = {vR}\,\text{Å}^3,\qquad V_H = \tfrac{\sqrt3}{2}a_H^2c_H = {vH}\,\text{Å}^3 = 3V_R

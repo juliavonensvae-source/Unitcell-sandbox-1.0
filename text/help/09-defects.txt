@@ -1,0 +1,361 @@
+# Help topics: Defects mode
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Shared
+helpScopeDefects: Defects mode · cubic P, I, F
+helpScopeDisl: Defects mode · cubic P
+helpScopeAll: Any crystal
+helpExFor: For <b>{name}</b> on screen.
+helpExDefault: For a defect in the middle of the block, at the default strength of 50 %.
+
+### How far the neighbours move (worked examples of every point defect)
+helpRelaxEx1: The host atoms touch, so their radius is half the nearest-neighbour distance; the defect's nearest neighbours are d away:
+helpRelaxEx1Tex: R = {R}\,\text{Å},\qquad d = {d}\,\text{Å}
+helpRelaxEx2Vac: A vacancy has no atom; at full strength its neighbours move in by R/10:
+helpRelaxEx2VacTex: \delta = -\frac{R}{10} = -\frac{{R}}{10} = {delta}\,\text{Å}
+helpRelaxEx2: How far the nearest neighbours would have to move to just touch the defect atom:
+helpRelaxEx2Tex: \delta = r + R - d = {r} + {R} - {d} = {delta}\,\text{Å}
+helpRelaxEx3: With a strength of {s} %, the first shell moves:
+helpRelaxEx3Tex: u_1 = s\,\delta = {s} \times ({delta}) = {u1}\,\text{Å}\quad({pct}\,\%\text{ of } d)
+helpRelaxEx4: The next shell is further away, so it moves less (as 1/r²):
+helpRelaxEx4Tex: u_2 = u_1\left(\frac{r_1}{r_2}\right)^2 = {u1}\times\left(\frac{{r1}}{{r2}}\right)^2 = {u2}\,\text{Å}
+helpRelaxExIn: The neighbours move in, towards the defect: the crystal around it is pulled together a little.
+helpRelaxExOut: The neighbours move out, away from the defect: the crystal around it is pushed apart.
+helpRelaxExNone: The atom fits in its hole, so nothing moves.
+
+
+## Vacancy
+
+### Popover
+helpVacExplain: A vacancy is a lattice point whose atom is missing. Every crystal above 0 K contains some, because they raise its entropy, and atoms diffuse by jumping into them. The neighbours lose an atom to lean on and relax slightly inward.
+helpVacNow: <b>{name}</b>: its nearest neighbours move about {u} Å inward.
+helpVacNowNone: Add one with + Add → Point defects → Vacancy and click an atom.
+
+### SEE MORE: Derivation
+[diagram: a square layer with a vacancy, drawn at the top]
+helpVacStep1: Taking an atom from inside the crystal to its surface leaves a vacancy and costs an energy $Q_\text{v}$, about 1 eV in metals (0.9 eV in copper).
+helpVacStep2: The neighbours were held partly by the missing atom, so they relax towards the hole. Here, at full strength, the nearest shell moves in by a tenth of the atom radius:
+helpVacStep3: Around a point defect the crystal behaves elastically: the displacement falls off as $1/r^2$ (the field of a point defect in an isotropic solid), so only a few shells move noticeably:
+helpVacStep4: In real metals the nearest neighbours of a vacancy move in by only 1–2 % of their spacing, too little to see: that is what Exaggerate on the Atoms card is for.
+helpVacStep5: Vacancies matter because they move: an atom beside one can jump into it, which is how most atoms diffuse in metals. Their number rises steeply with temperature (see Vacancy concentration).
+
+
+## Self-interstitial
+
+### Popover
+helpSelfExplain: A self-interstitial is an extra atom of the crystal itself squeezed into an interstitial site. The holes are much smaller than an atom, so the neighbours are pushed far apart and it costs several eV to make one. They are rare in equilibrium, but irradiation makes many.
+helpSelfNow: {lattice}: the nearest hosts are {d} Å from the site and R = {R} Å, so they would have to move out by δ = {delta} Å.
+
+### SEE MORE: Derivation
+[diagram: a self-interstitial in a square layer]
+helpSelfStep1: An atom of radius r in a hole whose nearest neighbours are d away overlaps them by δ = r + R − d.
+helpSelfStep2: For an extra atom of the crystal itself, r = R:
+helpSelfStep2Tex: \delta = R + R - d = 2R - d
+helpSelfStep3: Even in the largest hole, the octahedral site of cubic F, $d = \sqrt2\,R$, so $\delta = (2 - \sqrt2)R \approx 0.59R$: the neighbours must move out by more than half a radius. That is why a self-interstitial costs about three times as much energy as a vacancy.
+helpSelfStep4: Real self-interstitials share a lattice point with another atom (a dumbbell, along ⟨100⟩ in cubic F metals and ⟨110⟩ in cubic I) rather than sit in the middle of a hole; the simple picture here shows the size problem.
+
+
+## Substitutional impurity
+
+### Popover
+helpSubExplain: A substitutional impurity is a foreign atom on a lattice point, in place of a host atom. A larger atom pushes its neighbours out and a smaller one lets them move in. If the two radii differ by more than about 15 %, the distortion costs so much that little of the element dissolves (a Hume-Rothery rule).
+helpSubFormula: \delta = r - R\qquad(\text{the nearest neighbours are } 2R \text{ away})
+helpSubNowNone: Add one with + Add → Point defects → Substitutional impurity and click an atom.
+helpSubNowLarger: <b>{name}</b> is {ratio} R: its nearest neighbours move out by {u} Å.
+helpSubNowSmaller: <b>{name}</b> is {ratio} R: its nearest neighbours move in by {u} Å.
+
+### SEE MORE: Derivation
+[diagram: a larger substitutional atom in a square layer]
+helpSubStep1: In touching spheres the nearest neighbours of a lattice point are $d = 2R$ away. Put an atom of radius r there instead.
+helpSubStep2: To just touch it, they move by:
+helpSubStep3: δ > 0 (a larger atom): they move out and the crystal around it is pushed apart. δ < 0 (a smaller atom): they move in. The strength slider sets how much of δ the crystal takes up.
+helpSubStep4: Brass is copper with zinc on some of its lattice points. Zinc is only about 4 % larger, so more than 30 % zinc dissolves; much larger misfits strain the lattice so much that the solid solution breaks up into other phases.
+
+### SEE MORE: Your lattice
+helpSubExDefault: For an atom 25 % larger than the host atoms, at the default strength of 50 %.
+
+
+## Interstitial impurity
+
+### Popover
+helpIntExplain: An interstitial impurity is a small foreign atom, such as hydrogen, carbon, nitrogen or boron, in a hole between the host atoms. If it is larger than the hole it pushes the neighbours out; if it is smaller it just rattles. Carbon in iron is the classic case: it is what turns iron into steel.
+helpIntNow: {lattice}: the largest atom that fits without pushing has r/R = {ratio}, r = {rmax} Å.
+
+### SEE MORE: Derivation
+[diagram: a small interstitial atom in a square layer]
+helpIntStep1: The largest atom that fits in a hole touches its nearest hosts: $r_\text{max} = d - R$ (the critical radius ratios of Interstitial sites).
+helpIntStep2: A larger atom overlaps them by δ, and they would have to move out that far to just touch it:
+helpIntStep3: A smaller atom has room to spare (δ < 0): nothing moves, because nothing pulls the neighbours in.
+helpIntStep4: Carbon (r ≈ 0.07 nm) is too big for the holes in iron (R ≈ 0.124 nm). The octahedral hole of cubic F iron (r/R = 0.414) is far bigger than that of cubic I iron (0.155), so cubic F (γ) iron dissolves up to 2.1 wt% carbon and cubic I (α) iron only 0.022 wt%, even though cubic I is the less densely packed lattice.
+
+### SEE MORE: Your lattice
+helpIntExDefault: For an atom of radius 0.55 R in the octahedral site, at the default strength of 50 %.
+helpIntExFits: The atom is smaller than its hole, so it fits and nothing moves.
+
+
+## Frenkel pair
+
+### Popover
+helpFrExplain: A Frenkel pair is an atom that has jumped from its lattice point into a nearby interstitial site, leaving a vacancy behind. The number of atoms does not change, so it can form deep inside the crystal. In ionic crystals such as AgCl the small cations do this easily.
+helpFrFormula: \text{vacancy} + \text{self-interstitial},\qquad N_\text{atoms}\ \text{unchanged}
+helpFrSymN: N_\text{atoms}
+helpFrSymNText: the number of atoms in the crystal
+helpFrSymV: \text{vacancy}
+helpFrSymVText: the lattice point the atom left
+helpFrNow: <b>{name}</b>: the atom jumped {jump} Å.
+helpFrNowNone: Add one with + Add → Point defects → Frenkel pair and click the atom that jumps.
+
+### SEE MORE: Derivation
+[diagram: a Frenkel pair in a square layer]
+helpFrStep1: An atom leaves its lattice point (now a vacancy) and goes into an interstitial site nearby (now a self-interstitial).
+helpFrStep2: Both defects relax their neighbours, the vacancy inward and the interstitial outward, and the two fields add up:
+helpFrStep3: If the two are very close, the atom simply jumps back and the pair disappears; a lasting pair needs them several spacings apart.
+helpFrStep4: A Schottky defect is the other way to make vacancies in an ionic crystal: a cation and an anion vacancy together, which keeps the crystal neutral (as in NaCl). In a Frenkel defect only one kind of ion moves.
+
+### SEE MORE: Your lattice
+helpFrEx1: How far the atom jumped, compared with the nearest-neighbour distance:
+helpFrEx1Tex: \text{jump} = {jump}\,\text{Å},\qquad d_\text{nn} = {dnn}\,\text{Å}
+helpFrEx2: How far each defect would move its neighbours at full strength:
+helpFrEx2Tex: \delta_\text{interstitial} = {delta}\,\text{Å},\qquad \delta_\text{vacancy} = {vac}\,\text{Å}
+helpFrExResult: The interstitial distorts the crystal far more than the vacancy does.
+
+
+## How the neighbours relax (Atoms card, strength sliders)
+
+### Popover
+helpRelaxTitle: How the neighbours relax
+helpRelaxExplain: Around a point defect the atoms move along the line to the defect: out from an atom that is too big, in towards a vacancy or a small atom. The app moves the nearest shell by u₁ and every other atom by less, falling off as 1/r², and adds up the fields of all the defects. The colours show how far each atom moved or how much its bonds stretched.
+helpRelaxStrainFormula: \varepsilon = \frac{1}{n}\sum_{j}\frac{\ell_{ij} - \ell^{0}_{ij}}{\ell^{0}_{ij}}
+helpRelaxStrainTag: Colour: strain
+helpRelaxSymU: u(r)
+helpRelaxSymUText: how far an atom at distance r from the defect moves (outward is positive)
+helpRelaxSymR1: r_1
+helpRelaxSymR1Text: the distance from the defect to its nearest neighbours
+helpRelaxSymS: s
+helpRelaxSymSText: the strength: how much of δ the crystal gives way (0 to 1)
+helpRelaxSymDelta: \delta
+helpRelaxSymDeltaText: how far the nearest neighbours would move to just touch the defect atom (R: host radius, r: defect atom radius, d: their distance)
+helpRelaxSymEps: \varepsilon
+helpRelaxSymEpsText: the average stretch of an atom's n bonds to its nearest neighbours (ℓ now, ℓ⁰ in the perfect crystal)
+helpRelaxNow: Set the strength on each defect's card, and the colours and the exaggeration on the Atoms card.
+
+### SEE MORE: Derivation
+[diagram: a larger substitutional atom in a square layer]
+helpRelaxStep1: The host atoms are touching spheres of radius R, so a defect atom of radius r whose nearest neighbours are d away overlaps them by δ = r + R − d (around a vacancy, δ = −R/10).
+helpRelaxStep2: The nearest shell moves by u₁ = sδ, and every other atom by less, the way the elastic field of a point defect in an isotropic solid falls off:
+helpRelaxStep3: s = 100 % means the neighbours move until they just touch the defect atom, so the defect itself is not squeezed at all; s = 0 means a rigid lattice. Real crystals share the misfit, roughly half and half.
+helpRelaxStep4: With several defects the displacements simply add (linear elasticity). Dislocations move the atoms by their own field on top (see Edge dislocation).
+helpRelaxStep5: The strain colour compares each bond with the perfect crystal:
+helpRelaxStep6: Oddly, the 1/r² field of a point defect has no change of volume away from the defect: the bonds along the line to it change one way and those across it the other. That is why the strain colours around a point defect are mixed, while an edge dislocation shows a clean squeezed side and a stretched side.
+helpRelaxStep7: Not modelled: the real forces between atoms, the defect's own change of shape (dumbbells, for example), and the free surfaces of the block (here the crystal acts as if it went on for ever).
+
+
+## Vacancy concentration
+
+### Popover
+helpVcExplain: Making a vacancy costs an energy $Q_\text{v}$, but spreading vacancies over the lattice points raises the entropy, so above 0 K some lattice points are always empty. Their fraction rises steeply with temperature, as a Boltzmann factor. Near the melting point of a metal about one lattice point in ten thousand is empty.
+helpVcFormulaN: N = \frac{\text{atoms per cell}}{a^3} = \frac{N_\text{A}\,\rho}{A}
+helpVcFormulaNTag: Atoms per m³
+helpVcSymNv: N_\text{v}
+helpVcSymNvText: vacancies per m³
+helpVcSymN: N
+helpVcSymNText: atoms (lattice points) per m³
+helpVcSymQ: Q_\text{v}
+helpVcSymQText: the energy to make one vacancy (eV; × 96.485 gives kJ/mol)
+helpVcSymK: k
+helpVcSymKText: Boltzmann's constant, 8.617 × 10⁻⁵ eV/K
+helpVcSymT: T
+helpVcSymTText: the absolute temperature (K)
+helpVcNow: <b>{name}</b>: at $T = {T}$ K, $N_\text{v}/N = {frac}$.
+helpVcNowNone: Add + Add → Calculations → Vacancy concentration to try it with sliders.
+
+### SEE MORE: Derivation
+[diagram: the graph of the fraction against temperature]
+helpVcStep1: Making one vacancy costs the energy $Q_\text{v}$ (an atom moves from inside the crystal to its surface). With n vacancies among N atoms the energy goes up by $nQ_\text{v}$.
+helpVcStep2: But the vacancies can sit on any of the N + n lattice points. The number of ways is W, and the entropy is S = k ln W:
+helpVcStep2Tex: W = \frac{(N+n)!}{N!\,n!},\qquad S = k\ln W
+helpVcStep3: The crystal settles where its free energy G is lowest:
+helpVcStep3Tex: G(n) = nQ_\text{v} - kT\ln\frac{(N+n)!}{N!\,n!}
+helpVcStep4: With Stirling's approximation, ln x! ≈ x ln x − x, set dG/dn = 0:
+helpVcStep4Tex: Q_\text{v} - kT\ln\frac{N+n}{n} = 0
+helpVcStep5: So, as n ≪ N:
+helpVcStep6: Taking logarithms gives a straight line against 1/T (an Arrhenius plot), whose slope gives $Q_\text{v}$:
+helpVcStep6Tex: \ln\frac{N_\text{v}}{N} = -\frac{Q_\text{v}}{k}\cdot\frac{1}{T}
+helpVcStep7: Approximations: the vibrations of the atoms around a vacancy are left out (they add a factor $e^{S_\text{v}/k}$, about 1 to 10), and the vacancies do not interact.
+
+### SEE MORE: Your lattice
+helpVcEx1: Copper at 1000 °C (1273 K), with $Q_\text{v} = 0.9$ eV and $N = 8.0 \times 10^{28}$ m⁻³ (the textbook example in Callister):
+helpVcEx1Tex: \frac{N_\text{v}}{N} = e^{-0.9/(8.617\times10^{-5}\times1273)} = {frac},\qquad N_\text{v} = {nv}\ \text{m}^{-3}
+helpVcEx2: {lattice} on screen, atoms per m³ from the cell:
+helpVcEx2Tex: N = \frac{{n}}{({a}\times10^{-10}\,\text{m})^3} = {N}\ \text{m}^{-3}
+helpVcEx3: With the values chosen:
+helpVcEx3Tex: kT = 8.617\times10^{-5}\times{T} = {kT}\,\text{eV},\quad \frac{N_\text{v}}{N} = e^{-{Q}/{kT}} = {frac},\quad N_\text{v} = {Nv}\ \text{m}^{-3}
+helpVcExResult: About one lattice point in ${one}$ is empty.
+
+
+## The 2D slice
+
+### Popover
+helpSliceTitle: The 2D slice
+helpSliceExplain: The 2D view shows one atomic layer of the same crystal, seen straight on, so the defects are easier to see than in the whole block. Choose which axis the slice is across and step through the layers in the bar at the top. An edge dislocation is clearest in a slice across its line.
+helpSliceNow: Slice across {axis}, layer {k} of {n}.
+helpSliceNowOff: Switch to 2D in the top bar to see one layer.
+
+
+## Dislocations (shared)
+helpDislApprox1: <b>Approximations.</b> Isotropic linear elasticity, with one Poisson's ratio ν the same in every direction (real crystals are anisotropic). The fields are those of a straight line in an endless crystal, so the free surfaces of the block and the forces they exert are left out.
+helpDislApprox2: The core, within about b to 4b of the line, is where the atoms are too displaced for elasticity. The formulas still move them there, so the atoms right beside the line are only roughly right.
+helpDislApprox3: Simple cubic (cubic P), with b = a⟨100⟩, the shortest lattice vector there. Real metals are mostly cubic I (b = a/2⟨111⟩) or cubic F (b = a/2⟨110⟩, which also split into partial dislocations); the ideas are the same.
+helpDislNotCP: (Dislocations are drawn in cubic P; the numbers use b = a of {lattice}.)
+helpDislExDefault: For b = a of the lattice on screen (no dislocation added yet).
+helpDislSymB: b
+helpDislSymBText: the length of the Burgers vector (a lattice vector: a in cubic P)
+helpDislSymXY: x,\ y
+helpDislSymTheta: \theta
+helpDislSymThetaText: the angle around the line, from the x direction
+helpDislSymNu: \nu
+helpDislSymNuText: Poisson's ratio (about 0.3 in metals)
+helpDislEnergy: E \approx \tfrac12\,G b^2\ \text{per unit length}
+
+
+## Edge dislocation
+
+### Popover
+helpEdgeExplain: An edge dislocation is the edge of an extra half-plane of atoms pushed into the crystal. Along that line the planes on the side of the half-plane are squeezed together and those on the other side are pulled apart. Its Burgers vector b is at right angles to the line and lies in the slip plane, on which the line can glide.
+helpEdgeDilatation: \Delta = -\frac{b}{2\pi}\,\frac{1-2\nu}{1-\nu}\,\frac{y}{x^2+y^2}
+helpEdgeDilatationTag: Volume change
+helpEdgeSymXYText: the position from the line: x along b, y up from the slip plane (towards the extra half-plane)
+helpEdgeSymDelta: \Delta
+helpEdgeSymDeltaText: the change of volume per volume (negative: squeezed)
+helpEdgeNow: <b>{name}</b>: b = {b} Å, at right angles to the line.
+helpEdgeNowNone: Add one with + Add → Line defects → Edge dislocation (cubic P).
+
+### SEE MORE: Derivation
+[diagram: an edge dislocation in a square layer]
+helpEdgeStep1: Cut the crystal halfway, open the cut and slide in an extra half-plane of atoms, then let it relax. The edge of the half-plane is the dislocation line.
+helpEdgeStep2: Far from the line every atom has its usual neighbours again; only near the line is the crystal distorted. The same distortion appears if the half above part of the slip plane slips by b over the half below: the line is the edge of the slipped area.
+helpEdgeStep3: Linear elasticity gives the displacement (x along b, y up from the slip plane). θ jumps by 2π across the slipped part, so the atoms there have slipped by exactly b:
+helpEdgeStep4: The change of volume is negative on the side of the extra half-plane (squeezed) and positive on the other (stretched), falling off as 1/r:
+helpEdgeStep5: The energy per length grows with b², so dislocations have the shortest b the lattice allows (G is the shear modulus):
+
+### SEE MORE: Your lattice
+helpEdgeEx1: The Burgers vector and Poisson's ratio:
+helpEdgeEx1Tex: b = {b}\,\text{Å},\qquad \nu = {nu}
+helpEdgeEx2: Straight above the line (θ = 90°), at r = 2b, the crystal is squeezed by:
+helpEdgeEx2Tex: |\Delta| = \frac{b}{2\pi r}\,\frac{1-2\nu}{1-\nu} = {d}\,\%\quad(r = {r}\,\text{Å})
+helpEdgeEx3: At r = 5b, only:
+helpEdgeEx4: The energy per length, in units of the shear modulus G:
+helpEdgeEx4Tex: E \approx \tfrac12\,G b^2 = \tfrac12 \times {b2}\,\text{Å}^2 \times G
+helpEdgeExResult: The distortion is strongest right at the line and dies away as 1/r. Coloured by strain, the squeezed atoms (blue) are on the side of the extra half-plane.
+
+
+## Screw dislocation
+
+### Popover
+helpScrewExplain: In a screw dislocation the atoms on one side of a cut have slipped by b along the line, compared with the other side. Going once around the line takes you up one lattice plane, so the planes join into a single spiral ramp. Its Burgers vector runs along the line, and there is no change of volume, only shear.
+helpScrewStrain: \gamma_{\theta z} = \frac{b}{2\pi r}
+helpScrewSymR: r
+helpScrewSymRText: the distance from the line
+helpScrewSymGamma: \gamma_{\theta z}
+helpScrewSymGammaText: the shear strain around the line
+helpScrewNow: <b>{name}</b>: the planes rise by b = {b} Å each time around the line.
+helpScrewNowNone: Add one with + Add → Line defects → Screw dislocation (cubic P).
+
+### SEE MORE: Derivation
+[diagram: the atoms around a screw dislocation shaded by how far they rose]
+helpScrewStep1: Cut the crystal halfway, then slide the two sides of the cut past each other by b, along the edge of the cut. That edge is the line of the screw dislocation.
+helpScrewStep2: Going around the line, the atoms rise steadily with the angle θ; after a whole turn they have risen by b, so each plane joins the next: a spiral ramp.
+helpScrewStep3: There is no stretch or squeeze, only shear, falling off as 1/r:
+helpScrewStep4: Because b is parallel to the line, a screw dislocation can glide on any plane that contains the line (cross-slip); an edge dislocation only on the one plane that holds both b and the line.
+
+### SEE MORE: Your lattice
+helpScrewEx1: The Burgers vector, and how far the ramp has risen after a quarter turn:
+helpScrewEx1Tex: b = {b}\,\text{Å},\qquad u_z(\theta = 90^\circ) = \frac{b}{4} = {q}\,\text{Å}
+helpScrewEx2: The shear strain at r = 2b from the line:
+helpScrewEx2Tex: \gamma = \frac{b}{2\pi r} = \frac{1}{4\pi} = {g}\,\%\quad(r = {r}\,\text{Å})
+helpScrewExResult: The shear is the same all the way around, so coloured by strain a screw dislocation hardly shows (its bonds tilt rather than stretch): colour the atoms by how far they moved instead.
+
+
+## Burgers circuit and vector
+
+### Popover
+helpBcTitle: Burgers circuit and vector
+helpBcExplain: A Burgers circuit is a walk from atom to atom with the same number of steps in each direction. In a perfect crystal it ends where it started; around a dislocation it does not, and the vector from the start S to the finish F is the Burgers vector b. It is the same all along the line, and its angle to the line says what kind of dislocation it is.
+helpBcFormulaKind: \mathbf b \perp \boldsymbol\xi:\ \text{edge},\qquad \mathbf b \parallel \boldsymbol\xi:\ \text{screw}
+helpBcSymSF: \overrightarrow{\text{SF}}
+helpBcSymSFText: from the start S of the circuit to its finish F
+helpBcSymXi: \boldsymbol\xi
+helpBcSymXiText: the direction of the dislocation line (the circuit goes around it anticlockwise when it points at you)
+helpBcNowNone: Add + Add → Line defects → Burgers circuit, then step through it.
+helpBcNowCloses: <b>{name}</b> closes: there is no dislocation inside it.
+helpBcNowFails: <b>{name}</b>: S → F = a[{b}].
+
+### SEE MORE: Derivation
+[diagram: the circuit around an edge dislocation, and the same circuit in a perfect crystal]
+helpBcStep1: Choose a direction ξ for the line and walk around it anticlockwise when ξ points at you (right-handed): n steps one way, n up, n back and n down, always from atom to atom.
+helpBcStep2: Take the same steps in a perfect crystal: the circuit closes.
+helpBcStep3: Around a dislocation the walk in the real crystal ends at F, one lattice vector from S. That gap is the Burgers vector (the SF/RH convention; Hull &amp; Bacon's FS/RH convention closes the circuit around the dislocation instead and finds the same b as the gap F → S in the perfect crystal):
+helpBcStep4: The angle between b and the line says which kind it is:
+helpBcStep5: Any circuit around the same dislocation gives the same b, however big; a circuit that does not go around it closes. Try moving the circuit off the line.
+helpBcStep6: b is always a lattice vector, because far from the line the crystal is perfect: a in cubic P, a/2⟨111⟩ in cubic I and a/2⟨110⟩ in cubic F, the shortest ones, since the energy grows with b².
+
+### SEE MORE: Your lattice
+helpBcExDefault: Add a Burgers circuit to see the numbers of your own.
+helpBcEx1: In cubic P the shortest lattice vector is a cell edge:
+helpBcEx1Tex: |\mathbf b| = a = {a}\,\text{Å}
+helpBcEx2: The circuit takes {n} steps each way, {total} in all.
+helpBcEx3: Where it ends:
+helpBcEx3Tex: \overrightarrow{\text{SF}} = a\,[{b}],\qquad |\mathbf b| = {len}\,\text{Å}
+helpBcEx4Edge: b is at right angles to the line: an edge dislocation.
+helpBcEx4Screw: b runs along the line: a screw dislocation.
+helpBcEx4None: It closes: the circuit does not go around a dislocation.
+helpBcExResult: Move the circuit or make it bigger: as long as it goes around the line once, the gap stays b.
+
+
+## Glide and slip
+
+### Popover
+helpGlideTitle: Glide and slip
+helpGlideExplain: A shear stress τ pushes a dislocation along its slip plane. As the line passes, each pair of atoms across the plane changes partner by one step, so only a few bonds are strained at a time. When the line has crossed the crystal, the top half has slipped by b and a step shows on each side.
+helpGlideFormula: \tau_\text{perfect} \approx \frac{G}{2\pi}\ \gg\ \tau_\text{real} \approx 10^{-5}\ \text{to}\ 10^{-3}\,G
+helpGlideFormulaTag: Why metals bend
+helpGlideSymTau: \tau
+helpGlideSymTauText: the shear stress on the slip plane
+helpGlideSymG: G
+helpGlideSymGText: the shear modulus of the crystal
+helpGlideNow: Press Glide through the crystal on the dislocation's card.
+
+### SEE MORE: Derivation
+[diagram: an edge dislocation before, during and after gliding through]
+helpGlideStep1: To slide one half of a perfect crystal over the other, every bond across the slip plane must give at once. That takes a shear stress of about G/2π (Frenkel's estimate).
+helpGlideStep2: Real crystals yield at stresses hundreds to thousands of times smaller:
+helpGlideStep3: The answer is dislocations: the line moves one atomic spacing at a time and only the bonds at the line are strained, so a small stress is enough (like moving a rug by pushing a ruck along it).
+helpGlideStep4: An edge dislocation glides in the one plane that holds b and the line; a screw dislocation can change plane (cross-slip). Either way, when the line leaves the crystal the two halves have slipped by exactly b.
+helpGlideStep5: Here the line enters the block, crosses it and leaves. At the surface the drawing jumps to a clean slip of b; in a real crystal the surface pulls the line out (the image force).
+
+### SEE MORE: Your lattice
+helpGlideEx1: The height of the slip step after one dislocation has passed:
+helpGlideEx1Tex: \text{step} = |\mathbf b| = {b}\,\text{Å}
+helpGlideEx2: A slip line you can see (about 1 µm high) is many dislocations on the same plane:
+helpGlideEx2Tex: \frac{1\,\mu\text{m}}{|\mathbf b|} \approx 10^{3}\ \text{to}\ 10^{4}\ \text{dislocations}
+helpGlideExResult: The slip lines on the polished surface of a bent metal are such steps, made by many dislocations gliding out on the same planes.
+
+
+## Pictures
+diagVacancy: Vacancy: the neighbours relax inward
+diagSubstitutional: A larger atom pushes its neighbours out
+diagSelf: Self-interstitial: neighbours pushed apart
+diagInterstitial: Small interstitial: neighbours move out a little
+diagFrenkel: Frenkel pair: the atom jumped into a hole
+diagHalfPlane: extra half-plane
+diagSlipPlane: slip plane
+diagEdgeCaption: Edge dislocation ⊥: squeezed above, stretched below
+diagScrewStep: the step
+diagScrewCaption: Along the line: darker = risen further, b per turn
+diagBurgersReal: Around the dislocation
+diagBurgersPerfect: Perfect crystal
+diagBurgersCaption: The same steps close in a perfect crystal but not around a dislocation
+diagGlide1: before
+diagGlide2: gliding
+diagGlide3: after: slipped by b
+diagGlideCaption: An edge dislocation glides through and leaves a step of b

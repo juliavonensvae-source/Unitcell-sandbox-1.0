@@ -1,0 +1,124 @@
+# Help topics: ionic structures
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Ionic structures: lattice + basis
+
+### Popover
+helpIonicTitle: Ionic structures: lattice + basis
+helpIonicScope: Rock salt, CsCl, zinc blende, fluorite
+helpIonicExplain: A crystal structure is a Bravais lattice with the same group of atoms, the <b>basis</b>, at every lattice point. In an ionic crystal the basis holds the ions of one formula unit, so rock salt is cubic F with the basis Cl⁻ + Na⁺, not a lattice of its own. The ions per cell, the formula units Z and the coordination numbers all follow from the lattice and the basis.
+helpIonicFormula2: N_X = N_\text{lattice}\times n_X,\qquad Z = \frac{N_X}{\text{(number of }X\text{ in the formula)}}
+helpIonicFormula3Tag: Radius-ratio rule
+helpIonicFormula3: \frac{r_+}{r_-} \ge 0.732 \Rightarrow 8,\quad \ge 0.414 \Rightarrow 6,\quad \ge 0.225 \Rightarrow 4
+helpIonicSym1: n_X
+helpIonicSym1Text: number of ions X in the basis
+helpIonicSym2: N_\text{lattice}
+helpIonicSym2Text: lattice points per cell
+helpIonicNow: {formula}: {name} + {basis} → {ions} per cell, Z = {z}.
+
+### SEE MORE: Derivation
+helpIonicStep1: A Bravais lattice is a set of translations: shifting the crystal by one of them maps it onto itself. In a crystal of two kinds of ions, a shift that takes a cation onto an anion is not one of them.
+helpIonicStep2: So the lattice is found from one kind of ion alone, and everything else is the basis: the ions you place at every lattice point, given in fractions of a, b, c.
+helpIonicStep2Tex: \mathbf r = \mathbf T + \mathbf r_j,\qquad \mathbf T = n_1\mathbf a + n_2\mathbf b + n_3\mathbf c
+helpIonicStep3: Each lattice point carries one copy of the basis, so the ions of kind X per cell are:
+helpIonicStep3Tex: N_X = N_\text{lattice}\times n_X
+helpIonicStep4: Counted in the drawn cell with shares, the same numbers come out. Rock salt (Na⁺ on the edges and in the centre, Cl⁻ on corners and faces):
+helpIonicStep4Tex: N_{\mathrm{Na^+}} = 12\cdot\tfrac14 + 1 = 4,\qquad N_{\mathrm{Cl^-}} = 8\cdot\tfrac18 + 6\cdot\tfrac12 = 4
+helpIonicStep5: The basis is one formula unit (or a few), so the formula units per cell are:
+helpIonicStep5Tex: Z_\mathrm{NaCl} = 4,\quad Z_\mathrm{CsCl} = 1,\quad Z_\mathrm{ZnS} = 4,\quad Z_{\mathrm{CaF_2}} = 4
+helpIonicStep6: The coordination number is how many ions of the other kind are nearest. A cation stays in contact with all its anions only if it is big enough for the hole they make; the critical ratios are those of the interstitial sites:
+helpIonicStep6Tex: \text{cube } 0.732,\qquad \text{octahedron } 0.414,\qquad \text{tetrahedron } 0.225
+helpIonicStep7: So r₊/r₋ predicts the structure: CsCl (0.96) CN 8, NaCl (0.56) CN 6, ZnS (0.33) CN 4. The rule is a guide only: real ions are not hard spheres, and partly covalent bonds (as in ZnS) bend it.
+
+### SEE MORE: Your lattice (worked example)
+helpIonicExTitle: {formula} ({name})
+helpIonicExIntro: For the ionic structure whose “?” you pressed:
+helpIonicExIntroElse: For rock salt (add another structure to see its numbers here):
+helpIonicExResult: {formula}: {ions} per cell, Z = {z}, CN {cn}.
+helpIonicEx1: Lattice and basis:
+helpIonicEx2: Ions per cell:
+helpIonicEx3: Formula units and coordination:
+
+# One topic per structure (NaCl, CsCl, ZnS, CaF₂)
+# The same template is used for all four; the parts that differ are listed per structure further down.
+
+## Shared by the four structure topics
+### Popover
+helpIonicTopicScope: {lattice} + {count}-ion basis
+helpIonicTouching: Ions touching
+helpIonicZTex: Z = {z}\ \mathrm{{formula}}\ \text{per cell},\qquad \text{CN} = {cn}
+helpIonicInsideTex: \ \text{inside}
+helpIonicSym3: N_X
+helpIonicSym3Text: number of ions X that belong to one cell (corner ⅛, edge ¼, face ½, inside 1)
+helpIonicSym4: Z
+helpIonicSym4Text: formula units per cell
+helpIonicSym5: \text{CN}
+helpIonicSym5Text: coordination number: nearest neighbours of the other kind
+helpIonicSym6: r_+,\ r_-
+helpIonicSym6Text: ionic radii of the cation and the anion
+helpIonicSym7: a
+helpIonicSym7Text: lattice parameter (cell edge)
+helpIonicTopicNowShown: With a = {a} Å on screen: {cation}–{anion} = {d} Å.
+helpIonicTopicNow: With the real a = {a} Å: {cation}–{anion} = {d} Å. Add it with + Add → Ionic structures, or type Ionic({id}).
+
+### SEE MORE: Derivation
+helpIonicTopicStep1: Start with the Bravais lattice. {lattice} has {n} lattice points per cell.
+helpIonicTopicStep1One: Start with the Bravais lattice. {lattice} has {n} lattice point per cell.
+helpIonicTopicStep1Tex: N_\text{lattice} = {n}
+helpIonicTopicStep2: Put the same basis on every lattice point: {basis} from it. So every kind of ion appears once per lattice point for each time it is in the basis:
+helpIonicIonAt: {ion} at ${pos}$
+helpIonicTopicStep2Tex: N_X = N_\text{lattice}\times(\text{number of }X\text{ in the basis})
+helpIonicTopicStep3: Counting the ions in the drawn cell with shares (corner ⅛, edge ¼, face ½, inside 1) gives the same numbers; turn on “Cut spheres at cell boundary” to see the pieces:
+helpIonicTopicStep4: One formula unit is the basis itself, so there are as many formula units as lattice points:
+helpIonicTopicStep4Tex: Z = {z}
+helpIonicTopicStep5: Nearest neighbours: the {cation} and {anion} ions are {along} apart, and each ion has {neighbours}.
+helpIonicSameCN: {cn} of the other kind around it
+helpIonicTwoCN: {cation}: {cn}, {anion}: {cn2} neighbours of the other kind
+helpIonicTopicStep5Tex: d = {d},\qquad \text{CN} = {cn}
+helpIonicTopicStep6: If the ions touch, the cell size follows from the radii:
+helpIonicTopicStep7: Radius-ratio rule: a cation fills a hole of {cn} anions when r₊/r₋ is at least the critical ratio of that hole (0.732 cube, 0.414 octahedron, 0.225 tetrahedron).
+helpIonicTopicStep7Tex: \frac{r_+}{r_-} = \frac{{rPlus}}{{rMinus}} = {ratio}\ \Rightarrow\ \text{CN } {cn}
+# The last step is the structure’s own point, below (helpIonicPoint…).
+
+### SEE MORE: Your lattice (worked example)
+helpIonicTopicExTitleShown: {formula} on screen, a = {a} Å
+helpIonicTopicExTitle: {formula}, a = {a} Å
+helpIonicTopicExIntroOther: {lattice} is on screen, so this example uses the real lattice parameter of {formula}.
+helpIonicTopicEx1: Distance between neighbouring {cation} and {anion}:
+helpIonicTopicEx1Tex: d = {dTex} = {d}\,\text{Å}
+helpIonicTopicEx2: Sum of the ionic radii, to compare:
+helpIonicTopicEx2Tex: r_+ + r_- = {rPlus} + {rMinus} = {sum}\,\text{Å}
+helpIonicTopicEx3: Mass of one formula unit and volume of the cell:
+helpIonicTopicEx3Tex: M = {mass}\,\text{g/mol},\qquad V = a^3 = {volume}\,\text{Å}^3
+helpIonicTopicEx4: Density from {z} formula units per cell (1 Å³ = 10⁻²⁴ cm³):
+helpIonicTopicEx4One: Density from {z} formula unit per cell (1 Å³ = 10⁻²⁴ cm³):
+helpIonicTopicEx4Tex: \rho = \frac{Z\,M}{N_A\,V} = \frac{{z}\times{mass}}{6.022\times10^{23}\times{volume}\times10^{-24}} = {rho}\,\text{g/cm}^3
+helpIonicTopicExResult: ρ ≈ {rho} g/cm³; the measured density of {formula} is about {measured} g/cm³.
+
+## What each structure looks like: nearest-neighbour distance, the line it lies along, and the touching condition
+helpIonicDTexNaCl: \tfrac12\,a
+helpIonicAlongNaCl: half a cell edge
+helpIonicTouchNaCl: a = 2\,(r_+ + r_-)
+helpIonicDTexCsCl: \tfrac{\sqrt3}{2}\,a
+helpIonicAlongCsCl: half a body diagonal
+helpIonicTouchCsCl: \sqrt3\,a = 2\,(r_+ + r_-)
+# ZnS and CaF₂ share these three:
+helpIonicDTexQuarter: \tfrac{\sqrt3}{4}\,a
+helpIonicAlongQuarter: a quarter of a body diagonal
+helpIonicTouchQuarter: \tfrac{\sqrt3}{4}\,a = r_+ + r_-
+
+## NaCl (rock salt)
+helpIonicExplainNaCl: Rock salt is <b>cubic F with a basis of two ions</b>: Cl⁻ at (0, 0, 0) and Na⁺ at (½, ½, ½). The Cl⁻ ions form a face-centred cubic array and the Na⁺ ions fill every octahedral hole in it, so each ion has 6 neighbours of the other kind. It is not a simple cubic lattice: neighbouring positions hold different ions.
+helpIonicPointNaCl: All 8 ions of a small cube of edge a/2 look like simple cubic, but next-door ions are different. The translations that map the whole crystal onto itself are those of cubic F, so the lattice is cubic F and the second ion belongs to the basis.
+
+## CsCl (caesium chloride)
+helpIonicExplainCsCl: CsCl is <b>cubic P with a basis of two ions</b>: Cl⁻ at the corner (0, 0, 0) and Cs⁺ at the body centre (½, ½, ½). It looks like body-centred cubic, but it is not: the corner and the centre hold different ions, so (½, ½, ½) is not a lattice translation. Each ion has 8 neighbours of the other kind.
+helpIonicPointCsCl: A common mistake is to call CsCl body-centred cubic. Shifting the crystal by (½, ½, ½) moves Cl⁻ onto Cs⁺, so that shift is not a lattice translation. Only whole cell edges are: the lattice is cubic P, with 1 lattice point and 1 formula unit per cell.
+
+## ZnS (zinc blende)
+helpIonicExplainZnS: Zinc blende is <b>cubic F with a basis of two ions</b>: S²⁻ at (0, 0, 0) and Zn²⁺ at (¼, ¼, ¼). The S²⁻ ions form a face-centred cubic array and Zn²⁺ fills half of its tetrahedral holes, so each ion has 4 neighbours of the other kind. With all atoms the same it would be the diamond structure.
+helpIonicPointZnS: Cubic F has 8 tetrahedral holes per cell; Zn²⁺ takes the 4 at (¼, ¼, ¼) + the centring vectors and leaves the 4 at (¾, ¾, ¾)-type positions empty. Replace both ions by C or Si and you get diamond.
+
+## CaF₂ (fluorite)
+helpIonicExplainCaF2: Fluorite is <b>cubic F with a basis of three ions</b>: Ca²⁺ at (0, 0, 0) and F⁻ at (¼, ¼, ¼) and (¾, ¾, ¾). The Ca²⁺ ions form a face-centred cubic array and F⁻ fills every tetrahedral hole, so there are twice as many F⁻ as Ca²⁺. Each Ca²⁺ has 8 F⁻ around it and each F⁻ has 4 Ca²⁺.
+helpIonicPointCaF2: The coordination numbers follow the formula: each Ca²⁺ has 8 F⁻ and each F⁻ has 4 Ca²⁺, and 8 : 4 = 2 : 1, as in CaF₂. Seen from the F⁻ ions, they form a simple cubic array with a Ca²⁺ in every second cube centre.

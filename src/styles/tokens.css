@@ -1,0 +1,131 @@
+/* Design tokens: the whole look is set here (clean, brutalist).
+   Corners var(--radius) or 0 (circles only for atoms and points); solid
+   borders, no shadows, glows or gradients; one accent (--primary); Inter for
+   the interface, JetBrains Mono for numbers; short transitions, no bounce.
+   Dark mode only redefines colours. index.html sets data-theme before paint. */
+:root {
+  --font-ui: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-display: var(--font-ui);
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-math: "Cambria Math", Cambria, "Times New Roman", serif;
+
+  --radius: 2px;
+  --border-w: 1px;
+  --border-w-strong: 2px;
+
+  /* paper, ink and greys */
+  --bg: #EDEDE9;
+  --surface: #FFFFFF;
+  --surface-2: #F4F4F1;
+  --surface-3: #E6E6E2;
+  --ink: #0B0B0C;
+  --ink-2: #26262A;
+  --muted: #55555C;
+  --faint: #85858C;
+  --line: #CFCFCA;
+  --line-strong: #0B0B0C;
+  --stage: #FAFAF8;
+
+  /* the one accent */
+  --primary: #1F3BFF;
+  --primary-hover: #0025E0;
+  --primary-ink: #FFFFFF;
+  --primary-soft: #E5E9FF;
+  --primary-text: #1A33D9;
+
+  --lattice-point: var(--primary);
+  --cell-line: #0B0B0C;
+  --thumb-edge: var(--ink-2);
+  --thumb-corner: var(--ink-2);
+  --thumb-centre: var(--primary);
+  /* One colour per axis, used everywhere: 3D arrows, gizmo, toolbar, labels */
+  --axis-a: #E5484D;
+  --axis-b: #23A26D;
+  --axis-c: #3F73F0;
+  --axis-a3: #D98200;
+  --axis-angle: #8B5CF6;
+  /* Interstitial sites: one colour per kind of hole */
+  --site-oct: #EA7A00;
+  --site-tet: #D6409F;
+  --site-cub: #0E9F9A;
+  /* Defects: how far an atom moved (one hue, pale to deep) and bond strain (squeezed blue ← grey → red stretched) */
+  --moved-low: #F1C3A8;
+  --moved-mid: #EB6834;
+  --moved-high: #8C2E0B;
+  --squeeze: #1C5CAB;
+  --strain-mid: #BDBCB6;
+  --stretch: #C23B3A;
+
+  --good: #0F8A5C;
+  --good-soft: #DDF3E8;
+  --bad: #D12C22;
+  --bad-soft: #FCE6E3;
+  --warn: #8A5200;
+  --warn-soft: #FFF0D1;
+  /* help: 3D highlights and the "now" box */
+  --highlight: #E8890C;
+  --highlight-soft: #FFF1DC;
+
+  --label-bg: var(--surface);
+  --toast-bg: var(--ink);
+  --toast-ink: #FFFFFF;
+  --ring: 0 0 0 2px var(--primary);
+
+  --ease-out: ease-out;
+  --t-fast: 0.12s;
+  --t-slide: 0.18s;
+  --panel-w: 344px;
+  --drawer-w: min(360px, calc(100vw - 24px));
+  --help-w: clamp(330px, 34vw, 450px);
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0C0C0E;
+  --surface: #151517;
+  --surface-2: #1C1C1F;
+  --surface-3: #27272B;
+  --ink: #F1F1EE;
+  --ink-2: #D2D2D6;
+  --muted: #9C9CA4;
+  --faint: #6D6D75;
+  --line: #34343A;
+  --line-strong: #CFCFD4;
+  --stage: #101012;
+
+  --primary: #7088FF;
+  --primary-hover: #8DA0FF;
+  --primary-ink: #0B0B0C;
+  --primary-soft: #1B2250;
+  --primary-text: #A3B2FF;
+
+  --cell-line: #D9D9DE;
+  --axis-a: #FF6B6F;
+  --axis-b: #3DD39A;
+  --axis-c: #6E98FF;
+  --axis-a3: #FFB547;
+  --axis-angle: #B59BFF;
+  --site-oct: #FFA24A;
+  --site-tet: #F472C0;
+  --site-cub: #2DD4BF;
+  --moved-low: #5C3524;
+  --moved-mid: #D95926;
+  --moved-high: #FFB08A;
+  --squeeze: #3987E5;
+  --strain-mid: #4A4A46;
+  --stretch: #E66767;
+
+  --good: #43D29C;
+  --good-soft: #12302A;
+  --bad: #FF7B71;
+  --bad-soft: #3A1D22;
+  --warn: #FFC24D;
+  --warn-soft: #3A2E12;
+  --highlight: #FFB547;
+  --highlight-soft: #3A2E12;
+
+  --toast-ink: #0B0B0C;
+
+  color-scheme: dark;
+}

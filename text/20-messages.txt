@@ -1,0 +1,142 @@
+# Messages: toasts, input-bar results and errors
+
+## Mode page
+msgModeLocked: <b>{mode}</b> is still locked — it unlocks in a later update.
+
+## Toasts in the explorer
+msgAdded: Added <b>{label}</b>
+msgRemoved: Removed <b>{label}</b>
+msgRemovedOne: Removed {count} object
+msgRemovedMany: Removed {count} objects
+msgRenamed: Renamed <b>{old}</b> to <b>{next}</b>
+msgLattice: <b>{name}</b> · {longName}
+msgLattice2DPrimitive: <b>{name}</b> · 2D primitive lattice
+msgLattice2DCentred: <b>{name}</b> · 2D centred lattice
+msgHexSetting: Hexagonal axes: the same lattice in a cell 3× larger
+msgRhombSetting: Rhombohedral axes: the primitive cell
+msgPrism: <b>Hexagonal prism</b> · 3 primitive cells, axes a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub> and c
+msgPrimitiveCell: <b>Primitive cell</b> · the rhombus-based unit cell
+msgAdvancedOn: <b>Advanced mode</b> · lattice parameters, four-index input, λ, projection and more
+msgAdvancedOff: <b>Basic mode</b> · just the essentials
+msg3DView: <b>3D view</b> · the 14 Bravais lattices
+msg2DView: <b>2D view</b> · the five 2D Bravais lattices
+msgSourceHidden: {name} is hidden so this view is easy to see. Click its eye to show it again.
+
+## Input bar results
+msgCreated: Created <b>{label}</b>
+msgChanged: Changed <b>{label}</b>
+msgHereIs: Here is <b>{label}</b>
+
+## Input bar errors
+msgTypeSomething: Type something first, for example d1 = [1 1 0].
+msgNameBeforeEq: Put a name before the “=”, for example d1 = [1 1 0].
+msgWhatShould: What should {name} be? For example {name} = [1 1 0] or {name} = (1 1 1).
+msgBrackets: The brackets don’t match up. Check that every “(” and “[” is closed.
+msgBracketMissing: A bracket is missing: directions use [ ] and planes (or 2D lines) use ( ), for example [1 1 0] or (1 1 1).
+msgCantRead: I couldn’t read that. Try d1 = [1 1 0], p1 = (1 1 1), Angle(d1, p1) or Spacing(p1) — the list button next to the input bar shows every command.
+msgMissingInUse: {name} doesn't exist yet. Names in use: {names}.
+msgMissingCreate3D: {name} doesn't exist yet. Create it first, for example {name} = (1 1 1).
+msgMissingCreate2D: {name} doesn't exist yet. Create it first, for example {name} = [1 2].
+msgUnknownCommand: I don't know the command “{name}”.
+msgUnknownCommandTry: I don't know the command “{name}”. Try {examples}… (the list button shows them all).
+msgWorksIn3D: {name} works in the 3D view. Switch to 3D first.
+msgWorksIn2D: {name} works in the 2D view. Switch to 2D first.
+msgTakesNothing: {name} takes nothing between the brackets: {usage}.
+msgTakesRange: {name} takes {fewest} to {most} values separated by commas, for example {usage}.
+msgTakesUpTo: {name} takes up to {most} values separated by commas, for example {usage}.
+msgNeedsValue: {name} needs {count} value, for example {usage}.
+msgNeedsValues: {name} needs {count} values separated by a comma, for example {usage}.
+msgNeedsName: {name} needs {count} name, for example {usage}.
+msgNeedsNames: {name} needs {count} names separated by a comma, for example {usage}.
+msgAlready: {name} is already {what}. Pick another name.
+msgAlreadyNot: {name} is already {what}, not {word}. Pick another name.
+msgWorkedOut: {name} is worked out from other objects, so its indices can't be typed. Pick another name.
+msgNeedsKind: {name} is {what}. {command} needs {needed}, e.g. {command}({example}).
+msgInvalidIndices: {name} has invalid indices: {error}
+
+## Names
+msgNameEmpty: Give it a name, for example d1.
+msgNameLong: Keep names short: {max} characters at most.
+msgNameNumber: A name can't start with a number. Try “d{name}” or “x{name}”.
+msgNameChars: Names can only use letters, numbers and _ (no spaces, dashes or other symbols).
+msgNameReserved: “{name}” is reserved for the {axis} axis. Pick another name, for example d1.
+msgNameCommand: “{name}” is the name of a command. Pick another name.
+msgNameTaken: “{name}” is already used by another object. Names must be unique.
+
+## Typed numbers (radius, wavelength …)
+numFieldLabel: {label} in {unit}
+numTheValue: The value
+numTypeNumber: Type a number, e.g. 0.5 {unit}.
+numNotNumber: “{text}” is not a number.
+numNegative: {what} can't be negative.
+numZero: {what} must be bigger than 0.
+numTooBig: {what} can be at most {max} {unit}.
+numKept: {error} Kept {last} {unit}.
+
+## + Add menu
+msgTwoPoints: Give two different points, e.g. from (0, 0) to (1, 2).
+
+## Typed indices
+msgIdxEmpty: Type some indices first, for example 1 1 0.
+msgIdxWhole: Use whole numbers only, separated by spaces, e.g. 1 -1 0.
+msgIdxNonZero: At least one index must be non-zero.
+msgIdxDir: Enter three indices, e.g. 1 1 0.
+msgIdxDirFourAllowed: Enter three indices [u v w] or four [u v t w].
+msgIdxDirFour: In [u v t w] the third index must be t = −(u + v). Here u = {u} and v = {v}, so t should be {t}: try [{fixed}].
+msgIdxPlane: Enter three indices, e.g. 1 1 1.
+msgIdxPlaneFourAllowed: Enter three indices (h k l) or four (h k i l).
+msgIdxPlaneFour: In (h k i l) the third index must be i = −(h + k). Here h = {h} and k = {k}, so i should be {i}: try ({fixed}).
+msgIdxFourBasic: Four-index (Miller–Bravais) input is available in Advanced mode. In Basic mode type three indices, e.g. {example} — both notations are shown for you.
+msgIdxFourNotHex: Four indices are only used for hexagonal lattices. Type three indices here, e.g. {example}.
+msgIdx2DType: Type two whole numbers, e.g. {example}.
+msgIdx2DWhole: Use whole numbers only, e.g. {example}.
+msgIdx2DDirTwo: In 2D a direction has two indices, e.g. {example}.
+msgIdx2DLineTwo: In 2D a line has two indices, e.g. {example}.
+msgNotAPoint: “{text}” isn’t a point. Write it as (x, y) in units of a and b, e.g. (1, 2) or (0.5, 0).
+
+## Lattice parameters
+msgParamLength: {name} must be a positive length in Å.
+msgParamAngle: {name} must lie between 0° and 180°.
+msgAnglesClose: These angles cannot close a cell: each must be smaller than the sum of the other two, and all three must add up to less than 360°.
+msgZeroVolume: These angles give a cell with zero volume.
+
+## Directions and intersections
+msgChooseTwoPlanes: Choose two planes.
+msgPlaneInvalid: {name} has invalid indices.
+msgPlanesParallel: These planes are parallel, so they don’t meet.
+msgIntersectionNeeds: Intersection needs two planes with valid indices, e.g. Intersection(p1, p2).
+msgIntersectionNotPlane: {name} is {what}. Intersection needs two planes, e.g. Intersection(p1, p2).
+msgPickTwoPlanes: Pick two different planes.
+msgPickTwoPlanesEg: Pick two different planes, e.g. Intersection({name}, …).
+msgParallelNames: {a} and {b} are parallel, so they don’t meet.
+msgCreatedMeet: Created <b>{label}</b>, where {a} and {b} meet
+
+## Planes and families
+msgFamilyNotPlane: {name} isn’t a plane. Family needs a plane, e.g. Family(p1).
+msgFamilyNotLine: {name} isn’t a line. Family needs a line, e.g. Family(l1).
+msgFamilyCreatedPlanes: Created <b>{label}</b> with all parallel planes
+msgFamilyCreatedLines: Created <b>{label}</b> with all parallel lines
+msgFamilyShowsPlanes: <b>{label}</b> now shows all parallel planes
+msgFamilyShowsLines: <b>{label}</b> now shows all parallel lines
+msgFamilyNeedsPlane: Family needs a plane with valid indices.
+msgFamilyNeedsLine: Family needs a line with valid indices.
+
+## Angles and calculations
+msgAngleNotDirOrPlane: {name} isn’t a direction or a plane. Angle works with directions and planes, e.g. Angle(d1, p1).
+msgPickTwoObjects: Pick two different objects, e.g. Angle({name}, …).
+msgCreatedSummary: Created <b>{label}</b>: {summary}
+msgChangedSummary: Changed <b>{label}</b>: {summary}
+msgAdvancedCalc: {title} is an Advanced calculation. Turn on Advanced first.
+msgAlreadyCalc: {name} is already a {title}
+
+## Interstitial sites and atom fit
+msgSitesChoose: {notAvailable} Choose one of them in the lattice picker first.
+msgSitesAlready: {name} already shows the interstitial sites
+msgFitNoKind: {lattice} has no {kind} sites. Its sites are: {names}.
+msgFitCantRead: I couldn’t read “{arg}”. Give the site ({names}) and the radius in Å, for example Fit({last}, 0.3), Fit({first}, 0.4R) or Fit({first}, max).
+msgFitRadiusRange: Pick a radius between 0 and {max} Å (the radius R of the lattice spheres), for example Fit({kind}, {example}).
+
+## Ionic structures
+msgIonClicked: <b>{ion}</b> at {pos} · {cn} {other} around it at {d} Å
+msgIonicUnknown: I don't know the structure “{name}”. Try {names}.
+msgIonicUnknownEg: I don't know the structure “{name}”. Try {names}, e.g. Ionic(NaCl).

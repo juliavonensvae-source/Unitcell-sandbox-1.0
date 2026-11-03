@@ -1,0 +1,34 @@
+# Every object card in the panel
+cardSettings: Settings
+cardSettingsFor: Settings for {name}
+colourOf: Colour of {name}
+cardName: Name
+cardNameHint: Letters, numbers and _.
+cardNameHintPlane: Letters, numbers and _. Use it in the input bar, e.g. Angle(d1, {name}).
+cardNameHintDirection: Letters, numbers and _. Use it in the input bar, e.g. Angle({name}, p1).
+cardDefinition: Definition
+cardEdit: Edit
+cardEditTitle: Put the definition in the input bar to change it
+
+## Appearance dropdown
+appearanceColour: colour and transparency
+appearanceColours: colours and transparency
+appearanceTransparent: {percent}% transparent
+swatchLabel: Colour {hex}
+swatchAutoTitle: Automatic: follows light / dark mode
+swatchAutoLabel: Automatic colour
+
+## Indices field (directions, planes, 2D directions and lines)
+indexHint: Three whole numbers, e.g. {example} or 1 -1 0.
+indexHintHex: Three indices {open}{first} {second} {last}{close}, or four {open}{first} {second} {extra} {last}{close} with {extra} = −({first} + {second}).
+indexHintHexBasic: Three indices, e.g. 1 0 0. Four-index typing is in Advanced mode.
+indexThree: Three-index
+indexFour: Four-index (Miller–Bravais)
+
+## Picking a plane or direction (Spacing, Intercepts, Components, Angle …)
+chooseAPlane: Choose a plane…
+chooseADirection: Choose a direction…
+linkedAddPlaneFirst: Add a plane first, or type one in the input bar, e.g. p1 = (1 1 1).
+linkedAddDirectionFirst: Add a direction first, or type one in the input bar, e.g. d1 = [1 1 0].
+linkedQuickPlane: Add (111)
+linkedQuickDirection: Add [110]

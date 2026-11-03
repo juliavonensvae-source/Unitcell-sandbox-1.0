@@ -1,0 +1,58 @@
+# Plane (hkl) card
+planeTitle: Plane
+planeMenu: Plane (hkl)
+planeCountOne: {count} lattice plane · {spacing}
+planeCountMany: {count} lattice planes · {spacing}
+planeFamily: Show all parallel planes
+planeFamilyHint: Every plane of this set that holds lattice points, through the displayed cell
+planeFamilyHintPrism: Every plane of this set that holds lattice points. In a field of prisms they are drawn through the column of the highlighted prism.
+planeEquivalent: Show equivalent planes {hkl}
+planeEquivalentHint: The planes that the symmetry of this lattice makes the same as this one, drawn in the highlighted cell
+planeEqOne: {count} plane set in {family}: {list}
+planeEqMany: {count} plane sets in {family}: {list}
+planeDFormula: Interplanar distance (formula)
+planeWithPoints: Planes with lattice points
+planeWithPointsValue: {planes} planes, <b>{d} Å</b> apart
+planeFamilyNoteExtra: In the 3D view the planes from the formula are solid; the extra planes in between are lighter, with dashed edges.
+planeFamilyNoteEmpty: In the 3D view the empty formula planes (no lattice points) are drawn as dashed outlines only.
+planeLookNormal: Look along the normal
+cmdHelpFamily: Show all parallel planes (2D: lines) of a set
+
+## Spacing formulas (also in the Interplanar distance card)
+dFormulaGeneral: \frac{1}{{d}^2} = \mathbf h^\mathsf T G^*\,\mathbf h = {q}\,\text{Å}^{-2}\ \Rightarrow\ {d} = \mathbf{{value}}\,\text{Å}
+dFormulaCubic: {d} = \frac{a}{\sqrt{h^2 + k^2 + l^2}} = \frac{{aValue}}{\sqrt{{sum}}}
+spacingSummaryBoth: {d} = {value} Å · planes with points {lattice} Å apart
+
+## Why the planes with points are closer together (centred lattices)
+spacingCentringOne: The centring point at {points} lies between the {planes} planes (at <i>h·x</i> = {levels}),
+spacingCentringMany: The centring points at {points} lie between the {planes} planes (at <i>h·x</i> = {levels}),
+spacingExtraOne: so there is 1 extra plane of lattice points between each pair.
+spacingExtraMany: so there are {count} extra planes of lattice points between each pair.
+spacingHoldDivided: The planes that hold lattice points are the {planes} planes: {d}/{q} = {result}.
+spacingAbsence: This is also why the {planes} X-ray reflection is missing (a systematic absence).
+spacingFactor: These indices share a factor {p}: only every {nth} {planes} plane contains lattice points (the others are empty).
+spacingFactorPlanes: The planes with points are the {planes} planes: {p} × {d} = {result} ({d} = {value} Å).
+spacingHoldRatio: The planes that hold lattice points are the {planes} planes, {p}/{q} × {d} apart: {result}.
+ordinal2: second
+ordinal3: third
+ordinal4: fourth
+ordinal5: fifth
+ordinal6: sixth
+ordinalN: {n}th
+
+# Interplanar distance d (dimension line) card
+spacingTitle: Interplanar distance
+spacingMenu: Interplanar distance d (dimension line)
+spacingPicker: Distance between the planes of
+summaryChoosePlane: Choose a plane
+spacingSummary: planes with points: {eq} = {lattice} Å · formula {d} = {formula} Å
+spacingFromFormula: {d} from the formula
+spacingHold: Planes that hold lattice points
+spacingEveryOne: every one of them
+spacingPlanesOf: {planes} planes
+spacingBetween: Distance between those planes
+spacingWhy3D: {why} In the 3D view the solid-edged label is the spacing of the planes with points; the dashed-edged label is {d} from the formula.
+spacingFocus: Highlight two neighbouring planes and fade the rest
+spacingEdgeOn: View edge-on, along {direction}
+spacingLabelFormula: {d} = {value} Å (formula)
+cmdHelpSpacing: Measure the distance between neighbouring planes

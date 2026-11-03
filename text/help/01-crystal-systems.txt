@@ -1,0 +1,148 @@
+# Help topics: crystal systems and Bravais lattices
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## The 7 crystal systems
+
+### Popover
+helpCrystalSystemsTitle: The 7 crystal systems
+helpCrystalSystemsExplain: A crystal system tells you the shape of the unit cell: which edge lengths are equal and which angles are 90° or 120°. The shape comes from the rotation symmetry of the lattice, and there are exactly seven possibilities, from cubic (most symmetric) to triclinic (no rules at all).
+helpCrystalSystemsFormula1Tag: Your lattice: {label}
+helpCrystalSystemsNow: {label}: {sYSTEMBLURBS}
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpCrystalSystemsStep1: A lattice is fixed by six numbers: three edge lengths and three angles.
+helpCrystalSystemsStep1Tex: a,\ b,\ c,\qquad \alpha = \angle(\mathbf b,\mathbf c),\quad \beta = \angle(\mathbf a,\mathbf c),\quad \gamma = \angle(\mathbf a,\mathbf b)
+helpCrystalSystemsStep2: A rotation that maps the lattice onto itself turns a lattice vector $\mathbf t$ into another lattice vector. Rotating $\mathbf t$ by $+\varphi$ and by $-\varphi$ and adding the results gives a vector along $\mathbf t$, which must again be a whole multiple of $\mathbf t$.
+helpCrystalSystemsStep2Tex: R_{+\varphi}\,\mathbf t + R_{-\varphi}\,\mathbf t = 2\cos\varphi\;\mathbf t = m\,\mathbf t,\qquad m \in \mathbb Z
+helpCrystalSystemsStep3: So $2\cos\varphi$ can only be −2, −1, 0, 1 or 2. A lattice can only have 1-, 2-, 3-, 4- and 6-fold rotation axes: no 5-fold or 7-fold ones.
+helpCrystalSystemsStep3Tex: 2\cos\varphi \in \{-2,-1,0,1,2\}\ \Rightarrow\ \varphi = 180^\circ,\ 120^\circ,\ 90^\circ,\ 60^\circ,\ 360^\circ
+helpCrystalSystemsStep4: Each system is defined by the rotation axes it must have, and every axis forces some lengths or angles to be equal:
+helpCrystalSystemsStep4Tex: \small\begin{array}{lll} \text{triclinic} & \text{no axis needed} & \text{no rules}\\ \text{monoclinic} & \text{one 2-fold} \parallel \mathbf b & \alpha=\gamma=90^\circ\\ \text{orthorhombic} & \text{three 2-fold} & \alpha=\beta=\gamma=90^\circ\\ \text{tetragonal} & \text{one 4-fold} \parallel \mathbf c & a=b,\ \text{all }90^\circ\\ \text{rhombohedral} & \text{one 3-fold} & a=b=c,\ \alpha=\beta=\gamma\\ \text{hexagonal} & \text{one 6-fold} \parallel \mathbf c & a=b,\ \gamma=120^\circ\\ \text{cubic} & \text{four 3-fold} & a=b=c,\ \text{all }90^\circ \end{array}
+helpCrystalSystemsStep5: The four 3-fold axes of the cubic system lie along the body diagonals: turning the cube by 120° about a body diagonal swaps a → b → c, so the three edges must be equal.
+helpCrystalSystemsStep6: Strictly speaking these seven are the <b>lattice systems</b>. Books that count <b>crystal systems</b> use “trigonal” (any 3-fold axis) instead of “rhombohedral”; a trigonal crystal can have a rhombohedral or a hexagonal lattice.
+helpCrystalSystemsStep7: For a bare lattice the cell shape decides the symmetry. In a real crystal the atoms inside the cell decide, so a crystal can be tetragonal even when c happens to be very close to a.
+
+### SEE MORE: Your lattice (worked example)
+helpCrystalSystemsExTitle: {lattice}
+helpCrystalSystemsExResult: {label}: {sYSTEMBLURBS}
+helpCrystalSystemsEx1: The edge lengths of the cell on screen:
+helpCrystalSystemsEx1Tex: a = {a}\,\text{Å},\quad b = {b}\,\text{Å},\quad c = {c}\,\text{Å}
+helpCrystalSystemsEx2: Its angles:
+helpCrystalSystemsEx2Tex: \alpha = {alpha}^\circ,\quad \beta = {beta}^\circ,\quad \gamma = {gamma}^\circ
+helpCrystalSystemsEx3: These follow the {system} rule:
+
+
+## Centring types P, I, F, C (and R)
+
+### Popover
+helpCentringTitle: Centring types P, I, F, C (and R)
+helpCentringExplain: Centring adds extra lattice points to the cell: I (body-centred) one in the middle, F (face-centred) one on every face, C (base-centred) one on the two ab faces, while P (primitive) has points on the corners only. Every point still has identical surroundings, so it is still a lattice. A centred cell is used because it shows the symmetry better than the smaller primitive cell.
+helpCentringFormula1Tag: Centring vectors
+helpCentringFormula1: \mathbf t_I = \tfrac12(\mathbf a+\mathbf b+\mathbf c),\quad \mathbf t_C = \tfrac12(\mathbf a+\mathbf b),\quad \mathbf t_F = \tfrac12(\mathbf b+\mathbf c),\ \tfrac12(\mathbf a+\mathbf c),\ \tfrac12(\mathbf a+\mathbf b)
+helpCentringFormula2Tag: Points per cell
+helpCentringFormula2: N_P = 1,\quad N_I = 2,\quad N_C = 2,\quad N_F = 4,\quad N_R = 3\ \text{(hexagonal axes)}
+helpCentringSym1: \mathbf t
+helpCentringSym1Text: a centring vector: adding it to any lattice point gives another lattice point
+helpCentringSym2: N
+helpCentringSym2Text: lattice points per conventional cell
+helpCentringSym3: \mathbf a,\ \mathbf b,\ \mathbf c
+helpCentringSym3Text: the lattice vectors (cell edges)
+helpCentringNow: {lattice}: {centring} ({letter}), {total} points per cell.
+helpCentringNowOne: {lattice}: {centring} ({letter}), {total} point per cell.
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpCentringStep1: A centring vector $\mathbf t$ adds a lattice point at $\mathbf r + \mathbf t$ for every lattice point $\mathbf r$ of the primitive pattern.
+helpCentringStep1Tex: \mathbf r' = \mathbf r + \mathbf t
+helpCentringStep2: The result must still be a lattice, so adding $\mathbf t$ twice must land on a cell corner: $2\mathbf t$ has whole-number components. Each component of $\mathbf t$ is therefore 0 or ½.
+helpCentringStep2Tex: 2\mathbf t \in \mathbb Z^3\ \Rightarrow\ t_i \in \{0,\ \tfrac12\}
+helpCentringStep3: That leaves a body vector (I) or a face vector (C, or A and B for the other faces, which are the same lattice with relabelled axes).
+helpCentringStep3Tex: (\tfrac12,\tfrac12,\tfrac12) \to I,\qquad (\tfrac12,\tfrac12,0) \to C
+helpCentringStep4: Two different face centrings force the third: their sum is the third face vector plus a whole cell edge. So exactly two centred face pairs is impossible, and all three together give F.
+helpCentringStep4Tex: (\tfrac12,\tfrac12,0) + (0,\tfrac12,\tfrac12) = (\tfrac12,1,\tfrac12) \equiv (\tfrac12,0,\tfrac12)
+helpCentringStep5: Counting: the 8 corners give 1 point per cell, and every centring vector adds one more.
+helpCentringStep5Tex: N_I = 1 + 1 = 2,\qquad N_C = 1 + 1 = 2,\qquad N_F = 1 + 3 = 4
+helpCentringStep6: R is special: the rhombohedral lattice drawn on hexagonal axes has extra points at (⅔, ⅓, ⅓) and (⅓, ⅔, ⅔), so 3 per hexagonal cell. On rhombohedral axes the same lattice is primitive.
+helpCentringStep6Tex: \mathbf t_R = (\tfrac23,\tfrac13,\tfrac13),\ (\tfrac13,\tfrac23,\tfrac23)\ \Rightarrow\ N_R = 3
+helpCentringStep7: Every centred lattice also has a primitive cell, N times smaller. For cubic F it is a rhombohedron with edges a/√2 at 60°: correct, but it hides the cubic symmetry, which is why the cube is used.
+helpCentringStep7Tex: V_\text{prim} = \frac{V}{N}
+
+### SEE MORE: Your lattice (worked example)
+helpCentringEx1: Centring type: <b>{cen}</b> ({name}). Its centring vectors:
+helpCentringEx1None: Centring type: <b>{cen}</b> ({name}). There are no centring vectors: points on the corners only.
+helpCentringEx2: Points per cell, 1 from the corners plus one per centring vector:
+helpCentringEx2Tex: N = 1 + {count} = {n}
+helpCentringEx3: Volume of the cell and of a primitive cell:
+helpCentringEx3Tex: V = {volume}\,\text{Å}^3,\qquad V_\text{prim} = \frac{V}{N} = {primitive}\,\text{Å}^3
+
+
+## Why exactly 14 Bravais lattices?
+
+### Popover
+helpBravaisTitle: Why exactly 14 Bravais lattices?
+helpBravaisExplain: Combining the 7 crystal systems with the centring types P, C, I and F gives 28 candidates, but only 14 are really different lattices. The others are either a lattice that is already on the list, drawn with an unnecessarily large cell, or they break the symmetry that defines their system.
+helpBravaisFormula1: \underbrace{3}_{\text{cubic}} + \underbrace{2}_{\text{tetr.}} + \underbrace{4}_{\text{orth.}} + \underbrace{1}_{\text{hex.}} + \underbrace{1}_{\text{rhomb.}} + \underbrace{2}_{\text{mono.}} + \underbrace{1}_{\text{tricl.}} = 14
+helpBravaisSym1: P,\ C,\ I,\ F
+helpBravaisSym1Text: primitive, base-centred, body-centred, face-centred
+helpBravaisSym2: R
+helpBravaisSym2Text: the rhombohedral lattice (its primitive cell)
+helpBravaisNow: {name} is one of the {count} {system} lattices.
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpBravaisStep1: Start with every combination of a crystal system with a centring type.
+helpBravaisStep1Tex: 7\ \text{systems} \times \{P,\ C,\ I,\ F\} = 28\ \text{candidates}
+helpBravaisStep2: <b>Rule 1: the same lattice in disguise.</b> If a centred cell can be redrawn as a smaller cell of the same system, it is not new. Tetragonal C: new axes along the diagonals of the square base give a smaller square base with no centring.
+helpBravaisStep2Tex: \mathbf a' = \tfrac12(\mathbf a+\mathbf b),\quad \mathbf b' = \tfrac12(\mathbf a-\mathbf b),\quad |\mathbf a'| = |\mathbf b'| = \tfrac{a}{\sqrt2}\ \Rightarrow\ tC = tP
+helpBravaisStep3: The same trick shows that tetragonal F is tetragonal I, monoclinic I and F are monoclinic C, and every centred triclinic cell has a smaller primitive triclinic cell.
+helpBravaisStep3Tex: tF = tI,\qquad mI = mF = mC,\qquad aC = aI = aF = aP
+helpBravaisStep4: <b>Rule 2: symmetry broken.</b> Centring only one pair of faces of a cube treats c differently from a and b, so the 3-fold axes along the body diagonals are lost: “cubic C” is really tetragonal. Centring a hexagonal cell destroys its 6-fold axis in the same way.
+helpBravaisStep4Tex: cC \to \text{tetragonal},\qquad hC,\ hI,\ hF \to \text{lower symmetry}
+helpBravaisStep5: Orthorhombic is the exception: a, b and c are all different and no symmetry links them, so no smaller orthorhombic cell exists for any centring. All four survive.
+helpBravaisStep5Tex: oP,\quad oC,\quad oI,\quad oF
+helpBravaisStep6: Count what is left:
+helpBravaisStep6Tex: cP,\,cI,\,cF \;\cdot\; tP,\,tI \;\cdot\; oP,\,oC,\,oI,\,oF \;\cdot\; hP \;\cdot\; hR \;\cdot\; mP,\,mC \;\cdot\; aP\ =\ 14
+
+### SEE MORE: Your lattice (worked example)
+helpBravaisEx1: <b>{name}</b>: a Bravais lattice.
+helpBravaisEx1Current: <b>{name}</b>: a Bravais lattice — the one on screen.
+helpBravaisEx1Else: <b>{label} {c}</b> ✕ {row}
+helpBravaisExTitle: {label} system
+helpBravaisExIntro: The four candidates of the {system} system:
+
+
+## Lattice vectors and parameters
+
+### Popover
+helpLatticeParamsTitle: Lattice vectors and parameters
+helpLatticeParamsExplain: Three lattice vectors a, b and c start at the origin and span the unit cell. Their lengths a, b, c and the angles α (between b and c), β (between a and c) and γ (between a and b) are the six lattice parameters. Every lattice point is reached by whole steps along the three vectors.
+helpLatticeParamsFormula1: \mathbf r = n_1\mathbf a + n_2\mathbf b + n_3\mathbf c,\qquad n_1, n_2, n_3 \in \mathbb Z
+helpLatticeParamsSym1: \mathbf a,\ \mathbf b,\ \mathbf c
+helpLatticeParamsSym1Text: the lattice vectors (bold: vectors)
+helpLatticeParamsSym3: n_1, n_2, n_3
+helpLatticeParamsSym3Text: whole numbers: how many steps along each vector
+helpLatticeParamsNow: On screen: ${paramsTex}$
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpLatticeParamsStep1: Pick a lattice point as the origin. The vectors to three neighbouring lattice points that do not lie in one plane are the lattice vectors.
+helpLatticeParamsStep1Tex: \mathbf a,\ \mathbf b,\ \mathbf c
+helpLatticeParamsStep2: Their lengths and the angles between them are the lattice parameters:
+helpLatticeParamsStep2Tex: a = |\mathbf a|,\qquad \cos\alpha = \frac{\mathbf b\cdot\mathbf c}{bc},\quad \cos\beta = \frac{\mathbf a\cdot\mathbf c}{ac},\quad \cos\gamma = \frac{\mathbf a\cdot\mathbf b}{ab}
+helpLatticeParamsStep3: To draw the cell, the app puts $\mathbf a$ along x and $\mathbf b$ in the xy-plane:
+helpLatticeParamsStep3Tex: \mathbf a = (a,\ 0,\ 0),\qquad \mathbf b = (b\cos\gamma,\ b\sin\gamma,\ 0)
+helpLatticeParamsStep4: The components of $\mathbf c$ follow from its angles with $\mathbf a$ and $\mathbf b$; its height makes the cell volume come out right:
+helpLatticeParamsStep4Tex: \mathbf c = \Big(c\cos\beta,\ \ c\,\frac{\cos\alpha - \cos\beta\cos\gamma}{\sin\gamma},\ \ \frac{V}{ab\sin\gamma}\Big)
+helpLatticeParamsStep5: Positions are written as fractional coordinates (x, y, z) in units of the cell edges. Whole numbers are lattice points of a primitive lattice; centred lattices add the centring vectors.
+helpLatticeParamsStep5Tex: \mathbf r = x\,\mathbf a + y\,\mathbf b + z\,\mathbf c
+
+### SEE MORE: Your lattice (worked example)
+helpLatticeParamsEx1: The six parameters:
+helpLatticeParamsEx2: The vectors in Cartesian coordinates (Å), as the app draws them:
+helpLatticeParamsEx2Tex: \mathbf a = {aVector},\quad \mathbf b = {bVector},\quad \mathbf c = {cVector}
+helpLatticeParamsEx3: Check: the length of $\mathbf c$ comes back as c.
+helpLatticeParamsEx3Tex: |\mathbf c| = \sqrt{{x}^2 + {y}^2 + {z}^2} = {norm}\,\text{Å}

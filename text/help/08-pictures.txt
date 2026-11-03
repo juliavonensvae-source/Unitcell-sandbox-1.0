@@ -1,0 +1,83 @@
+# Help pictures (diagrams) and 3D highlights
+# The pictures themselves are drawn by the program; these are their labels and captions.
+
+## Diagram: Bragg reflection (Bragg angle topic)
+diagBraggPath: Path difference AB + BC = 2
+diagBraggCaption: Bragg reflection from two neighbouring planes: the lower ray travels 2 d sin θ further
+
+## Diagram: hexagonal axes (Miller–Bravais topic)
+diagHexC: ⊙ {c} points out of the page
+diagHexCaption: The basal plane with a1, a2 and a3 = −(a1 + a2) at 120° to each other; c points out of the page
+
+## Diagram: cube face of cubic F (interstitial sites, cubic F octahedral site)
+diagOctCaption: A cube face of cubic F: corner and face-centre spheres touch along the diagonal, the octahedral hole sits at the edge midpoint
+
+## Diagram: cut through cubic I (cubic I octahedral site)
+diagBccCut: Cut along an edge and the body diagonal
+diagBccCaption: Cubic I: corner and body-centre spheres touch along the body diagonal; the octahedral hole sits at the edge midpoint between two corners
+
+## Diagram: cut through cubic P (cubic P site)
+diagCubicCut: Cut along c and a face diagonal
+diagCubicCaption: Cubic P: the corner spheres touch along the cell edge; the body diagonal holds two radii R and the hole 2r
+
+## Diagram: plane spacing (interplanar distance topics)
+diagSpacingLabel: plane (hkl), seen edge-on
+diagSpacingCaption: The plane nearest the origin cuts the axes at a/h and a/k; d is the perpendicular distance from the origin
+
+## Diagram: angle between two vectors (angle topic)
+diagAngleCaption: Two vectors from the same point with the angle θ between them
+
+## Diagram: the four centring types (centring topic)
+diagPointsPerCell: {count} points per cell
+diagPointPerCell: {count} point per cell
+diagHexAxes: (hexagonal axes)
+
+## Diagram: table of the 7 × 4 combinations (Bravais lattices topic): why a ✕ is not a new lattice
+diagWhyCubicC: Only one pair of faces centred: the 3-fold axes along the body diagonals are lost, so the lattice is really tetragonal.
+diagWhyTetragonalC: The same as tetragonal P: turn a and b by 45° to get a smaller primitive cell (a′ = a/√2).
+diagWhyTetragonalF: The same as tetragonal I with a smaller cell (axes turned by 45°).
+diagWhyHexagonalC: Breaks the 6-fold axis (the lattice becomes orthorhombic).
+diagWhyHexagonalIF: Breaks the 6-fold axis.
+diagWhyRhombohedralC: Breaks the 3-fold axis.
+diagWhyRhombohedralIF: Gives another rhombohedral lattice with a smaller primitive cell (or a cubic one for special angles).
+diagWhyMonoclinicI: The same as monoclinic C, with a different choice of a and c.
+diagWhyMonoclinicF: The same as monoclinic C with a smaller cell.
+diagWhyTriclinicC: There are no angles or lengths to protect, so a smaller primitive triclinic cell always exists.
+diagWhyTriclinicIF: A smaller primitive triclinic cell always exists.
+diagBravaisNote: Hover a ✕ to see why that combination is not a new lattice. For the rhombohedral system the “P” column is its primitive cell, R.
+
+# 3D highlights (the caption under "Show in the 3D view")
+## Spheres touching along a line (packing fraction)
+hlEdge: edge
+hlFaceDiagonal: face diagonal
+hlBodyDiagonal: body diagonal
+hlTouchCaption: The spheres touch along the <b>{what}</b> {dir}: {count} spheres in a row span {rel}.
+
+## The other highlights
+hlAxesCaption: The three lattice vectors from the origin, with α between <i>b</i> and <i>c</i>, β between <i>a</i> and <i>c</i>, γ between <i>a</i> and <i>b</i>.
+hlVolumeCell: The parallelepiped spanned by <i>a</i>, <i>b</i> and <i>c</i>.
+hlVolumePrism: The hexagonal prism: three primitive cells, volume 3<i>V</i>.
+hlSharesCaption: Each point is labelled with the part of it that lies inside the highlighted cell.
+hlCornersOnly: P: corners only
+hlPrimitiveCaption: A primitive cell has lattice points on its corners only.
+hlCentringCaption: The arrows are the centring vectors <b>t</b>: adding any of them to a lattice point gives another lattice point.
+hlDirectionCaption: The arrow {dir} and the steps along <i>a</i>, <i>b</i>, <i>c</i> that build it.
+hlPlaneCaption: The plane {plane} nearest the origin and the points where it meets the axes (an index 0 means it never meets that axis).
+hlSpacingCaption: Two neighbouring {plane} planes and the distance <i>d</i> measured straight along their normal.
+hlFamilyCaption: The {plane} planes that hold lattice points in the highlighted cell. Dashed ones lie between the planes of the formula (centred lattices).
+hlNeighboursCaption: The point at the origin and its {count} nearest neighbours (some of them lie in the cells next door).
+hlAngleDDCaption: The two directions from the origin and the angle between them.
+hlAnglePPCaption: Planes are compared through their normals (the arrows), drawn here from the centre of the cell.
+hlNormal: normal
+hlZoneCaption: The two planes through the centre of the cell and the line where they cross.
+
+## Interstitial sites and atom fit
+hlSiteChoose: Choose {lattice} in the lattice picker to see this hole in the 3D view.
+hlSiteCaption: The {kind} hole and its {cn} neighbours as touching spheres; the coloured sphere is the largest that fits.
+hlSitesCoveredCounting: Interstitial sites are covered for cubic P, I and F. Choose one of them to see the counting in 3D.
+hlSitesCoveredHoles: Interstitial sites are covered for cubic P, I and F. Choose one of them to see the holes in 3D.
+hlSitesEvery: Every hole in the highlighted cell: {list}.
+hlSiteSharesCaption: Each hole is labelled with the part of it that belongs to the highlighted cell: inside 1, on a face ½, on an edge ¼.
+hlFitCubicOnly: The atom-fit tool works for cubic P, I and F. Choose one of them to see it in 3D.
+hlFitFits: An atom with <i>r</i>/<i>R</i> = {ratio} fits: it does not reach any neighbour.
+hlFitTooBig: An atom with <i>r</i>/<i>R</i> = {ratio} is too big: the red circles show where it cuts its neighbours, the arrows how far they must move.

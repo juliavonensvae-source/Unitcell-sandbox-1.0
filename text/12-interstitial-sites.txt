@@ -1,0 +1,106 @@
+# Kinds of site
+siteOctName: Octahedral
+siteOctAdj: octahedral
+siteTetName: Tetrahedral
+siteTetAdj: tetrahedral
+siteCubName: Cubic
+siteCubAdj: cubic
+
+## Where the sites are
+siteWhereCP: the body centre
+siteWhereCIOct: the face centres and edge midpoints
+siteWhereCITet: (½, ¼, 0)-type positions on the faces
+siteWhereCFOct: the body centre and edge midpoints
+siteWhereCFTet: (¼, ¼, ¼)-type positions inside the cell
+
+## Places in a cell
+placeBodyCentre: body centre
+placeInside: inside the cell
+placeFaceCentre: face centre
+placeOnFace: on a face
+placeEdgeMidpoint: edge midpoint
+placeOnEdge: on an edge
+placeCorner: corner
+
+## Shapes the neighbours form (also used by ionic structures)
+polyOctahedron: octahedron
+polyTetrahedron: tetrahedron
+polyCube: cube
+polyTriangle: triangle
+polyLine: line
+
+# Interstitial sites card
+sitesMenu: Octahedral & tetrahedral sites
+sitesSummary: {list} per cell
+sitesSummaryCubic: {count} cubic site per cell
+sitesNotAvailable: Not available yet for {lattice}. Interstitial sites are covered for the cubic lattices (cubic P, I and F).
+sitesNotAvailableShort: Not available yet for {lattice}
+sitesSwitch: {notAvailable} Switch to one of them to try it:
+sitesRowLabel: {name} sites
+sitesRowHint: At {where} · {cn} neighbours form a {poly}
+sitesPerCell: Per cell
+sitesPerPoint: Per lattice point
+sitesLargest: Largest that fits, <i>r</i>/<i>R</i>
+sitesMarkers: Markers
+sitesMarkersHint: Small markers at the centre of each hole.
+sitesFit: Largest sphere that fits
+sitesFitHint: Each hole is filled with the biggest sphere that fits without pushing the lattice spheres apart.
+sitesPolyhedra: Polyhedra of neighbours
+sitesOff: Off
+sitesSelected: Selected site
+sitesEvery: Every site
+sitesSelectHint: Or click a marker in the 3D view. {around}.
+sitesNeighbourOne: {count} neighbour at {d} Å
+sitesNeighbourMany: {count} neighbours at {d} Å
+sitesFormAn: {shells} form an {poly}
+sitesFormA: {shells} form a {poly}
+sitesSquashed: that is squashed: its corners are not all the same distance away
+sitesShares: Label how much of each site belongs to the cell
+sitesSharesHint: Inside 1, on a face ½, on an edge ¼, the way lattice points are counted
+sitesAll: Show the sites in every cell
+sitesAllHint: Otherwise only in the highlighted cell ({cell})
+sitesCounting: Counting the sites
+formulaSites: N_\text{sites} = N_\text{inside} + \tfrac12 N_\text{face} + \tfrac14 N_\text{edge},\qquad \text{per lattice point} = \frac{N_\text{sites}}{N}
+sitesColourOf: Colour of the {kind} sites
+cmdHelpSites: Show the octahedral and tetrahedral sites (cubic lattices)
+
+# Atom fit card
+fitMenu: Atom fit tool
+fitLabel: Atom in {kind} site
+fitLabelUnknown: Atom in a site
+fitChipFits: ✓ fits
+fitChipTooBig: ✗ too big
+fitAddNote: Only the site and its {cn} neighbours are shown. Type another radius (or use ↑ ↓) to see when the atom stops fitting.
+fitSite: Site
+fitOneKind: Cubic P has one kind of hole: the cubic site at the body centre.
+fitPosition: Position
+fitPositions: These {count} positions are equivalent: the atom fits the same way in each.
+fitPositionsClick: Or click one of the faint markers in the 3D view. These {count} positions are equivalent: the atom fits the same way in each.
+fitOnlyOne: The only one in the cell.
+fitRadiusLabel: Radius <i>r</i> of the atom
+fitTheRadius: The radius
+fitRadiusHint: In Å, like the lattice parameters. Enter applies it; ↑ ↓ step 0.01 Å (Shift: 0.1 Å). Up to R = {max} Å, the radius of the lattice spheres.
+fitJustFits: Just fits
+fitTooBigButton: 10% too big
+fitCritical: critical
+fitFitsRoom: <b>Fits.</b> <i>r</i> = {r} Å ≤ <i>r</i><sub>max</sub> = {rMax} Å, with {room} Å to spare.
+fitFitsTouch: <b>Fits.</b> <i>r</i> = {r} Å ≤ <i>r</i><sub>max</sub> = {rMax} Å: it just touches its neighbours.
+fitTooBig: <b>Too big by {by} Å.</b>
+fitMoveOne: The {count} neighbour at {d} Å must move <b>{move} Å</b> outward ({percent}% of that distance)
+fitMoveMany: The {count} neighbours at {d} Å must each move <b>{move} Å</b> outward ({percent}% of that distance)
+fitStillRoom: The {list} still have room.
+fitHostRadius: Host radius <i>R</i> = <i>d</i><sub>nn</sub>/2
+fitHoleDistance: Hole centre → nearest host <i>d</i>
+fitLargest: Largest atom <i>r</i><sub>max</sub> = <i>d</i> − <i>R</i>
+fitYourAtom: Your atom <i>r</i>
+fitWhen: When does it fit?
+formulaFitR: \text{fits} \iff r \le r_\text{max} = d - R
+fitTagTooBig: Too big
+fitDeltaHint: δ<sub>i</sub> is how far neighbour <i>i</i> must move outward to make room.
+fitFocus: Show only this site and its neighbours
+fitFocusHint: Hides the other lattice points
+fitMoved: Show where the neighbours would have to move
+fitMovedHint: Arrows and faint red spheres when the atom is too big
+fitOthers: Show the other sites of this kind
+fitOthersHint: Click one to move the atom there
+cmdHelpFit: Put an atom of radius r (Å) in a site: oct, tet or cub. r can also be 0.4R or max

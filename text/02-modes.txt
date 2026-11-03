@@ -1,0 +1,46 @@
+# Mode page
+
+## Top
+modesKicker: Choose a mode
+modesTitle: What do you want to explore?
+
+## Card 01: Crystal Structures (its name is in 00-shared.txt)
+modesCrystalDesc: 14 Bravaise lattices, add directions and planes, and calculate as you go.
+modesCrystalTag1: 14 lattices
+modesCrystalTag2: Robin Grimes
+modesCrystalTag3: Planes
+modesTagCalculations: Calculations
+modesPlay: Play
+
+## Cards that are not open yet
+modesComingSoon: Coming soon
+modesLocked: Locked
+
+## Card 02: Defects
+modesDefectsName: Defects
+modesDefectsDesc: Vacancies, interstitials, dislocations and Burgers vectors, that even Jess Wade might find cool
+modesDefectsTag1: Point defects
+modesDefectsTag2: Dislocations
+modesDefectsTag3: Burgers vector
+
+## Card 03: Challenge mode (its third tag is modesTagCalculations above)
+modesChallengeName: Challenge mode
+modesChallengeDesc: Test yourself: name directions and planes, calculate spacings and more with leaderboard.
+modesChallengeTag1: Quizzes
+modesChallengeTag2: Get firsts
+
+## Card 04: Phase diagrams
+modesPhasesName: Phase diagrams
+modesPhasesDesc: Read binary phase diagrams: phases, tie lines and the lever rule.
+modesPhasesTag1: Phases
+modesPhasesTag2: David Dye
+modesPhasesTag3: Lever rule
+
+## Card 05: Material builder
+modesBuilderName: Material builder
+modesBuilderDesc: Put atoms on a lattice to build your own material.
+modesBuilderTag1: Idea in progress 
+
+
+## Read aloud by screen readers
+modesScreenLabel: Choose a mode

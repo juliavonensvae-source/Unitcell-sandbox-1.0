@@ -1,0 +1,314 @@
+# Help topics: interstitial sites and atom fit
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice when there is a worked example).
+
+## Interstitial sites and radius ratios
+
+### Popover
+helpInterstitialsTitle: Interstitial sites and radius ratios
+helpInterstitialsExplain: Between touching lattice spheres of radius R there are holes: octahedral sites (6 neighbours) and tetrahedral sites (4 neighbours), plus the cubic site in cubic P (8 neighbours). The largest sphere that fits without pushing the neighbours apart has radius r = d − R, where d is the distance from the centre of the hole to its nearest neighbours; r/R is the critical radius ratio.
+helpInterstitialsFormula1Tag: Any site
+helpInterstitialsFormula1: r_\text{max} = d - R\qquad\Rightarrow\qquad \frac{r}{R} = \frac{d}{R} - 1
+helpInterstitialsFormula2Tag: Cubic F
+helpInterstitialsFormula2: \text{oct: } \sqrt2 - 1 \approx 0.414,\qquad \text{tet: } \sqrt{\tfrac32} - 1 \approx 0.225
+helpInterstitialsFormula3Tag: Cubic I
+helpInterstitialsFormula3: \text{oct: } \tfrac{2}{\sqrt3} - 1 \approx 0.155,\qquad \text{tet: } \sqrt{\tfrac53} - 1 \approx 0.291
+helpInterstitialsFormula4Tag: Cubic P
+helpInterstitialsFormula4: \text{cubic site: } \sqrt3 - 1 \approx 0.732
+helpInterstitialsSym1: R
+helpInterstitialsSym1Text: radius of the lattice spheres (touching: d<sub>nn</sub>/2)
+helpInterstitialsSym2: r
+helpInterstitialsSym2Text: radius of the sphere in the hole
+helpInterstitialsSym3: d
+helpInterstitialsSym3Text: distance from the centre of the hole to the nearest lattice points
+helpInterstitialsNow: {lattice}: not available yet. Interstitial sites are covered for cubic P, I and F.
+helpInterstitialsNow2: {lattice}: {sites}. Add them with + Add → Interstitial sites.
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+[diagram: drawn at the top of the derivation]
+helpInterstitialsStep1: The lattice spheres touch their nearest neighbours, so their radius is fixed by the lattice:
+helpInterstitialsStep1Tex: R = \frac{d_\text{nn}}{2}
+helpInterstitialsStep2: A sphere in a hole touches the spheres around it when the centre distance equals the sum of the radii. Any larger and it pushes them apart:
+helpInterstitialsStep2Tex: d = R + r_\text{max}\ \Rightarrow\ \frac{r_\text{max}}{R} = \frac{d}{R} - 1
+helpInterstitialsStep3: <b>Cubic F, octahedral</b> (body centre and edge midpoints, 4 per cell). Along a cell edge there are two spheres and the hole between them; the spheres touch along the face diagonal:
+helpInterstitialsStep3Tex: a = 2R + 2r,\qquad \sqrt2\,a = 4R\ \Rightarrow\ 2r = 2\sqrt2R - 2R\ \Rightarrow\ \frac{r}{R} = \sqrt2 - 1 = 0.414
+helpInterstitialsStep4: <b>Cubic F, tetrahedral</b> at (¼, ¼, ¼) (8 per cell): a quarter of the body diagonal from a corner sphere.
+helpInterstitialsStep4Tex: R + r = \frac{\sqrt3}{4}a = \frac{\sqrt3}{4}\cdot2\sqrt2R = \sqrt{\tfrac32}\,R\ \Rightarrow\ \frac{r}{R} = \sqrt{\tfrac32} - 1 = 0.225
+helpInterstitialsStep5: <b>Cubic I, octahedral</b> at the face centres and edge midpoints (6 per cell). The closest spheres are the two at a/2; the spheres touch along the body diagonal:
+helpInterstitialsStep5Tex: R + r = \frac{a}{2},\qquad \sqrt3\,a = 4R\ \Rightarrow\ \frac{r}{R} = \frac{2}{\sqrt3} - 1 = 0.155
+helpInterstitialsStep6: <b>Cubic I, tetrahedral</b> at (½, ¼, 0) (12 per cell): two corners and two body centres, all at the same distance:
+helpInterstitialsStep6Tex: R + r = \sqrt{\big(\tfrac12\big)^2 + \big(\tfrac14\big)^2}\,a = \frac{\sqrt5}{4}a = \sqrt{\tfrac53}\,R\ \Rightarrow\ \frac{r}{R} = 0.291
+helpInterstitialsStep7: <b>Cubic P, cubic site</b> at the body centre (1 per cell): the spheres touch along the edge, the hole is half the body diagonal away from each corner:
+helpInterstitialsStep7Tex: a = 2R,\qquad R + r = \frac{\sqrt3}{2}a = \sqrt3\,R\ \Rightarrow\ \frac{r}{R} = \sqrt3 - 1 = 0.732
+helpInterstitialsStep8: The cubic I octahedral hole is squashed: 2 neighbours at a/2 but 4 more at a/√2. That is why it is smaller than the tetrahedral hole in the same lattice. Each kind has its own “?” with the full derivation.
+
+### SEE MORE: Your lattice (worked example)
+helpInterstitialsExIntro: Interstitial sites are covered for cubic P, I and F. Choose one of them in the lattice picker to see the numbers for your lattice.
+helpInterstitialsEx1: Cubic F, for comparison (any a):
+helpInterstitialsEx1Tex: \frac{r}{R}\Big|_\text{oct} = 0.414,\qquad \frac{r}{R}\Big|_\text{tet} = 0.225
+helpInterstitialsExResult: Add + Add → Interstitial sites to see these holes in 3D, and the Atom fit tool to test whether an atom fits.
+helpInterstitialsEx2: Radius of the lattice spheres from the nearest-neighbour distance:
+helpInterstitialsEx2Tex: R = \frac{d_\text{nn}}{2} = {r}\,\text{Å}
+helpInterstitialsEx3: <b>{name}</b> at ${f}$, {cn} nearest neighbours:
+helpInterstitialsEx3Tex: d = {d}\,\text{Å},\quad r_\text{max} = d - R = {rMax}\,\text{Å},\quad \frac{r}{R} = {ratio}\ \ ({tex})
+
+
+## Sites per cell and per lattice point
+
+### Popover
+helpSiteCountTitle: Sites per cell and per lattice point
+helpSiteCountExplain: Interstitial sites are counted like lattice points: a site inside the cell belongs to it alone, one on a face is shared by 2 cells, on an edge by 4 and on a corner by 8. Dividing by the number of lattice points per cell N gives the sites per lattice point. That number tells you how many small atoms a structure can take for every lattice point.
+helpSiteCountFormula1: N_\text{sites} = N_\text{inside} + \tfrac12 N_\text{face} + \tfrac14 N_\text{edge} + \tfrac18 N_\text{corner}
+helpSiteCountFormula2: n = \frac{N_\text{sites}}{N}
+helpSiteCountSym1: N_\text{inside}
+helpSiteCountSym1Text: sites inside the cell (likewise on a face, edge or corner)
+helpSiteCountSym2: N
+helpSiteCountSym2Text: lattice points per cell (P = 1, I = 2, F = 4)
+helpSiteCountSym3: n
+helpSiteCountSym3Text: sites per lattice point
+helpSiteCountNow2: {lattice}: {sites}.
+helpSiteCountRow: {count} {kind} per cell = {perPoint} per lattice point
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpSiteCountStep1: A site on the boundary of the cell is shared with the neighbouring cells, so only part of it belongs to this cell: ½ on a face, ¼ on an edge, ⅛ on a corner.
+helpSiteCountStep1Tex: N_\text{sites} = N_\text{inside} + \tfrac12 N_\text{face} + \tfrac14 N_\text{edge} + \tfrac18 N_\text{corner}
+helpSiteCountStep2: <b>Cubic P</b>, cubic site: only the body centre (N = 1).
+helpSiteCountStep2Tex: N_\text{cub} = 1,\qquad n = \tfrac11 = 1
+helpSiteCountStep3: <b>Cubic F</b>, octahedral: the body centre and 12 edge midpoints (N = 4).
+helpSiteCountStep3Tex: N_\text{oct} = 1 + 12\cdot\tfrac14 = 4,\qquad n = \tfrac44 = 1
+helpSiteCountStep4: <b>Cubic F</b>, tetrahedral: 8 sites, all inside.
+helpSiteCountStep4Tex: N_\text{tet} = 8,\qquad n = \tfrac84 = 2
+helpSiteCountStep5: <b>Cubic I</b>, octahedral: 6 face centres and 12 edge midpoints (N = 2).
+helpSiteCountStep5Tex: N_\text{oct} = 6\cdot\tfrac12 + 12\cdot\tfrac14 = 6,\qquad n = \tfrac62 = 3
+helpSiteCountStep6: <b>Cubic I</b>, tetrahedral: 4 on each of the 6 faces.
+helpSiteCountStep6Tex: N_\text{tet} = 24\cdot\tfrac12 = 12,\qquad n = \tfrac{12}{2} = 6
+helpSiteCountStep7: So a cubic F crystal has 1 octahedral and 2 tetrahedral holes for every lattice point; cubic I has 3 and 6, but they are much smaller.
+
+### SEE MORE: Your lattice (worked example)
+helpSiteCountExIntro: Interstitial sites are covered for cubic P, I and F. Cubic F, for comparison:
+helpSiteCountEx1Tex: N_\text{oct} = 12\cdot\tfrac14 + 1\cdot 1 = 4,\qquad N_\text{tet} = 8
+helpSiteCountExResult: {sites}, for {points}.
+helpSitesPerCell: {list} sites per cell
+helpSitePerCell: {list} site per cell
+helpLatticePointsPerCell: {n} lattice points per cell
+helpLatticePointPerCell: {n} lattice point per cell
+helpSiteCountEx2: <b>{name}</b> sites ({where}):
+helpSiteCountEx2Tex: N_\text{{kind}} = {count},\qquad n = \frac{{total}}{{n}} = {perPoint}
+
+
+## Atom fit
+
+### Popover
+helpAtomFitExplain: Put an atom of radius r in a hole between lattice spheres of radius R. It fits without pushing anything when r ≤ r<sub>max</sub> = d − R, which is the same as r/R being at most the critical ratio of that site. A bigger atom overlaps its nearest neighbours, and each of them must move outward by δ = r + R − d to make room.
+helpAtomFitFormula1: \text{fits} \iff r \le d - R \iff \frac{r}{R} \le \Big(\frac{r}{R}\Big)_\text{crit}
+helpAtomFitFormula2: \delta_i = r + R - d_i\qquad(\text{only when } \delta_i > 0)
+helpAtomFitSym1: r
+helpAtomFitSym1Text: radius of the atom in the hole
+helpAtomFitSym2: R
+helpAtomFitSym2Text: radius of the lattice spheres (touching: d<sub>nn</sub>/2)
+helpAtomFitSym3: d_i
+helpAtomFitSym3Text: distance from the centre of the hole to neighbour i (d = the nearest)
+helpAtomFitSym4: \delta_i
+helpAtomFitSym4Text: how far neighbour i must move outward
+helpAtomFitNow2: {lattice}: critical ratios {ratios}.
+helpAtomFitNow3: {name}: r/R = {ratio} against {critical}, so it fits.
+helpAtomFitNow3TooBig: {name}: r/R = {ratio} against {critical}, so it is too big.
+
+[3D highlight: the "Show in the 3D view" box, above the tabs]
+
+### SEE MORE: Derivation
+helpAtomFitStep1: Two spheres just touch when the distance between their centres equals the sum of their radii; closer than that, they overlap.
+helpAtomFitStep1Tex: \text{touch: } d = r + R
+helpAtomFitStep2: The lattice spheres touch each other, so their radius is half the nearest-neighbour distance:
+helpAtomFitStep2Tex: R = \frac{d_\text{nn}}{2}
+helpAtomFitStep3: The centre of the hole is a distance d from its nearest neighbours. The biggest atom that fits touches them:
+helpAtomFitStep3Tex: r_\text{max} = d - R\qquad\Rightarrow\qquad \Big(\frac{r}{R}\Big)_\text{crit} = \frac{d}{R} - 1
+helpAtomFitStep4: So an atom fits exactly when its ratio is not above the critical ratio. Because both r<sub>max</sub> and R scale with a, the ratio is the same for every lattice parameter.
+helpAtomFitStep5: A bigger atom overlaps every neighbour i with d<sub>i</sub> < r + R. To remove the overlap that neighbour must move outward, along the line from the hole to its centre, by:
+helpAtomFitStep6: The local strain is roughly δ/d. In a squashed hole (cubic I octahedral) only the 2 nearest neighbours are pushed at first, so the lattice stretches along one axis: a well-known example is carbon in body-centred iron.
+helpAtomFitStep6Tex: \varepsilon \approx \frac{\delta}{d}
+
+### SEE MORE: Your lattice (worked example)
+helpAtomFitExIntro: The atom-fit tool works for cubic P, I and F. Cubic F with a = 4 Å, for comparison:
+helpAtomFitEx1: Lattice spheres and the octahedral hole:
+helpAtomFitEx1Tex: R = \tfrac{\sqrt2}{4}a = 1.414\,\text{Å},\quad d = \tfrac12 a = 2\,\text{Å},\quad r_\text{max} = 0.5858\,\text{Å}
+helpAtomFitEx2: An atom with r = 0.7 Å is too big; each of the 6 neighbours moves out by
+helpAtomFitEx2Tex: \delta = 0.7 + 1.414 - 2 = 0.1142\,\text{Å}
+helpAtomFitExIntro2: Using <b>{name}</b>: an atom of radius {r} Å in a {adjective} hole.
+helpAtomFitExIntroElse: An example atom 15 % bigger than the largest that fits in the {adjective} hole. Add the Atom fit tool to try your own.
+helpAtomFitExResult: The atom fits without straining the lattice.
+helpAtomFitExResultElse: The atom is too big: the lattice has to stretch around it.
+helpAtomFitEx3: Lattice spheres and the hole:
+helpAtomFitEx3Tex: R = {r}\,\text{Å},\qquad d = {d}\,\text{Å},\qquad r_\text{max} = d - R = {rMax}\,\text{Å}
+helpAtomFitEx4: Compare the ratios:
+helpAtomFitEx4Tex: \frac{r}{R} = \frac{{r2}}{{r3}} = {ratio}\ {fits}\ {critical}
+helpAtomFitEx5: It fits, with room to spare:
+helpAtomFitEx5Tex: r_\text{max} - r = {max2}\,\text{Å}
+helpAtomFitEx6: The {count} neighbours at {d} Å must move out by
+helpAtomFitEx6One: The {count} neighbour at {d} Å must move out by
+helpAtomFitEx6Tex: \delta = r + R - d_i = {r} + {host} - {d} = {move}\,\text{Å}\quad({percent}\,\%)
+
+## Sites as the help topics name them
+helpSiteNameCubic: Cubic site
+helpCritCITet: \sqrt{\tfrac53} - 1
+helpCritCFTet: \sqrt{\tfrac32} - 1
+helpCritCP: \sqrt3 - 1
+helpCritCIOct: \tfrac{2}{\sqrt3} - 1
+helpCritCFOct: \sqrt2 - 1
+
+# One topic per kind of site
+# The same template is used for all five; the parts that differ are listed per site further down.
+
+## Shared by the five site topics
+### Popover
+helpSiteScope: {lattice} only
+helpSiteLatticeCP: cubic P
+helpSiteLatticeCI: cubic I
+helpSiteLatticeCF: cubic F
+helpSiteSym1: a
+helpSiteSym1Text: lattice parameter (edge of the cubic cell)
+helpSiteSym2: R
+helpSiteSym2Text: radius of the lattice spheres; they touch, so R = d<sub>nn</sub>/2
+helpSiteSym3: r
+helpSiteSym3Text: radius of the largest sphere that fits in the {kind} hole
+helpSiteNow: With a = {a} Å: R = {rHost} Å, so the biggest atom in this hole has r = {rMax} Å.
+helpSiteNowOther: On screen: {lattice}. These numbers are for {name}.
+
+[3D highlight: the hole and its neighbours; captions are in 08-pictures.txt]
+
+### SEE MORE: Your lattice (worked example)
+helpWithYourA: With your lattice parameter a = {a} Å:
+helpSiteExTitleOther: {lattice}, a = 4 Å
+helpSiteExIntroOther: Your lattice is {lattice}, so this example uses {name} with a = 4 Å. Choose {name} in the lattice picker to use your own numbers.
+helpSiteEx1: Radius of the lattice spheres (they touch):
+helpSiteEx1Tex: R = {rTex} = {rHost}\,\text{Å}
+helpSiteEx2: Centre of the hole at ${site}$ to its {cn} nearest neighbours:
+helpSiteEx2Tex: d = {dTex} = {dValue}\,\text{Å}
+helpSiteEx3: Largest sphere that fits:
+helpSiteEx3Tex: r_\text{max} = d - R = {dValue} - {rHost} = {rMax}\,\text{Å}
+helpSiteEx4: Critical radius ratio:
+helpSiteEx4Tex: \frac{r}{R} = \frac{{rMax}}{{rHost}} = {ratio}\quad\big(= {ideal}\big)
+helpSiteEx5: {kind} holes in one cell:
+helpSiteEx5Tex: N = {count}
+helpSiteExResult: An atom with r/R up to {ratio} fits in this hole without pushing the lattice spheres apart.
+
+## The critical ratio of each site, as written in the worked example
+helpSiteIdealCITet: \sqrt{5/3} - 1
+helpSiteIdealCFTet: \sqrt{3/2} - 1
+
+# The five site topics (title, explanation, formulas, derivation, and the labels of the lines in the 3D highlight)
+## Cubic P: the cubic site
+
+helpSiteCPCubTitle: Cubic P: the cubic site
+helpSiteCPCubExplain: Cubic P has one hole per cell, at the body centre, with the 8 corner spheres around it on the corners of a cube. It is a big hole: the largest sphere that fits has $r/R = \sqrt3 - 1 \approx 0.732$. The faces of the cube are only windows from one hole to the next.
+helpSiteCPCubFormula1Tex: a = 2R,\qquad \sqrt3\,a = 2R + 2r
+helpSiteCPCubFormula2Tex: \frac{r}{R} = \sqrt3 - 1 \approx 0.732
+helpSiteCPCubRtex: \tfrac12 a
+helpSiteCPCubDtex: \tfrac{\sqrt3}{2}a
+helpSiteCPCubStep1: In cubic P the spheres touch along the <b>cell edge</b>: two corner spheres side by side span one edge.
+helpSiteCPCubStep1Tex: a = 2R
+helpSiteCPCubStep2: The body centre is half a body diagonal from every corner, so all 8 neighbours are the same distance away:
+helpSiteCPCubStep2Tex: d = \tfrac12\sqrt3\,a
+helpSiteCPCubStep3: A sphere in the hole that just fits touches all 8. Along the <b>body diagonal</b> lie a corner sphere, the hole and the opposite corner sphere:
+helpSiteCPCubStep3Tex: \sqrt3\,a = R + 2r + R = 2R + 2r
+helpSiteCPCubStep4: Put in a = 2R and solve for r:
+helpSiteCPCubStep4Tex: 2\sqrt3\,R = 2R + 2r\ \Rightarrow\ r = (\sqrt3 - 1)\,R
+helpSiteCPCubStep5: Divide by R. The ratio does not depend on a, so it is the same for every cubic P lattice:
+helpSiteCPCubStep5Tex: \frac{r}{R} = \sqrt3 - 1 \approx 0.732
+helpSiteCPCubStep6: Counting: the body centre belongs to this cell alone.
+helpSiteCPCubStep6Tex: N_\text{cub} = 1\ \text{per cell} = 1\ \text{per lattice point}
+helpSiteCPCubHlLabel1: 2<i>R</i> + 2<i>r</i> = √3 <i>a</i>
+helpSiteCPCubHlLabel2: 2<i>R</i> = <i>a</i>
+
+## Cubic I: octahedral site
+
+helpSiteCIOctTitle: Cubic I: octahedral site
+helpSiteCIOctExplain: In cubic I the octahedral holes sit at the face centres and edge midpoints, 6 per cell (3 per lattice point). Their octahedron is squashed: 2 neighbours are only a/2 away while the other 4 are a/√2 away. The 2 close ones limit the hole to $r/R = 2/\sqrt3 - 1 \approx 0.155$.
+helpSiteCIOctFormula1Tex: R + r = \frac{a}{2},\qquad \sqrt3\,a = 4R
+helpSiteCIOctFormula2Tex: \frac{r}{R} = \frac{2}{\sqrt3} - 1 \approx 0.155
+helpSiteCIOctRtex: \tfrac{\sqrt3}{4}a
+helpSiteCIOctDtex: \tfrac12 a
+helpSiteCIOctStep1: In cubic I the spheres touch along the <b>body diagonal</b>: corner, body centre, opposite corner.
+helpSiteCIOctStep1Tex: \sqrt3\,a = 4R\ \Rightarrow\ R = \tfrac{\sqrt3}{4}a
+helpSiteCIOctStep2: Take the hole at the edge midpoint $(\tfrac12, 0, 0)$. The two corner spheres on that edge are a/2 away; the four body-centre spheres around the edge are further:
+helpSiteCIOctStep2Tex: d_\text{corner} = \tfrac12 a,\qquad d_\text{body centre} = \sqrt{\big(\tfrac12\big)^2 + \big(\tfrac12\big)^2}\,a = \tfrac{1}{\sqrt2}a
+helpSiteCIOctStep3: The closest neighbours decide how big the hole is. Along the <b>cell edge</b>:
+helpSiteCIOctStep3Tex: a = R + 2r + R\ \Rightarrow\ R + r = \tfrac12 a
+helpSiteCIOctStep4: Divide by R:
+helpSiteCIOctStep4Tex: \frac{r}{R} = \frac{a/2}{\sqrt3\,a/4} - 1 = \frac{2}{\sqrt3} - 1 \approx 0.155
+helpSiteCIOctStep5: The 4 far neighbours alone would allow a sphere 4 times bigger, so the hole is a <b>squashed octahedron</b>. An atom that is too big pushes only the 2 close neighbours apart and stretches the lattice along one axis.
+helpSiteCIOctStep5Tex: \frac{a/\sqrt2}{R} - 1 = \frac{2\sqrt2}{\sqrt3} - 1 \approx 0.633
+helpSiteCIOctStep6: Counting: 6 face centres shared by 2 cells and 12 edge midpoints shared by 4.
+helpSiteCIOctStep6Tex: N_\text{oct} = 6\cdot\tfrac12 + 12\cdot\tfrac14 = 6 = 3\ \text{per lattice point}
+helpSiteCIOctHlLabel1: <i>a</i> = 2<i>R</i> + 2<i>r</i>
+helpSiteCIOctHlLabel2: 2<i>R</i> = √3 <i>a</i>/2
+
+## Cubic I: tetrahedral site
+
+helpSiteCITetTitle: Cubic I: tetrahedral site
+helpSiteCITetExplain: In cubic I the tetrahedral holes sit at (½, ¼, 0)-type positions, 4 on each face, 12 per cell (6 per lattice point). Each has 4 neighbours at the same distance: two corners and two body centres. The largest sphere that fits has $r/R = \sqrt{5/3} - 1 \approx 0.291$, bigger than the octahedral hole of the same lattice.
+helpSiteCITetFormula1Tex: R + r = \frac{\sqrt5}{4}a,\qquad \sqrt3\,a = 4R
+helpSiteCITetFormula2Tex: \frac{r}{R} = \sqrt{\tfrac53} - 1 \approx 0.291
+helpSiteCITetRtex: \tfrac{\sqrt3}{4}a
+helpSiteCITetDtex: \tfrac{\sqrt5}{4}a
+helpSiteCITetStep1: The spheres touch along the <b>body diagonal</b>:
+helpSiteCITetStep1Tex: \sqrt3\,a = 4R\ \Rightarrow\ R = \tfrac{\sqrt3}{4}a
+helpSiteCITetStep2: The hole at $(\tfrac12, \tfrac14, 0)$ has the corners $(0,0,0)$ and $(1,0,0)$ and the body centres $(\tfrac12,\tfrac12,\pm\tfrac12)$ around it. All four are equally far:
+helpSiteCITetStep2Tex: d = \sqrt{\big(\tfrac12\big)^2 + \big(\tfrac14\big)^2}\,a = \sqrt{\big(\tfrac14\big)^2 + \big(\tfrac12\big)^2}\,a = \tfrac{\sqrt5}{4}a
+helpSiteCITetStep3: A sphere that just fits touches all four:
+helpSiteCITetStep3Tex: R + r = \tfrac{\sqrt5}{4}a
+helpSiteCITetStep4: Divide by R:
+helpSiteCITetStep4Tex: \frac{r}{R} = \frac{\sqrt5/4}{\sqrt3/4} - 1 = \sqrt{\tfrac53} - 1 \approx 0.291
+helpSiteCITetStep5: So in cubic I the tetrahedral hole is the larger one (0.291 against 0.155), the opposite of cubic F. Small atoms in a body-centred lattice often prefer it.
+helpSiteCITetStep6: Counting: 4 holes on each of the 6 faces, each shared by 2 cells.
+helpSiteCITetStep6Tex: N_\text{tet} = 24\cdot\tfrac12 = 12 = 6\ \text{per lattice point}
+helpSiteCITetHlLabel1: <i>R</i> + <i>r</i> = √5 <i>a</i>/4
+helpSiteCITetHlLabel2: 2<i>R</i> = √3 <i>a</i>/2
+
+## Cubic F: octahedral site
+
+helpSiteCFOctTitle: Cubic F: octahedral site
+helpSiteCFOctExplain: In cubic F the octahedral holes sit at the body centre and the 12 edge midpoints, 4 per cell (1 per lattice point). Each is surrounded by 6 neighbours at a/2, on the corners of a regular octahedron. The largest sphere that fits touches all six, which gives $r/R = \sqrt2 - 1 \approx 0.414$.
+helpSiteCFOctFormula1Tex: a = 2R + 2r,\qquad \sqrt2\,a = 4R
+helpSiteCFOctFormula2Tex: \frac{r}{R} = \sqrt2 - 1 \approx 0.414
+helpSiteCFOctRtex: \tfrac{\sqrt2}{4}a
+helpSiteCFOctDtex: \tfrac12 a
+helpSiteCFOctStep1: In cubic F the spheres touch along the <b>face diagonal</b>: a corner sphere, the face-centre sphere and the opposite corner sphere sit in a row.
+helpSiteCFOctStep1Tex: \sqrt2\,a = 4R\ \Rightarrow\ a = 2\sqrt2\,R
+helpSiteCFOctStep2: Along a <b>cell edge</b> the two corner spheres have the octahedral hole between them, at the edge midpoint. A sphere that just fits touches both:
+helpSiteCFOctStep2Tex: a = R + 2r + R = 2R + 2r
+helpSiteCFOctStep3: Both are the same length a, so set them equal:
+helpSiteCFOctStep3Tex: 2R + 2r = 2\sqrt2\,R\ \Rightarrow\ r = (\sqrt2 - 1)\,R
+helpSiteCFOctStep4: Divide by R. The ratio does not depend on a: every cubic F lattice has the same one.
+helpSiteCFOctStep4Tex: \frac{r}{R} = \sqrt2 - 1 \approx 0.414
+helpSiteCFOctStep5: Check with the body-centre hole: its 6 neighbours are the face centres, all a/2 away, so the octahedron is regular and gives the same answer.
+helpSiteCFOctStep5Tex: R + r = \tfrac12 a = \sqrt2\,R
+helpSiteCFOctStep6: Counting: the body centre belongs to the cell alone, each of the 12 edge midpoints is shared by 4 cells.
+helpSiteCFOctStep6Tex: N_\text{oct} = 1 + 12\cdot\tfrac14 = 4 = 1\ \text{per lattice point}
+helpSiteCFOctHlLabel1: <i>a</i> = 2<i>R</i> + 2<i>r</i>
+helpSiteCFOctHlLabel2: √2 <i>a</i> = 4<i>R</i>
+
+## Cubic F: tetrahedral site
+
+helpSiteCFTetTitle: Cubic F: tetrahedral site
+helpSiteCFTetExplain: In cubic F the tetrahedral holes sit at the 8 positions of the (¼, ¼, ¼) type, all inside the cell: 2 per lattice point. Each one has 4 neighbours (a corner and the three face centres next to it) on the corners of a regular tetrahedron. The largest sphere that fits has $r/R = \sqrt{3/2} - 1 \approx 0.225$.
+helpSiteCFTetFormula1Tex: R + r = \frac{\sqrt3}{4}a,\qquad \sqrt2\,a = 4R
+helpSiteCFTetFormula2Tex: \frac{r}{R} = \sqrt{\tfrac32} - 1 \approx 0.225
+helpSiteCFTetRtex: \tfrac{\sqrt2}{4}a
+helpSiteCFTetDtex: \tfrac{\sqrt3}{4}a
+helpSiteCFTetStep1: The spheres touch along the <b>face diagonal</b>:
+helpSiteCFTetStep1Tex: \sqrt2\,a = 4R\ \Rightarrow\ a = 2\sqrt2\,R
+helpSiteCFTetStep2: The hole at $(\tfrac14, \tfrac14, \tfrac14)$ lies a quarter of the way along the <b>body diagonal</b>. Its neighbours $(0,0,0)$, $(\tfrac12,\tfrac12,0)$, $(\tfrac12,0,\tfrac12)$ and $(0,\tfrac12,\tfrac12)$ are all equally far:
+helpSiteCFTetStep2Tex: d = \sqrt{3\cdot\big(\tfrac14\big)^2}\,a = \tfrac{\sqrt3}{4}a
+helpSiteCFTetStep3: A sphere that just fits touches all four:
+helpSiteCFTetStep3Tex: R + r = \tfrac{\sqrt3}{4}a = \tfrac{\sqrt3}{4}\cdot 2\sqrt2\,R = \sqrt{\tfrac32}\,R
+helpSiteCFTetStep4: Divide by R:
+helpSiteCFTetStep4Tex: \frac{r}{R} = \sqrt{\tfrac32} - 1 \approx 0.225
+helpSiteCFTetStep5: Four neighbours crowd in closer than six can, so in cubic F the tetrahedral hole is the smaller one (0.225 against 0.414).
+helpSiteCFTetStep6: Counting: all 8 lie inside the cell.
+helpSiteCFTetStep6Tex: N_\text{tet} = 8 = 2\ \text{per lattice point}
+helpSiteCFTetHlLabel1: <i>R</i> + <i>r</i> = √3 <i>a</i>/4
+helpSiteCFTetHlLabel2: 2<i>R</i> = √2 <i>a</i>/2

@@ -1,0 +1,28 @@
+/* The 2D view: the SVG stage, its labels, the vector pick bar and the 2D object fields. */
+
+.flat-host { position: absolute; inset: 0; }
+.flat-svg { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; user-select: none; }
+.flat-svg:active { cursor: grabbing; }
+.flat-axis-label { font: italic 600 20px var(--font-math); paint-order: stroke; stroke: var(--stage); stroke-width: 4px; }
+.flat-angle-label { font: 600 13px var(--font-ui); paint-order: stroke; stroke: var(--stage); stroke-width: 4px; }
+.flat-note { display: flex; gap: 10px; margin: 0; padding: 12px 14px; border-radius: var(--radius); background: var(--surface-2); border-left: var(--border-w-strong) solid var(--line-strong); font-size: 12.5px; font-weight: 400; color: var(--muted); line-height: 1.5; }
+.flat-note .ic { flex: none; width: 18px; height: 18px; color: var(--primary-text); margin-top: 1px; }
+
+/* ---------- 2D objects ---------- */
+.flat-labels { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.flat-handle { cursor: grab; }
+.flat-handle:hover { stroke-width: 4.5; }
+.flat-pick-dot { fill: var(--primary); fill-opacity: 0.35; stroke: var(--primary); stroke-width: 2.5; pointer-events: none; }
+.flat-pick-line { stroke: var(--primary); stroke-width: 2.5; stroke-dasharray: 6 5; pointer-events: none; }
+.flat-pick {
+  position: absolute; left: 50%; top: 12px; z-index: 3; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  max-width: calc(100% - 24px); padding: 8px 10px 8px 14px; border-radius: var(--radius); background: var(--surface); border: var(--border-w) solid var(--line-strong); font-size: 13px;
+}
+.fp-text { display: inline-flex; align-items: center; gap: 8px; color: var(--primary-text); }
+.fp-text .ic { width: 18px; height: 18px; }
+.fp-snap { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--ink-2); }
+.vec-row { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; font: 600 15px var(--font-mono); color: var(--muted); }
+.vec-row .input { width: 58px; height: 34px; padding: 0 6px; text-align: center; font-family: var(--font-mono); }
+.vec-row b { margin: 0 4px; color: var(--ink-2); }
+.vec-row .btn { margin-left: auto; }
+.workspace.is-2d .flat-host .lbl { font-size: 12.5px; }

@@ -1,0 +1,294 @@
+# Defects mode (everything except the help topics, which are in help/09-defects.txt)
+
+## Browser tab title
+tabTitleDefects: Defects · Unit Cell Explorer
+
+## Top bar
+topDimLabelDefects: 3D view or 2D slice
+topDim3DTitleDefects: The whole block of atoms in 3D
+topDim2DTitleDefects: One atomic layer, seen straight on
+topPickerTitleDefects: Choose cubic P, I or F
+topAddTitleDefects: Add point defects, dislocations, a Burgers circuit…
+addMenuSubDefects: Everything you add appears in the Objects panel. Point defects ask you to click a lattice point or site.
+
+## Status line and hint on the canvas
+statusDefectsNone: <b>{name}</b> · {size} · {count} atoms · no defects
+statusDefectsOne: <b>{name}</b> · {size} · {count} atoms · {defects} defect
+statusDefectsMany: <b>{name}</b> · {size} · {count} atoms · {defects} defects
+statusSlice: slice ⊥ <i>{axis}</i> at {level}
+stageHintSlice: One layer, seen straight on · drag to pan · scroll or pinch to zoom
+msgSliceOn: <b>2D slice</b> · one atomic layer, seen straight on
+msgSliceOff: <b>3D view</b> · the whole block
+
+## The slice bar (2D)
+sliceTitle: Slice
+sliceAcross: Which axis the slice is across
+sliceAcrossAxis: Slice across {axis}
+sliceDown: Previous layer
+sliceUp: Next layer
+sliceLayer: layer {k} of {n}
+
+## Add cells drawer
+cellsBlockHint: The block of atoms the defects sit in, in cells along a, b and c. Dislocations show best with 7 or more cells across their line.
+
+## + Add categories
+catPointDefects: Point defects
+catPointDefectsBlurb: Missing, extra and foreign atoms, and how their neighbours relax
+catLineDefects: Line defects
+catLineDefectsBlurb: Edge and screw dislocations and the Burgers circuit
+catDefectCalcsBlurb: How many vacancies there are at a temperature
+
+## Objects panel, before anything is added
+emptyTextDefects: Use <b>+ Add</b> in the top bar, or type in the input bar below, e.g. <code>Vacancy()</code> or <code>Edge()</code>.
+
+## Placing a point defect by clicking
+placePoint: Click a lattice point for the {what}.
+placeSite: Click an interstitial site (the small markers) for the {what}.
+placeCentre: In the middle
+
+# Atoms (scene object)
+atomsTitle: Atoms
+atomsCount: {count} atoms
+atomsCountOne: {count} atom
+atomsMovedUpTo: moved up to {d} Å
+atomsPerfect: perfect crystal
+atomsNote: Touching spheres of radius R = {r} Å (half the nearest-neighbour distance). Every visible defect moves them; defect atoms are drawn by their own objects.
+atomsSize: Size (100 % = touching)
+atomsColourBy: Colour
+atomsColourNone: One colour
+atomsColourMoved: How far it moved
+atomsColourStrain: Strain
+atomsColourMovedHint: Pale atoms stayed put, deep orange ones moved most. The legend on the canvas gives the scale.
+atomsColourStrainHint: The average change in length of each atom's bonds to its nearest neighbours: blue squeezed, red stretched, grey unchanged.
+atomsColourNoneHint: Every atom in the colour chosen under Appearance.
+atomsExaggerate: Exaggerate the relaxation
+atomsExaggerateHint: Only the small movements around point defects are scaled up, so that they show. Dislocations always move the atoms by their real amount, and the numbers on the cards are never exaggerated.
+atomsGhosts: Show the perfect positions
+atomsGhostsHint: A small dot where each atom that moved would sit in a perfect crystal.
+atomsLegendMoved: How far each atom moved
+atomsLegendExaggerated: Drawn {k} × further than they really move.
+atomsLegendStrain: Bond strain
+atomsLegendStrainFoot: Blue: bonds squeezed · red: bonds stretched (the average over each atom's nearest neighbours).
+
+# Point defects
+
+## Names, + Add entries and command help (plain text: no HTML)
+pdTitleVacancy: Vacancy
+pdMenuVacancy: Vacancy
+pdDescVacancy: A lattice point with its atom missing; the neighbours relax slightly inward.
+pdTitleSelf: Self-interstitial
+pdMenuSelf: Self-interstitial
+pdDescSelf: An extra atom of the crystal itself, squeezed into an interstitial site.
+pdTitleSubstitutional: Substitutional impurity
+pdMenuSubLarge: Substitutional impurity – larger atom
+pdDescSubLarge: A foreign atom on a lattice point, larger than the host atoms: the neighbours are pushed out.
+pdMenuSubSmall: Substitutional impurity – smaller atom
+pdDescSubSmall: A foreign atom on a lattice point, smaller than the host atoms: the neighbours move in.
+pdDescSubstitutional: A foreign atom on a lattice point; its size sets which way the neighbours move.
+pdTitleInterstitial: Interstitial impurity
+pdMenuInterstitial: Interstitial impurity
+pdDescInterstitial: A small foreign atom (such as C, N or H) in an interstitial site.
+pdTitleFrenkel: Frenkel pair
+pdMenuFrenkel: Frenkel pair
+pdDescFrenkel: An atom that jumped from its lattice point into a nearby interstitial site: a vacancy and a self-interstitial together.
+pdCubicOnly: Point defects are placed in cubic P, I or F, the lattices whose interstitial sites are known here.
+
+## Cards
+pdPosition: Where
+pdWherePoint: At the lattice point {at}.
+pdWhereSite: In the {place} site {at}.
+pdFrenkelWhere: The atom left {at} and sits in the site {to}.
+pdMove: Move (click in the view)
+pdCentre: To the middle
+pdClash: {name} is already there, so this defect is left out until one of them moves.
+pdSiteKind: Interstitial site
+pdOneKind: Only one kind of site here: {name}.
+pdJumpLabel: The atom jumped to
+pdJump0: the nearest site
+pdJump1: the 2nd nearest
+pdJump2: the 3rd nearest
+pdSize: Size r/R (100 % = a host atom)
+pdStrength: How much the neighbours give way
+pdStrengthHint: 0 %: they stay put. 100 %: they move all the way, until they just touch the defect atom (around a vacancy: in by R/10). Real crystals are in between; 50 % shares the misfit between the defect and the crystal.
+pdShellIn: Its {count} nearest neighbours move {u} Å inward ({percent} % of their distance).
+pdShellOut: Its {count} nearest neighbours move {u} Å outward ({percent} % of their distance).
+pdShellStill: Its {count} nearest neighbours stay where they are.
+pdShellRattles: It is smaller than its hole, so its {count} nearest neighbours stay put (it rattles).
+pdHostRadius: Host atom radius R
+pdAtomRadius: Defect atom radius r
+pdFirstShell: Distance to the nearest neighbours r₁
+pdFirstMove: The nearest neighbours move u₁
+pdHowFar: How far the neighbours move
+pdArrows: Show which way the neighbours move
+pdArrowsHint: Arrows on the nearest neighbours, all the same length; the label gives the real distance.
+
+## Input bar messages
+msgPdNoKind: {lattice} has no {kind} sites; use {names}.
+msgPdPosition: I can't read the position “{arg}”. Write three coordinates, e.g. (2, 2, 2).
+msgPdCantRead: I can't read “{arg}”. {command} takes a position, e.g. (2, 2, 2), or a site: oct, tet or cub.
+msgPdCantReadSized: I can't read “{arg}”. {command} takes a size (1.2R, 120 % or a radius in Å) and a position, e.g. (2, 2, 2).
+msgPdSize: The size must be between 0.3R and 1.6R (R = {r} Å).
+msgPdNotSite: {at} is not a {kind} site of the block. The nearest one is {near}.
+msgPdNotPoint: {at} is not a lattice point of the block. The nearest one is {near}.
+
+# Dislocations
+
+## Names, + Add entries and command help (plain text: no HTML)
+dislEdgeTitle: Edge dislocation
+dislEdgeMenu: Edge dislocation
+dislEdgeDesc: An extra half-plane of atoms that ends at a line; b is at right angles to the line.
+dislScrewTitle: Screw dislocation
+dislScrewMenu: Screw dislocation
+dislScrewDesc: The lattice planes join into a spiral ramp around a line; b runs along the line.
+dislCubicPShort: Cubic P only
+dislCubicPOnly: Dislocations are drawn in cubic P, where b = a⟨100⟩ is the shortest lattice vector. {lattice} needs other Burgers vectors (a/2⟨111⟩ in cubic I, a/2⟨110⟩ in cubic F).
+dislSummary: <i>b</i> = {b} · line {line}
+
+## Cards
+dislBefore: Not in the crystal yet, so the crystal is perfect. Move it in, or press Glide.
+dislIn: In the crystal: the atoms around the line are moved by its displacement field.
+dislAfterEdge: It has left the crystal: the half above the slip plane has slipped by b = {b} Å over the half below, and a step of that height shows on each side.
+dislAfterScrew: It has left the crystal: the two halves have slipped by b = {b} Å along the line, and a step shows on the end faces.
+dislBurgers: Burgers vector
+dislBLength: |<i>b</i>|
+dislLine: Line along
+dislAngle: <i>b</i> and the line
+dislPerpendicular: at right angles: edge
+dislParallel: parallel: screw
+dislLineAlong: The line runs along
+dislHalfSide: Extra half-plane
+dislAbove: above the slip plane
+dislBelow: below
+dislHand: Screw
+dislRight: right-handed
+dislLeft: left-handed
+dislPosition: Position along {axis} (cells)
+dislPlane: Slip plane at {axis} = (cells)
+dislGlide: Glide through the crystal
+dislMiddle: Back to the middle
+dislGlideHintEdge: A shear stress τ pushes the line along b: it enters on one side, crosses the block and leaves a slip step of b.
+dislGlideHintScrew: A shear stress τ pushes the line sideways, at right angles to b: once it has crossed, the two halves have slipped by b along the line.
+dislMag: Displacement magnitude
+dislMagHint: 100 % is a whole Burgers vector. Less shows the field growing; the atoms across the slip plane line up again only at 100 %, which is why b must be a lattice vector.
+dislNu: Poisson's ratio ν (× 100)
+dislNuHint: ν = {nu}. Metals are close to 0.3; it sets how much the crystal swells or shrinks beside an edge dislocation.
+dislShowHalf: Show the extra half-plane
+dislShowHalfHint: Its atoms take the dislocation's colour, and a see-through ribbon follows them down to the line.
+dislRampAll: Show the ramp of every plane
+dislRampAllHint: Off: only the spiral ramp of the middle plane.
+dislShowSlip: Show the slip plane
+dislShowCore: Show the core
+dislShowCoreHint: A tube of radius b around the line: there the atoms are so displaced that elasticity, and so the formulas, no longer hold.
+dislShowB: Show the Burgers vector b
+dislShowShear: Show the shear stress τ
+dislShowShearHint: The stress that makes the line glide; Glide turns it on.
+dislField: Displacement field
+dislFieldHint: Isotropic linear elasticity (Volterra). x is along b from the line, y up from the slip plane, θ the angle from x.
+dislAddNoteStrain: The atoms are now coloured by strain (blue squeezed, red stretched); change it on the Atoms card.
+
+## Input bar messages
+msgDislCubicP: Dislocations are drawn in cubic P. Switch to cubic P first.
+msgDislAxis: I can't read “{arg}”. Give the axis the line runs along: a, b or c (−c turns it round).
+
+# Burgers circuit
+
+## Name, + Add entry and command help (plain text: no HTML)
+bcTitle: Burgers circuit
+bcMenu: Burgers circuit
+bcDesc: Walk atom to atom around a dislocation and compare with the same walk in a perfect crystal: the gap is b.
+bcAddNote: Step through it on its card, or press Play.
+
+## Card
+bcAround: Around
+bcStepStart: Start at S. Press Next to take the first step.
+bcStep: Step {step} of {total}: {k} of {n} {dir}
+bcRight: to the right
+bcUp: up
+bcLeft: to the left
+bcDown: down
+bcCloses: The circuit closes (S = F): there is no dislocation inside it.
+bcClosesAnyway: The circuit closes: with less than half of b the atoms still line up as in a perfect crystal.
+bcFails: It does not close: S → F = {b}, |<i>b</i>| = {len} Å. {kind}
+bcIsEdge: b is at right angles to the line: an edge dislocation.
+bcIsScrew: b runs along the line: a screw dislocation.
+bcRanOut: The circuit stopped: there is no atom where the next step goes (it left the block, or found a vacancy).
+bcRanOutShort: The circuit stops before it is complete
+bcNoDislocation: The dislocation of this circuit is gone. Choose another one.
+bcOutside: The circuit runs out of the block. Make it smaller, move it, or make the block bigger.
+bcBack: Back
+bcNext: Next
+bcPlay: Play
+bcRestart: Start again
+bcAll: Show all
+bcSize: Steps per side
+bcMove: Move the circuit
+bcCentre: Around the line
+bcMoveHint: Move it off the dislocation and it closes: only a circuit around a dislocation fails.
+bcCompare: Show the same circuit in a perfect crystal
+bcCompareHint: Drawn beside the block, step for step.
+bcRule: Burgers vector
+bcRuleHint: A right-handed circuit about the line (anticlockwise when the line points at you), the same number of steps each way. In a perfect crystal it closes; around the dislocation the gap from the start S to the finish F is b.
+bcSummaryCloses: Around {name}: closes
+bcSummaryFails: Around {name}: S → F = {b}
+
+## In the view
+bcWithDislocation: With the dislocation
+bcPerfect: Perfect crystal
+
+## Input bar messages
+msgBcSize: A circuit takes 2 to 6 steps per side.
+msgBcMissing: {name} doesn't exist yet. Add a dislocation first, e.g. Edge().
+msgBcNotDislocation: {name} is not a dislocation. A Burgers circuit goes around an edge or screw dislocation.
+
+# Vacancy concentration
+
+## Name, + Add entry and command help (plain text: no HTML)
+vcTitle: Vacancy concentration
+vcLabel: Vacancy concentration
+vcDesc: How many vacancies there are at a temperature: Nv = N exp(−Qv / kT), with a live graph.
+
+## Card
+vcSummary: <i>N</i><sub>v</sub>/<i>N</i> = {frac} at {T} K
+vcT: Temperature T ({c} °C)
+vcQ: Energy to form a vacancy Qᵥ ({kj} kJ/mol)
+vcOneIn: One vacancy for every … atoms
+vcInBlock: Expected in the block ({n} atoms)
+vcPlot: Graph
+vcPlotT: Nᵥ/N against T
+vcPlotArrhenius: ln(Nᵥ/N) against 1/T
+vcPlotTHint: A log scale: each grid line is a factor of 100 000. The dot is the temperature you chose; hover over the graph to read other values.
+vcPlotArrheniusHint: An Arrhenius plot: a straight line of slope −Qᵥ/k, which is how Qᵥ is measured.
+vcFormula: The equilibrium number of vacancies
+vcFormulaHint: N = atoms per m³ of the lattice on screen (atoms per cell ÷ a³); k = 8.617 × 10⁻⁵ eV/K.
+
+## The graph
+vcAxisT: T (K)
+vcAxis1000T: 1000 / T (K⁻¹)
+vcAxisFraction: Nᵥ / N
+vcAxisLn: ln(Nᵥ / N)
+vcBelow: below {p}
+vcSlope: slope −Qᵥ/k = −{s} K
+vcGraphT: The fraction of empty lattice points against temperature
+vcGraphArrhenius: The logarithm of the fraction of empty lattice points against 1/T
+
+## Input bar messages
+msgNvCantRead: I can't read “{arg}”. Nv takes a temperature (1273 or 1000 C) and an energy (0.9 eV or 87 kJ/mol).
+msgNvT: The temperature must be between 200 and 2000 K.
+msgNvQ: The energy must be between 0.2 and 3 eV.
+
+# Input bar in Defects mode
+cmdListSubDefects: Click one to put it in the input bar. Write <code>x = …</code> to name the result; using an existing name changes that object.
+msgMissingCreateDefects: {name} doesn't exist yet. Create it first, for example {name} = Edge().
+msgDefectsNoIndices: Directions and planes are in Crystal Structures. Here you add defects, e.g. Vacancy() or Edge().
+msgWorksInCrystal: {name} works in Crystal Structures.
+msgWorksInDefects: {name} works in Defects mode.
+
+# Formulas on the cards and in the help (LaTeX)
+formulaRelax: u(r) = u_1\left(\frac{r_1}{r}\right)^2,\qquad u_1 = s\,\delta
+formulaRelaxDelta: \delta = r + R - d
+formulaRelaxVacancy: \delta_\text{vacancy} = -\frac{R}{10}
+formulaEdgeUx: u_x = \frac{b}{2\pi}\left[\theta + \frac{xy}{2(1-\nu)(x^2+y^2)}\right]
+formulaEdgeUy: u_y = -\frac{b}{2\pi}\left[\frac{1-2\nu}{4(1-\nu)}\ln\frac{x^2+y^2}{b^2} + \frac{x^2-y^2}{4(1-\nu)(x^2+y^2)}\right]
+formulaScrew: u_z = \frac{b\,\theta}{2\pi}
+formulaBurgers: \mathbf b = \overrightarrow{\text{SF}}\quad(\text{the same circuit closes in a perfect crystal})
+formulaVacancyConc: N_\text{v} = N\exp\!\left(-\frac{Q_\text{v}}{kT}\right)
