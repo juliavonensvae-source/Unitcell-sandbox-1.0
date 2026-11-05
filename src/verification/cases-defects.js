@@ -1,9 +1,19 @@
 /* =====================================================================
    Verification cases for Defects mode (part of buildCases in cases.js):
    textbook numbers for vacancies, the point-defect field, the Burgers
-   vector of edge and screw dislocations, and slip by glide.
+   vector of edge and screw dislocations, slip by glide, and the slip
+   systems of cubic P, I and F on their close-packed planes.
    ===================================================================== */
 import * as M from '../math/index.js';
+import { Lattice } from '../math/lattice.js';
+
+/** Cubic P, I and F with a = 1: lattice and lattice points of one cell. */
+const CUBIC = {
+  cP: [[0, 0, 0]],
+  cI: [[0, 0, 0], [0.5, 0.5, 0.5]],
+  cF: [[0, 0, 0], [0.5, 0.5, 0], [0.5, 0, 0.5], [0, 0.5, 0.5]],
+};
+const cubic = id => ({ L: new Lattice({ a: 1, b: 1, c: 1, alpha: 90, beta: 90, gamma: 90 }), basis: CUBIC[id].map(f => ({ el: 'LP', f })) });
 
 /** The atoms of a cubic P block (a = 1) with one dislocation, or none. */
 function block(repeats, d = null) {
@@ -45,5 +55,37 @@ export function defectCases(near, truthy) {
     const near4 = C.atoms.filter(a => Math.abs(a.f[0] - 4.5) < 2 && Math.abs(a.f[1] - 4.5) < 2);
     truthy(DS, 'Edge dislocation: squeezed on the side of the extra half-plane, stretched on the other',
       mean(near4.filter(a => a.f[1] > 4.5)) < 0 && mean(near4.filter(a => a.f[1] < 4.5)) > 0);
+  }
+
+  slipCases(near, truthy);
+}
+
+/** Slip systems on the close-packed planes of cubic P, I and F (Callister, Hull & Bacon). */
+function slipCases(near, truthy) {
+  const SL = 'Slip on close-packed planes';
+  for (const [id, n, name] of [['cF', 12, 'FCC {111}⟨110⟩: 4 planes × 3 directions'], ['cI', 12, 'BCC {110}⟨111⟩: 6 planes × 2 directions'], ['cP', 6, 'SC {100}⟨100⟩: 3 planes × 2 directions']]) {
+    near(SL, `${name} = ${n} slip systems`, M.slipSystemCount(id), n, 0);
+  }
+  const facts = id => { const { L, basis } = cubic(id); return M.planeFacts(L, basis, M.slipPlanes(id)[0], M.neighbourShell(L, basis, 0)[0].d / 2); };
+  near(SL, 'FCC (111): planar packing π/(2√3) = 0.907, each atom touching 6', facts('cF').packing, 0.9069, 1e-4);
+  near(SL, 'BCC (110): planar packing 3π/(8√2) = 0.833, each atom touching 4', facts('cI').packing, 0.8330, 1e-4);
+  near(SL, 'SC (100): planar packing π/4 = 0.785, each atom touching 4', facts('cP').packing, 0.7854, 1e-4);
+  truthy(SL, 'Touching neighbours in the slip plane: 6 (FCC), 4 (BCC), 4 (SC)', [facts('cF').inPlane, facts('cI').inPlane, facts('cP').inPlane].join() === '6,4,4');
+  near(SL, 'FCC: b = a/2⟨110⟩, |b| = a/√2 = the nearest-neighbour distance', M.norm(M.burgersOf('cF', [1, -1, 0])), 1 / Math.SQRT2, 1e-12, ' a');
+  near(SL, 'BCC: b = a/2⟨111⟩, |b| = a√3/2', M.norm(M.burgersOf('cI', [1, -1, 1])), Math.sqrt(3) / 2, 1e-12, ' a');
+  {
+    const b = M.burgersOf('cF', [-1, 1, 0]);
+    const [b1, b2] = M.shockleyPartials(b, [1, 1, 1], [0.5, 0.5, 0], M.isLatticePoint(cubic('cF').basis));
+    near(SL, 'Shockley partials: |b₁| = |b₂| = a/√6', M.norm(b1), 1 / Math.sqrt(6), 1e-12, ' a');
+    truthy(SL, 'b₁ + b₂ = b, both in the (111) plane', M.norm(M.sub(M.add(b1, b2), b)) < 1e-12 && Math.abs(M.dot(b1, [1, 1, 1])) < 1e-12 && Math.abs(M.dot(b2, [1, 1, 1])) < 1e-12);
+    near(SL, "Frank's rule: b² = a²/2 splits into b₁² + b₂² = a²/3", M.b2(b1) + M.b2(b2), 1 / 3, 1e-12, ' a²');
+  }
+  // the field of a dislocation on (111): far behind the line the half above has slipped by b, far ahead not at all
+  for (const character of ['edge', 'screw']) {
+    const { L } = cubic('cF'), hkl = [1, 1, 1], b = L.toCartesian(M.burgersOf('cF', [1, -1, 0])), n = L.planeNormal(hkl), d = L.dSpacing(hkl);
+    const frame = M.slipFrame(n, b, character), u = M.lineShift(frame, [0, 0, 0], b, { zeta: M.coreHalfWidth(d, b, frame.xi) });
+    const across = X => M.sub(u(M.add(M.scale(frame.m, X), M.scale(n, d / 2))), u(M.add(M.scale(frame.m, X), M.scale(n, -d / 2))));
+    near(SL, `${character} on (111): behind the line the layer above has slipped by b`, M.norm(M.sub(across(-1e5), b)), 0, 1e-4, ' a');
+    near(SL, `${character} on (111): ahead of the line it has not slipped`, M.norm(across(1e5)), 0, 1e-4, ' a');
   }
 }

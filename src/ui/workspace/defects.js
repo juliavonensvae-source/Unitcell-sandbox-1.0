@@ -97,10 +97,13 @@ export class DefectsWorkspace extends CrystalWorkspace {
     if (card) this.replaceCard(item);
   }
 
-  /** A Burgers circuit puts a perfect crystal beside the block: fit both in view. */
+  /** A Burgers circuit puts a perfect crystal beside the block: fit both in view. A slip plane is seen from its own angle. */
   addItem(type, init = {}, opts = {}) {
     const item = super.addItem(type, init, opts);
-    if (!item.error && !opts.quiet && getType(type).frameExtra) this.frameView();
+    if (item.error || opts.quiet) return item;
+    const T = getType(type), along = T.viewOnAdd && !this.state.slice.on ? T.viewOnAdd(item, this.ctx) : null;
+    if (along && this.view) this.view.frame({ along });
+    else if (T.frameExtra) this.frameView();
     return item;
   }
 
@@ -162,6 +165,15 @@ export class DefectsWorkspace extends CrystalWorkspace {
     if (!it) { s.layer = null; return; }
     const D = it.type === 'burgers' ? ctx.itemById(it.src) : it;
     if (D && (D.type === 'edge' || D.type === 'screw')) { s.axis = D.line; s.layer = null; return; }
+    const T = D && getType(D.type);
+    if (T && T.sliceAxis) {
+      // across the line when it runs along a cube axis; otherwise the middle layer
+      const axis = T.sliceAxis(D, ctx);
+      if (axis != null) s.axis = axis;
+      s.layer = null;
+      return;
+    }
+    if (!it.at) { s.layer = null; return; }
     s.axis = 2;
     const layers = M.sliceLayers(ctx.basis, ctx.repeats, 2), half = (layers[1] - layers[0]) / 2;
     s.layer = Math.max(0, layers.findIndex(v => Math.abs(v - it.at[2]) < half + 1e-6));

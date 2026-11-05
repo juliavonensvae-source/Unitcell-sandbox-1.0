@@ -12,7 +12,7 @@ modesCrystalTag3: Planes
 modesTagCalculations: Calculations
 modesPlay: Play
 
-## Cards that are not open yet
+## Cards that are not open yet (the numbers continue after the open cards)
 modesComingSoon: Coming soon
 modesLocked: Locked
 
@@ -25,7 +25,7 @@ modesDefectsTag3: Burgers vector
 
 ## Card 03: Challenge mode (its third tag is modesTagCalculations above)
 modesChallengeName: Challenge mode
-modesChallengeDesc: Test yourself: name directions and planes, calculate spacings and more with leaderboard.
+modesChallengeDesc: Test yourself: name directions and planes, calculate spacings and more in a timed practice test.
 modesChallengeTag1: Quizzes
 modesChallengeTag2: Get firsts
 

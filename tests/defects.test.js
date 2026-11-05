@@ -36,7 +36,7 @@ describe('Defects mode: the model', () => {
 
   it('every + Add entry of Defects mode has a command that adds its type', () => {
     const entries = menuEntries().filter(e => getType(e.type).mode === 'defects');
-    expect(entries.map(e => e.key).sort()).toEqual(['burgers', 'edge', 'frenkel', 'interstitial', 'screw', 'self-interstitial', 'sub-large', 'sub-small', 'vacancy', 'vacancy-conc'].sort());
+    expect(entries.map(e => e.key).sort()).toEqual(['burgers', 'edge', 'frenkel', 'interstitial', 'screw', 'self-interstitial', 'slip-bcc', 'slip-fcc', 'slip-sc', 'sub-large', 'sub-small', 'vacancy', 'vacancy-conc'].sort());
     for (const e of entries) {
       const m = defects();
       const item = run(m, e.command.replace('edge1', '')); // Burgers() adds its own dislocation

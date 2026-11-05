@@ -1,0 +1,15 @@
+# =====================================================================
+# CHALLENGE MODE · Crystallography · the subject
+#
+# This folder is one subject of Challenge mode. Its name (below) is what the
+# Subject list shows; easy, medium and hard are the hints shown under the
+# Difficulty buttons. Every other .txt file in this folder is one topic,
+# listed in the order of the file names (a-…, b-…, c-…).
+# See ../README.md for how the files work and how to add topics and subjects.
+# =====================================================================
+
+[subject]
+name: Crystallography
+easy: Indices 0 to 2 with no minus signs, simple intercepts, clear lattice parameters.
+medium: Indices up to 3 with minus signs, fractional intercepts, exact Bravais lattices.
+hard: Indices up to 5, questions with several steps, symmetry and close values.

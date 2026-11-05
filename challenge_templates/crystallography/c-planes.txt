@@ -1,0 +1,68 @@
+# =====================================================================
+# CHALLENGE MODE · Crystallography · Topic C: Planes (cubic)
+#
+# HOW THIS FILE WORKS
+#   [topic]     The topic's name in the Topics list (one per file).
+#   [question]  One wording of a question type. The program fills in random
+#               numbers each time. Copy a block to add another wording of the
+#               same type (one is picked at random); delete or comment out a
+#               block to stop that type from appearing.
+#                 type:    which question type (see the list below; new types need code)
+#                 level:   easy, medium, hard (one or more; leave it out for all)
+#                 text:    the question
+#                 explain: the short solution shown in the review
+#   [fixed]     A question you write yourself, with fixed numbers:
+#                 text, answer, level and explain as above, and
+#                 wrong: three wrong options separated by |   (multiple choice)
+#               Leave "wrong" out for a typed answer: indices such as (1 1 0) or
+#               [1 1 0], or a number such as 14 or 2.34 Å (a number with decimals
+#               may be 1 % off). negative-ok: yes also accepts indices with every
+#               sign flipped.
+#   [words]     Pieces of text the program puts into the questions below.
+#
+#   {name}   is filled in by the program: keep the spelling. Each type's names
+#            are listed below; {answer} (the right answer) works in every type.
+#   $...$    is a formula (LaTeX), e.g. $d = a/\sqrt{h^2+k^2+l^2}$.
+#            Don't put a {name} inside $...$.
+#   A line that starts with a space continues the line above it.
+#   Lines starting with # are comments. <b>, <i>, <sub> and <br> work.
+#   With "npm run dev" running, saving this file reloads the page.
+# =====================================================================
+
+# QUESTION TYPES IN THIS TOPIC (levels · how it is answered)
+#   intercepts-to-hkl        easy, medium, hard · multiple choice or typed (hkl)
+#       {x} {y} {z} the intercepts (∞ when the plane is parallel to the axis)
+#       {recip} the reciprocals · {clear} the step that clears fractions (words clear / no-clear)
+#   plane-family-member      easy, medium, hard · multiple choice
+#   plane-family-not-member  easy, medium, hard · multiple choice
+#       {family} the family, e.g. {110}
+#   plane-family-count       easy, medium, hard · multiple choice or typed (a number)
+#       {family} · {members} every member · {count} how many
+#       A plane and its negative count as ONE member: {100} has 3, {110} has 6.
+
+[topic]
+name: Planes (cubic)
+
+[question]
+type: intercepts-to-hkl
+text: In a cubic crystal, a plane cuts the axes at x = {x}, y = {y} and z = {z} (in units of a). What are its Miller indices (hkl)?
+explain: Take the reciprocals of the intercepts: {recip}. {clear} The Miller indices are {answer}.
+
+[question]
+type: plane-family-member
+text: Which of these planes belongs to the family {family} in a cubic crystal?
+explain: In a cubic crystal the planes of {family} are the orderings and sign changes of the same three numbers. {answer} uses the same numbers; the others don't.
+
+[question]
+type: plane-family-not-member
+text: Which of these planes does <b>not</b> belong to the family {family} in a cubic crystal?
+explain: The planes of {family} are the orderings and sign changes of the same three numbers. {answer} uses different numbers.
+
+[question]
+type: plane-family-count
+text: How many different planes belong to the family {family} in a cubic crystal? Count a plane and its negative, e.g. (1 1 0) and (−1 −1 0), as one, since they are parallel.
+explain: Write every ordering and sign change of the indices, keeping one of each ± pair: {members}. That makes {count}.
+
+[words]
+clear: Multiply by {factor} to clear the fractions: {cleared}.
+no-clear: There are no fractions to clear.

@@ -15,5 +15,7 @@ export {
 } from './cells.js';
 export * from './interstitials.js';
 export * from './ionic.js';
+export * from './stacking.js';
 export * from './defects.js';
 export * from './dislocations.js';
+export * from './slip.js';

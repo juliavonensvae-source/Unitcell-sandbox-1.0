@@ -18,6 +18,7 @@ catIntercepts: Intercepts
 catInterceptsBlurb: Where a plane cuts the a, b and c axes
 catSitesBlurb: The empty spaces between lattice spheres
 catIonicBlurb: A Bravais lattice plus a basis of ions: NaCl, CsCl, ZnS, CaF₂
+catStackingBlurb: Layers of touching spheres stacked ABAB… (HCP) or ABCABC… (FCC)
 catCalculationsBlurb: Live values for the lattice on screen
 
 ## Entries

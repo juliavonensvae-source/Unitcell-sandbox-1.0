@@ -1,0 +1,71 @@
+# =====================================================================
+# CHALLENGE MODE · Crystallography · Topic E: How planes and directions relate (cubic)
+#
+# HOW THIS FILE WORKS
+#   [topic]     The topic's name in the Topics list (one per file).
+#   [question]  One wording of a question type. The program fills in random
+#               numbers each time. Copy a block to add another wording of the
+#               same type (one is picked at random); delete or comment out a
+#               block to stop that type from appearing.
+#                 type:    which question type (see the list below; new types need code)
+#                 level:   easy, medium, hard (one or more; leave it out for all)
+#                 text:    the question
+#                 explain: the short solution shown in the review
+#   [fixed]     A question you write yourself, with fixed numbers:
+#                 text, answer, level and explain as above, and
+#                 wrong: three wrong options separated by |   (multiple choice)
+#               Leave "wrong" out for a typed answer: indices such as (1 1 0) or
+#               [1 1 0], or a number such as 14 or 2.34 Å (a number with decimals
+#               may be 1 % off). negative-ok: yes also accepts indices with every
+#               sign flipped.
+#   [words]     Pieces of text the program puts into the questions below.
+#
+#   {name}   is filled in by the program: keep the spelling. Each type's names
+#            are listed below; {answer} (the right answer) works in every type.
+#   $...$    is a formula (LaTeX), e.g. $d = a/\sqrt{h^2+k^2+l^2}$.
+#            Don't put a {name} inside $...$.
+#   A line that starts with a space continues the line above it.
+#   Lines starting with # are comments. <b>, <i>, <sub> and <br> work.
+#   With "npm run dev" running, saving this file reloads the page.
+# =====================================================================
+
+# QUESTION TYPES IN THIS TOPIC (levels · how it is answered)
+# All of them use one rule: [uvw] lies in (hkl) when hu + kv + lw = 0.
+#   dir-in-plane         easy, medium, hard · multiple choice
+#       {plane} the plane · {check} hu + kv + lw worked out for the right answer
+#   plane-contains-dir   easy, medium, hard · multiple choice
+#       {direction} the direction · {check} as above
+#   zone-axis            medium, hard · multiple choice or typed [uvw] (either sign counts)
+#       {p1} {p2} the two planes · {cross} the cross product worked out
+#   plane-from-two-dirs  medium, hard · multiple choice or typed (hkl) (either sign counts)
+#       {d1} {d2} the two directions · {cross} the cross product worked out
+#   coplanar-three       medium, hard · multiple choice
+#       {plane} the plane that holds the right set · {checks} hu + kv + lw for each of the three
+
+[topic]
+name: Planes and directions (cubic)
+
+[question]
+type: dir-in-plane
+text: Which of these directions lies in the plane {plane}?
+explain: A direction [uvw] lies in the plane (hkl) when hu + kv + lw = 0. For {answer}: {check}.
+
+[question]
+type: plane-contains-dir
+text: Which of these planes contains the direction {direction}?
+explain: The plane (hkl) contains [uvw] when hu + kv + lw = 0. For {answer}: {check}.
+
+[question]
+type: zone-axis
+text: Along which direction do the planes {p1} and {p2} intersect?
+explain: The line where they meet lies in both planes, so it is perpendicular to both plane normals: take the cross product, {cross}. The opposite direction is also correct.
+
+[question]
+type: plane-from-two-dirs
+text: Which plane contains both directions {d1} and {d2}?
+explain: The plane's normal is perpendicular to both directions: take the cross product, {cross}. The indices with every sign flipped give the same set of planes.
+
+[question]
+type: coplanar-three
+text: Which set of three directions all lie in one plane?
+explain: The directions {answer} all lie in the plane {plane}: {checks}. In each other set one direction leaves the plane (the determinant of the three is not 0).

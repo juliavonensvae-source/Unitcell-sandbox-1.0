@@ -44,6 +44,7 @@ const P = {
   undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/>',
   mouse: '<rect x="6.5" y="3" width="11" height="18" rx="5.5"/><path d="M12 7v3.5"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/>',
+  clock: '<circle cx="12" cy="12" r="8.6"/><path d="M12 7.2V12l3.2 2.2"/>',
   minus: '<path d="M5 12h14"/>',
   axes: '<path d="M6 18.5V4.5" style="stroke:var(--axis-c)"/><path d="M3.5 7 6 4.5 8.5 7" style="stroke:var(--axis-c)"/><path d="M6 18.5h13.5" style="stroke:var(--axis-b)"/><path d="M17 16l2.5 2.5L17 21" style="stroke:var(--axis-b)"/><path d="M6 18.5 2.8 21.7" style="stroke:var(--axis-a)"/>',
   ions: '<circle cx="8.5" cy="9" r="5.5"/><circle cx="17.5" cy="16.5" r="3.5"/><path d="M6.5 9h4M8.5 7v4M15.8 16.5h3.4"/>',

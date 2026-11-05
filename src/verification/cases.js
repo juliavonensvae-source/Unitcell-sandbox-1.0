@@ -369,6 +369,24 @@ export function buildCases() {
       && cn[cat].cn === want[2] && cn[an].cn === want[3] && M.formulaUnitsOf(counts).z === want[4]);
   }
 
+  /* ---------- close-packed stacking ---------- */
+  const CP = 'Close-packed stacking';
+  for (const [seq, view, n, label] of [
+    ['AB', 'hex', 6, 'ABAB (HCP): 6 atoms in the hexagonal prism'],
+    ['ABC', 'hex', 9, 'ABC on hexagonal axes: 9 atoms in the hexagonal prism'],
+    ['ABC', 'cubic', 4, 'ABC in the cube (FCC): 4 atoms per cell'],
+  ]) {
+    const basis = view === 'cubic' ? basisOf('F') : M.stackingBasis(seq);
+    const F = M.stackingFacts(M.stackingParams(seq, view, 1), basis, view);
+    near(CP, label, M.pointCount(basis, view === 'cubic' ? M.boxRegion([1, 1, 1]) : M.hexPrismRegion(1)).total, n, 1e-9);
+    truthy(CP, `${seq} (${view}): CN 12 = 6 in the layer + 3 above + 3 below`, F.cn === 12 && F.inLayer === 6 && F.above === 3 && F.below === 3);
+    near(CP, `${seq} (${view}): packing fraction π/(3√2) = 0.7405`, F.packing, Math.PI / (3 * Math.SQRT2), 1e-9);
+    near(CP, `${seq} (${view}): layers 2r·√(2/3) apart (r = 1)`, F.spacing, 2 * Math.sqrt(2 / 3), 1e-9);
+  }
+  near(CP, 'Ideal HCP c/a = √(8/3) = 1.633', M.IDEAL_CA.AB, 1.633, 0.0005);
+  truthy(CP, 'FCC: the (111) layers run A, B, C, A along the body diagonal',
+    [[0, 0, 0], [0.5, 0.5, 0], [1, 0.5, 0.5], [1, 1, 1]].map(f => M.layerOf(f, 'cubic', 'ABC').letter).join('') === 'ABCA');
+
   /* ---------- Part 5: Defects mode ---------- */
   defectCases(near, truthy);
 

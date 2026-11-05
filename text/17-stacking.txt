@@ -1,0 +1,66 @@
+# Close-packed stacking: ABAB… (HCP) and ABCABC… (FCC)
+
+## Structures
+stackStructureAB: Hexagonal close-packed (HCP)
+stackStructureABC: Face-centred cubic (FCC), also called cubic close-packed
+stackExamplesAB: Mg, Zn, Ti, Co, Cd
+stackExamplesABC: Cu, Al, Ni, Ag, Au, Pt
+stackHowAB: Every layer is a close-packed layer of touching spheres. Layer B sits in one set of hollows of layer A, and the third layer goes back right above A, so the pattern repeats every two layers.
+stackHowABC: Every layer is a close-packed layer of touching spheres. Layer B sits in one set of hollows of layer A, and layer C in the other set, the hollows that B left free; only the fourth layer is right above A again.
+
+## + Add menu
+stackMenuAB: ABAB… stacking (HCP)
+stackMenuABDesc: Close-packed layers A, B, A, B…: hexagonal close-packed, c/a = 1.633
+stackMenuABC: ABCABC… stacking (FCC)
+stackMenuABCDesc: Close-packed layers A, B, C, A, B, C… lying flat, on hexagonal axes
+stackMenuFCC: ABCABC… in the cubic FCC cell
+stackMenuFCCDesc: The same stacking in the cubic F cell: the layers are the (111) planes
+cmdHelpStacking: Close-packed layers: ABAB (HCP), ABC (FCC on hexagonal axes) or FCC (in the cube)
+
+## Stacking card
+stackTitle: Close-packed stacking
+stackAddNote: {seq} stacking, {structure}: touching spheres with r = {r} Å, so a = 2r = {a} Å, shown on the hexagonal prism.
+stackAddNoteCubic: {seq} stacking in the cubic cell, {structure}: touching spheres with r = {r} Å, so a = 2√2 r = {a} Å.
+stackShownOn: Shown on {lattice} only
+stackWrongHex: {seq} is drawn on {lattice} with c/a near {ca}, and the lattice on screen ({current}) does not match. Switch back to see it.
+stackWrongCubic: {seq} in the cubic cell is drawn on cubic F, and {current} is on screen now. Switch back to see it.
+stackShowAgain: Show {seq} again
+stackSequence: Layers: {seq}
+stackHexABNote: On hexagonal axes the cell holds one atom of each layer: A at (0, 0, 0) and B at (⅔, ⅓, ½).
+stackHexABCNote: On hexagonal axes the cell holds A (0, 0, 0), B (⅔, ⅓, ⅓) and C (⅓, ⅔, ⅔), the R-centred hexagonal cell. These are the same atoms as cubic F, with c along the cube's body diagonal [111]: switch the view below to see it.
+stackCubicNote: These are the atoms of cubic F. The close-packed layers are the (111) planes, stacked along the body diagonal [111]: the corner atom is in layer A, then come B and C, and the opposite corner is in layer A again.
+stackStructure: Structure
+stackRepeat: Repeats after
+stackRepeatTwo: 2 layers
+stackRepeatThree: 3 layers
+stackAtomsPerCell: Atoms per cell
+stackCoordination: Coordination
+stackCoordValue: <b>{cn}</b> = {inLayer} in the layer + {above} above + {below} below
+stackPacking: Packing fraction
+stackPackingMax: (the densest packing of equal spheres)
+stackSpacing: Layer spacing
+stackCa: <i>c</i>/<i>a</i>
+stackIdeal: ideal {ca}
+stackCubicA: Cube edge <i>a</i>
+stackRadius: Sphere radius <i>r</i>
+stackExamples: {structure} metals: {examples}.
+stackView: Show the layers
+stackViewHex: Flat (hexagonal axes)
+stackViewCubic: In the cube (cubic F)
+stackUseIdeal: Use the ideal c/a = {ca}
+stackDraw: Draw the atoms
+stackLabels: Label the layers
+stackLabelsHint: The letter A, B or C on every atom of the highlighted cell
+stackPlanes: Show the layer planes
+stackPlanesHintHex: Each close-packed layer in the highlighted cell, in its colour
+stackPlanesHintCubic: The (111) planes through the atoms of the cube, in their layer's colour
+stackLayer: Layer {letter}
+stackColourOf: Colour of layer {letter}
+stackApfShort: APF {apf}
+stackPerCell: {count} atoms per cell
+
+## Legend and readout on the canvas
+stackLegendCount: {count} per cell
+stackLegendSub: CN {cn} · APF {apf} · layers {d} Å apart
+stackReadoutLabel: Atoms per cell
+stackReadoutTotal: Total: {total}

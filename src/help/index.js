@@ -27,12 +27,14 @@ import calculations from './topics/calculations.js';
 import interstitials from './topics/interstitials.js';
 import flat from './topics/flat.js';
 import ionic from './topics/ionic.js';
+import stacking from './topics/stacking.js';
 import defects from './topics/defects.js';
 import dislocations from './topics/dislocations.js';
+import slip from './topics/slip.js';
 import { txt } from '../text.js';
 
 const TOPICS = new Map();
-for (const t of [...systems, ...cell, ...indices, ...calculations, ...interstitials, ...ionic, ...flat, ...defects, ...dislocations]) {
+for (const t of [...systems, ...cell, ...indices, ...calculations, ...interstitials, ...ionic, ...stacking, ...flat, ...defects, ...dislocations, ...slip]) {
   if (TOPICS.has(t.key)) throw new Error(`Help topic "${t.key}" defined twice`);
   TOPICS.set(t.key, { ...t, scope: t.scope ?? txt('allLattices') });
 }

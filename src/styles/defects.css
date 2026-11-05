@@ -65,3 +65,7 @@
 .hd-move { stroke: var(--highlight); stroke-width: 2; }
 .hd-perp { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: square; }
 .hd-circuit { fill: none; stroke: var(--primary); stroke-width: 2.6; stroke-linejoin: round; }
+/* close-packed planes and Shockley partials */
+.hd-panel-on { fill: var(--primary-soft); stroke: var(--primary); stroke-width: 1.5; }
+.hd-atom-b { fill: color-mix(in srgb, var(--axis-c) 70%, transparent); stroke: var(--axis-c); stroke-width: 1.5; }
+.hd-hl-thin { stroke: var(--highlight); stroke-width: 2.4; fill: none; }

@@ -10,7 +10,9 @@
    'atoms' is the scene object that draws the host atoms (it takes the
    place of the lattice points): size, colour by how far each atom moved
    or by how much its bonds stretched, exaggerated relaxation, and the
-   perfect positions. Defect atoms are drawn by their own objects.
+   perfect positions. Defect atoms are drawn by their own objects, and so
+   are the atoms a type with drawsMarked marks (a slip plane's layers); a
+   type's restOfCrystal(item) may fade or hide the unmarked rest.
    ===================================================================== */
 import { registerType, getType } from './registry.js';
 import * as M from '../math/index.js';
@@ -43,6 +45,22 @@ export function crystalOf(ctx) {
   ctx._crystal = { ...M.buildCrystal({ hosts, defects, R, dnn, reach: second ? (dnn + second.d) / 2 : 1.2 * dnn }), R, dnn, hosts };
   ctx._crystalKey = cacheKey;
   return ctx._crystal;
+}
+
+/**
+ * How the host atoms that no object marks are drawn: 'show', 'faint' or 'hide' — the strongest any
+ * visible object asks for with its type's restOfCrystal(item) (a slip plane fades the rest of the block).
+ */
+export function restOf(ctx) {
+  let mode = 'show';
+  for (const it of ctx.ws.state.items) {
+    const T = getType(it.type);
+    if (!it.visible || !T.restOfCrystal) continue;
+    const m = T.restOfCrystal(it, ctx);
+    if (m === 'hide') return 'hide';
+    if (m === 'faint') mode = 'faint';
+  }
+  return mode;
 }
 
 /** Drawn size of the atoms: 1 = touching spheres. */
@@ -128,7 +146,16 @@ registerType({
   primitives(item, ctx) {
     if (!item.visible) return [];
     const C = crystalOf(ctx), theme = ctx.theme, mode = colourMode(item, C);
-    const hosts = C.atoms.filter(a => a.kind === 'host' && M.inSlice(a.f, ctx.slice));
+    // atoms marked by an object that draws them itself (a slip plane's two layers) are left to it
+    const own = new Map(), drawnElsewhere = a => {
+      if (a.mark == null) return false;
+      if (!own.has(a.mark)) { const o = ctx.itemById(a.mark); own.set(a.mark, !!(o && getType(o.type).drawsMarked)); }
+      return own.get(a.mark);
+    };
+    const all = C.atoms.filter(a => a.kind === 'host' && M.inSlice(a.f, ctx.slice) && !drawnElsewhere(a));
+    // the rest of the crystal may be faint or hidden, so that a slip plane shows
+    const rest = restOf(ctx), hosts = rest === 'show' ? all : all.filter(a => a.mark != null);
+    const faint = rest === 'faint' ? all.filter(a => a.mark == null) : [];
     const base = ctx.colour(item), marks = new Map();
     const colourOf = a => {
       if (a.mark != null) {
@@ -143,8 +170,11 @@ registerType({
       kind: 'spheres', centres: hosts.map(a => drawnPos(a, ctx)), radius: C.R * drawScale(ctx),
       colour: base, colours: hosts.map(colourOf), opacity: ctx.opacity(item),
     }];
+    if (faint.length) {
+      prims.push({ kind: 'spheres', centres: faint.map(a => drawnPos(a, ctx)), radius: C.R * drawScale(ctx), colour: base, colours: faint.map(colourOf), opacity: 0.16 * ctx.opacity(item) });
+    }
     if (item.ghosts) {
-      const moved = hosts.filter(a => a.moved > 1e-3 * C.R);
+      const moved = [...hosts, ...faint].filter(a => a.moved > 1e-3 * C.R);
       if (moved.length) prims.push({ kind: 'spheres', centres: moved.map(a => a.ref), radius: 0.14 * C.R, colour: theme.cell, opacity: 0.55 });
     }
     return prims;

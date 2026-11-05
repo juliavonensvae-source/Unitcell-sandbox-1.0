@@ -1,0 +1,56 @@
+# Help topics: close-packed stacking
+# The "?" popover, then SEE MORE (Derivation, and Your lattice).
+
+## Close packing: ABAB… and ABCABC…
+
+### Popover
+helpStackTitle: Close packing: ABAB… and ABCABC…
+helpStackScope: Hexagonal P (ABAB, ABC) and cubic F (ABC)
+helpStackExplain: Equal spheres pack most densely in flat layers where each sphere touches six others. The next layer sits in half of the hollows of the layer below, and there are two sets of hollows, so every layer is at one of three positions: A, B or C. Repeating ABAB… gives hexagonal close packing (HCP), and using all three, ABCABC…, gives face-centred cubic (FCC), whose close-packed layers are the {111} planes.
+helpStackFormula1Tag: Layer spacing
+helpStackFormula1: h = 2r\sqrt{\tfrac23} \approx 0.8165\cdot 2r
+helpStackFormula2Tag: ABAB (HCP)
+helpStackFormula2: a = 2r,\qquad c = 2h,\qquad \frac{c}{a} = \sqrt{\tfrac83} \approx 1.633
+helpStackFormula3Tag: ABCABC (FCC)
+helpStackFormula3: a_\text{cubic} = 2\sqrt2\,r,\qquad d_{111} = \frac{a_\text{cubic}}{\sqrt3} = h
+helpStackFormula4: \text{CN} = 6 + 3 + 3 = 12,\qquad \text{APF} = \frac{\pi}{3\sqrt2} \approx 0.740
+helpStackSym1: r
+helpStackSym1Text: sphere radius, half the nearest-neighbour distance
+helpStackSym2: h
+helpStackSym2Text: distance between neighbouring layers
+helpStackSym3: a,\ c
+helpStackSym3Text: hexagonal cell edges: a in the layer, c along the stacking
+helpStackSym4: a_\text{cubic}
+helpStackSym4Text: edge of the cubic F cell
+helpStackSym5: \text{CN}
+helpStackSym5Text: coordination number: how many spheres each one touches
+helpStackSym6: \text{APF}
+helpStackSym6Text: atomic packing fraction: the share of space the spheres fill
+helpStackNowHex: On screen: hexagonal P with $c/a = {ca}$. ABAB needs $c/a = 1.633$, ABC on hexagonal axes $c/a = 2.449$.
+helpStackNowCubic: On screen: cubic F. Its (111) planes are close-packed layers stacked ABCABC…, $d_{111} = {d}\,\text{Å}$ apart.
+helpStackNowOther: Add ABAB… or ABCABC… from + Add → Close packing to see the layers.
+
+### SEE MORE: Derivation
+helpStackStep1: Lay equal spheres flat, each touching six others: this is a close-packed layer, A. Between the spheres are hollows, each over a triangle of three spheres, and they come in two sets, B and C, whose triangles point opposite ways.
+helpStackStep2: A sphere of the next layer rests in a hollow and touches the three spheres under it. Seen from above, its centre is $2r/\sqrt3$ from each of theirs, so it is higher by:
+helpStackStep2Tex: h = \sqrt{(2r)^2 - \left(\tfrac{2r}{\sqrt3}\right)^2} = 2r\sqrt{\tfrac23}
+helpStackStep3: The spheres are too big to fill both sets of hollows at once, so the second layer uses one set, B. The third layer has a choice: right above A, or in the C hollows that B left free.
+helpStackStep4: Going back above A gives ABAB…, which repeats after two layers, so on hexagonal axes:
+helpStackStep4Tex: a = 2r,\qquad c = 2h = 4r\sqrt{\tfrac23}\ \Rightarrow\ \frac{c}{a} = \sqrt{\tfrac83} = 1.633
+helpStackStep5: Using C gives ABCABC…, which repeats after three layers. These are the atoms of cubic F: the layers are its (111) planes, and the body diagonal of the cube is three layers long:
+helpStackStep5Tex: a_\text{cubic}\sqrt3 = 3h\ \Rightarrow\ a_\text{cubic} = 2\sqrt2\,r
+helpStackStep6: Either way every sphere touches 6 in its own layer, 3 in the layer above and 3 below, and both fill the same share of space:
+helpStackStep6Tex: \text{CN} = 12,\qquad \text{APF} = \frac{4\cdot\tfrac43\pi r^3}{(2\sqrt2\,r)^3} = \frac{\pi}{3\sqrt2} = 0.7405
+helpStackStep7: The difference is the symmetry. HCP has close-packed layers in one orientation only, the (0001) basal planes, while FCC has them in four, the {111} planes. That is one reason why FCC metals such as Cu and Al have more slip systems and are more ductile than HCP metals such as Mg and Zn.
+
+### SEE MORE: Your lattice
+helpStackExTitle: Both stackings with spheres of r = {r} Å
+helpStackExIntroShown: With the a on screen, $r = {r}\,\text{Å}$.
+helpStackExIntro: With the radius of a copper atom, $r = {r}\,\text{Å}$.
+helpStackEx1: Height of one layer above the next:
+helpStackEx1Tex: h = 2r\sqrt{\tfrac23} = 2 \times {r} \times 0.8165 = {h}\,\text{Å}
+helpStackEx2: ABAB (HCP): two layers and two atoms per hexagonal cell.
+helpStackEx2Tex: a = {a}\,\text{Å},\quad c = 2h = {c}\,\text{Å},\quad \text{APF} = \frac{2\cdot\tfrac43\pi r^3}{\tfrac{\sqrt3}{2}a^2c} = {apfHex}
+helpStackEx3: ABCABC (FCC): four atoms per cube, and the (111) planes are exactly h apart.
+helpStackEx3Tex: a_\text{cubic} = 2\sqrt2\,r = {ac}\,\text{Å},\quad d_{111} = \frac{a_\text{cubic}}{\sqrt3} = {d}\,\text{Å},\quad \text{APF} = \frac{4\cdot\tfrac43\pi r^3}{a_\text{cubic}^3} = {apfCubic}
+helpStackExResult: The layers are {h} Å apart in both and the packing is the same, {apf}: the two differ only in where every third layer goes.

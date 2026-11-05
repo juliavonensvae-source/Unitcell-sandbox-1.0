@@ -1,5 +1,5 @@
 /* Entry point: fonts and styles, the console self-check (development only), and a tiny hash router
-   between the screens (title → mode select → Crystal Structures or Defects). */
+   between the screens (title → mode select → Crystal Structures, Defects or Challenge mode). */
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
@@ -17,6 +17,7 @@ import './styles/flat.css';
 import './styles/defects.css';
 import 'katex/dist/katex.min.css';
 import './styles/help.css';
+import './styles/challenge.css';
 
 import { runSelfCheck } from './verification/cases.js';
 import { initTheme, toggleTheme } from './ui/theme.js';
@@ -24,6 +25,7 @@ import { createTitleScreen } from './ui/screens/title.js';
 import { createModeSelect } from './ui/screens/mode-select.js';
 import { CrystalWorkspace } from './ui/workspace/workspace.js';
 import { DefectsWorkspace } from './ui/workspace/defects.js';
+import { ChallengeScreen } from './ui/screens/challenge.js';
 import { txt } from './text.js';
 
 // Only for developers, in the browser console of npm run dev (npm test runs the same cases); never shown in the app.
@@ -42,10 +44,14 @@ if (import.meta.env.PROD && GOATCOUNTER_CODE) {
 }
 
 const app = document.getElementById('app');
-const ROUTES = { '#/modes': 'modes', '#/crystal': 'crystal', '#/defects': 'defects' };
-const HASH = { title: '#/', modes: '#/modes', crystal: '#/crystal', defects: '#/defects' };
-const TITLES = { title: txt('tabTitleStart'), modes: txt('tabTitleModes'), crystal: txt('tabTitleCrystal'), defects: txt('tabTitleDefects') };
-const WORKSPACES = { crystal: CrystalWorkspace, defects: DefectsWorkspace };
+const ROUTES = { '#/modes': 'modes', '#/crystal': 'crystal', '#/defects': 'defects', '#/challenge': 'challenge' };
+const HASH = { title: '#/', modes: '#/modes', crystal: '#/crystal', defects: '#/defects', challenge: '#/challenge' };
+const TITLES = {
+  title: txt('tabTitleStart'), modes: txt('tabTitleModes'), crystal: txt('tabTitleCrystal'), defects: txt('tabTitleDefects'),
+  challenge: txt('tabTitleChallenge'),
+};
+/** Screens built the first time they are opened (the two workspaces and Challenge mode). */
+const WORKSPACES = { crystal: CrystalWorkspace, defects: DefectsWorkspace, challenge: ChallengeScreen };
 
 const go = name => {
   if (location.hash !== HASH[name]) location.hash = HASH[name];
@@ -58,7 +64,6 @@ const screens = {
 };
 for (const s of Object.values(screens)) { s.el.inert = true; app.appendChild(s.el); }
 
-/** The workspaces are built the first time they are opened. */
 function screen(name) {
   if (WORKSPACES[name] && !screens[name]) {
     const ws = new WORKSPACES[name]({ onHome: () => go('title') });

@@ -1,0 +1,115 @@
+# Help topics: close-packed planes and slip (Defects mode)
+# Each topic: the "?" popover, then SEE MORE (Derivation, and Your lattice).
+
+## Close-packed planes and slip systems
+
+### Popover
+helpSlipTitle: Close-packed planes and slip
+helpSlipScope: Defects mode · cubic P, I, F (HCP in the text)
+helpSlipExplain: A dislocation glides most easily on the most densely packed planes, along the most densely packed directions in them; such a plane and direction make a slip system. Only FCC and HCP have truly close-packed planes, where each atom touches six others in the plane: {111} in FCC and the basal plane (0001) in HCP. BCC has none, so it slips along its close-packed ⟨111⟩ directions on its densest planes, mostly {110}, and simple cubic on {100}. The densest planes are also the furthest apart, and the close-packed directions give the shortest Burgers vector, so slip there needs the least stress and energy.
+helpSlipFormula1Tag: Atoms per area
+helpSlipFormula1: \frac{\text{atoms}}{\text{area}} = \frac{n\,d_{hkl}}{V},\qquad \text{PPF} = \frac{\text{atoms}}{\text{area}}\cdot\pi r^2
+helpSlipFormula2Tag: Slip systems
+helpSlipFormula2: \begin{array}{lll} \text{FCC} & \{111\}\langle 1\bar10\rangle & 4\times3 = 12 \\ \text{BCC} & \{110\}\langle \bar111\rangle & 6\times2 = 12 \\ \text{HCP} & (0001)\langle 11\bar20\rangle & 1\times3 = 3 \\ \text{SC} & \{100\}\langle 100\rangle & 3\times2 = 6 \end{array}
+helpSlipFormula3Tag: Schmid's law
+helpSlipFormula3: \tau_\text{R} = \sigma\cos\phi\cos\lambda
+helpSlipSymN: n,\ V
+helpSlipSymNText: lattice points (atoms) per cell, and the volume of the cell
+helpSlipSymD: d_{hkl}
+helpSlipSymDText: the distance between neighbouring (hkl) planes
+helpSlipSymPPF: \text{PPF}
+helpSlipSymPPFText: planar packing fraction: the share of the plane covered by touching atoms of radius r
+helpSlipSymTau: \tau_\text{R},\ \sigma
+helpSlipSymTauText: the shear stress on a slip system (resolved shear stress) from a tensile stress σ
+helpSlipSymAngles: \phi,\ \lambda
+helpSlipSymAnglesText: the angles from the stress axis to the normal of the slip plane (φ) and to the slip direction (λ)
+helpSlipNow: On screen: {lattice}, which slips on {family}, {count} slip systems. {plane}: $d = {dd}\,\text{Å}$, $|\mathbf b| = {blen}\,\text{Å}$.
+helpSlipNowOther: Add + Add → Close-packed planes in Defects mode to see the slip planes of FCC, BCC and SC.
+
+### SEE MORE: Derivation
+[diagram: the densest plane of SC, BCC and FCC seen straight on]
+helpSlipStep1: Every set of parallel lattice planes holds all the atoms, layer by layer. So the atoms per volume, n/V, equal the atoms per area of one plane divided by the spacing d: the planes with the most atoms per area are the ones furthest apart.
+helpSlipStep1Tex: \frac{n}{V} = \frac{\text{atoms per area}}{d_{hkl}}\quad\Rightarrow\quad \text{atoms per area} = \frac{n\,d_{hkl}}{V}
+helpSlipStep2: Widely spaced planes are bonded to each other most weakly, and a dense plane is the smoothest: the atoms above it sit in shallow hollows and slide from one hollow to the next with the least effort. Along a close-packed direction the step b from one atom to the next is the shortest lattice vector, and the energy of a dislocation grows as b² (G is the shear modulus):
+helpSlipStep3: <b>FCC</b> (Cu, Al, Ni, Ag, Au): the {111} planes are close-packed, each atom touching 6 in its plane (PPF = 0.907). They lie in 4 orientations, each with 3 close-packed ⟨110⟩ directions: 12 slip systems, so one is always well placed to slip, and FCC metals stay ductile even when cold.
+helpSlipStep4: <b>BCC</b> (Fe, Cr, Mo, W): no plane is close-packed. In the densest, {110}, each atom touches 4 (PPF = 0.833), and slip runs along the close-packed ⟨111⟩ directions on {110}, {112} and {123} planes (48 systems). The screw dislocations have cores spread over several planes and need help from thermal vibrations to move, so BCC metals are strong and can turn brittle when cold.
+helpSlipStep5: <b>HCP</b> (Mg, Zn, Ti, Co): the basal plane (0001) is close-packed, the same layer as {111} in FCC, but there is only one set of them, with 3 directions $\langle 11\bar20\rangle$: 3 slip systems. Changing shape in every direction needs 5 independent slip systems (von Mises), so unless other planes slip too (the prism planes in Ti), HCP metals are less ductile.
+helpSlipStep6: <b>SC</b> (only polonium): the densest planes are {100}, a square net where each atom touches 4 (PPF = 0.785), with b = a⟨100⟩: 3 × 2 = 6 slip systems. The Edge and Screw dislocations of this mode are this case.
+helpSlipStep7: Which system slips first: a tensile stress σ gives a shear stress on each slip system that depends on the angles from the stress axis to the plane normal (φ) and to the slip direction (λ). Slip starts on the system where it first reaches the critical resolved shear stress (Schmid's law):
+helpSlipStep8: <b>In the app.</b> One straight dislocation glides across the middle of the block. The atoms are moved by its isotropic elastic (Volterra) field, with the slip spread over a core of half-width ζ = d/2 (screw) to d/2(1 − ν) (edge), as in the Peierls–Nabarro model. Real dislocations are curved loops, and the atoms right at the line are only roughly placed.
+
+### SEE MORE: Your lattice
+helpSlipExCopper: Copper (cubic F, a = 3.615 Å)
+helpSlipExIntroCopper: Slip planes are drawn in cubic P, I and F. Here: copper, cubic F with $a = 3.615\,\text{Å}$.
+helpSlipExIntro: For the lattice on screen, $a = {aa}\,\text{Å}$ (no slip plane added yet).
+helpSlipEx1: The slip planes, and how far apart they are:
+helpSlipEx1Tex: {plane}:\quad d = \frac{a}{\sqrt{h^2+k^2+l^2}} = \frac{{aa}}{\sqrt{{sum}}} = {dd}\,\text{Å}
+helpSlipEx2: Atoms per area of one plane, and the share of it that touching atoms of radius r = {rr} Å cover:
+helpSlipEx2Tex: \frac{n\,d}{V} = \frac{{nn}\times{dd}}{{vv}} = {rho}\,\text{Å}^{-2},\qquad \text{PPF} = {rho}\times\pi\times({rr})^2 = {ppf}
+helpSlipEx3: The Burgers vector is the shortest lattice vector, from an atom to the one it touches, so it is as long as an atom is wide:
+helpSlipEx3Tex: \mathbf b = {bvec},\qquad |\mathbf b| = {blen}\,\text{Å} = 2r = {rr2}\,\text{Å}
+helpSlipEx4: The next-shortest lattice vector, {next}, would make a dislocation cost more energy, since E grows as b²:
+helpSlipEx4Tex: \frac{E'}{E} = \left(\frac{{nlen}\,\text{Å}}{{blen}\,\text{Å}}\right)^2 = {ratio}
+helpSlipEx5: The slip systems: the planes of the family times the close-packed directions in each.
+helpSlipEx5Tex: {planes}\times{dirs} = {count}\ \text{slip systems}
+helpSlipExResult: In the slip plane each atom touches {inPlane} others, and touching atoms cover {ppf} of it.
+
+
+## Shockley partials (FCC)
+
+### Popover
+helpShockleyTitle: Shockley partials (FCC)
+helpShockleyScope: Defects mode · cubic F
+helpShockleyExplain: In FCC a perfect dislocation, b = a/2⟨110⟩, usually splits into two Shockley partials of type a/6⟨112⟩. The atoms above the slip plane then do not ride straight over the atoms below, but move in two smaller steps through the empty hollow between them, B → C → B. Between the two partials the layers above have made only the first step, so the stacking there is wrong (…ABCACABC…): a ribbon of stacking fault whose energy γ per area holds the partials together.
+helpShockleyFormula1Tag: The split
+helpShockleyFormula1: \tfrac a2[\bar110] \;\to\; \tfrac a6[\bar211] + \tfrac a6[\bar12\bar1]
+helpShockleyFormula2Tag: Frank's rule
+helpShockleyFormula2: |\mathbf b|^2 = \frac{a^2}{2}\ >\ |\mathbf b_1|^2 + |\mathbf b_2|^2 = \frac{a^2}{6} + \frac{a^2}{6} = \frac{a^2}{3}
+helpShockleyFormula3Tag: How far apart
+helpShockleyFormula3: d = \frac{G\,b_\text{p}^2}{8\pi\gamma}\cdot\frac{2-\nu-2\nu\cos2\beta}{1-\nu}
+helpShockleySymBp: b_\text{p}
+helpShockleySymBpText: the length of a partial, a/√6
+helpShockleySymGamma: \gamma
+helpShockleySymGammaText: the stacking-fault energy: the energy per area of the wrongly stacked ribbon
+helpShockleySymG: G
+helpShockleySymGText: the shear modulus
+helpShockleySymBeta: \beta
+helpShockleySymBetaText: the angle between b and the line: 0° for a screw dislocation, 90° for an edge one
+helpShockleyNow: On screen: $|\mathbf b| = a/\sqrt2 = {blen}\,\text{Å}$ can split into two partials of $a/\sqrt6 = {bp}\,\text{Å}$.
+helpShockleyNowOther: Shockley partials belong to cubic F (FCC): add + Add → Close-packed planes → FCC in Defects mode.
+
+### SEE MORE: Derivation
+[diagram: a close-packed layer A, an atom B above it, and its two paths to the next B hollow]
+helpShockleyStep1: In FCC the close-packed {111} layers are stacked A, B, C, A, B, C… Look at the slip plane between an A layer and the B layer on top of it. The B atoms sit in one set of hollows of the A layer; the other set, the C hollows, is empty there.
+helpShockleyStep2: A perfect dislocation moves the B atoms by b = a/2⟨110⟩, from one B hollow to the next. The straight way runs right over an A atom: uphill (dashed in the picture).
+helpShockleyStep3: The easy way goes through the empty C hollow beside it, in two steps of type a/6⟨112⟩, each 30° from b. These are the Burgers vectors of two Shockley partial dislocations:
+helpShockleyStep4: Splitting lowers the energy, because the energy of a dislocation grows as b² (Frank's rule):
+helpShockleyStep5: Between the two partials the layers above have made only the first step: every B atom moved to a C position, every C to A and every A to B. The stacking there reads …ABCA|CABC…, so the four layers around the plane, C A C A, are stacked like HCP: an intrinsic stacking fault, which costs an energy γ per area.
+helpShockleyStep6: The fault pulls the partials together with a force γ per length of line, and their elastic fields push them apart (their Burgers vectors point roughly the same way). In isotropic elasticity they settle at:
+helpShockleyStep7: A low γ means wide partials (copper, and much more brass and austenitic stainless steel); a high γ means narrow ones (aluminium). Wide partials must squeeze back together before a screw dislocation can cross-slip onto another {111} plane, so metals with a low γ cross-slip less and work-harden more.
+helpShockleyStep8: <b>In the app.</b> The atoms are moved by the elastic fields of the two partials, each spread over its own core. The distance between them is set with the slider rather than worked out from γ, so that both fit in the block.
+
+### SEE MORE: Your lattice
+helpShockleyExIntro: With the a on screen, $a = {aa}\,\text{Å}$, and the shear modulus and stacking-fault energy of copper.
+helpShockleyEx1: The perfect Burgers vector and the two partials:
+helpShockleyEx1Tex: |\mathbf b| = \frac{a}{\sqrt2} = {blen}\,\text{Å},\qquad |\mathbf b_\text{p}| = \frac{a}{\sqrt6} = {bp}\,\text{Å}
+helpShockleyEx2: Frank's rule:
+helpShockleyEx2Tex: |\mathbf b|^2 = {b2}\,\text{Å}^2\ >\ 2\,|\mathbf b_\text{p}|^2 = {bp2}\,\text{Å}^2
+helpShockleyEx3: With G ≈ 48 GPa, γ ≈ 45 mJ/m² (copper) and ν = 0.3, an edge dislocation (β = 90°) splits to:
+helpShockleyEx3Tex: d = \frac{G\,b_\text{p}^2}{8\pi\gamma}\cdot\frac{2+\nu}{1-\nu} = {width}\,\text{nm}\approx{nb}\,|\mathbf b|
+helpShockleyEx4: and a screw dislocation (β = 0°) to:
+helpShockleyEx4Tex: d = \frac{G\,b_\text{p}^2}{8\pi\gamma}\cdot\frac{2-3\nu}{1-\nu} = {width}\,\text{nm}\approx{nb}\,|\mathbf b|
+helpShockleyExResult: A few nanometres: wider than the block on screen, so the slider puts the partials closer together than they really are.
+
+
+## Pictures
+diagSlipSC: SC {100}
+diagSlipSCSub: touches 4 · PPF 0.785
+diagSlipBCC: BCC {110}
+diagSlipBCCSub: touches 4 · PPF 0.833
+diagSlipFCC: FCC {111}
+diagSlipFCCSub: touches 6 · PPF 0.907
+diagSlipCaption: The densest plane of simple cubic, BCC and FCC seen straight on; the arrows are the close-packed directions
+diagPartials1: Straight on (b), the atom of layer B rides over an A atom;
+diagPartials2: through the empty C hollow it takes two easy steps, b₁ + b₂.
+diagPartialsCaption: A close-packed layer A seen from above, with one atom B of the layer above and its two paths

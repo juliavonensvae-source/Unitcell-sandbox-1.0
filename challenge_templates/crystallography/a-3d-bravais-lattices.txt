@@ -1,0 +1,139 @@
+# =====================================================================
+# CHALLENGE MODE · Crystallography · Topic A: 3D Bravais lattices (the 14 types)
+#
+# HOW THIS FILE WORKS
+#   [topic]     The topic's name in the Topics list (one per file).
+#   [question]  One wording of a question type. The program fills in random
+#               numbers each time. Copy a block to add another wording of the
+#               same type (one is picked at random); delete or comment out a
+#               block to stop that type from appearing.
+#                 type:    which question type (see the list below; new types need code)
+#                 level:   easy, medium, hard (one or more; leave it out for all)
+#                 text:    the question
+#                 explain: the short solution shown in the review
+#   [fixed]     A question you write yourself, with fixed numbers:
+#                 text, answer, level and explain as above, and
+#                 wrong: three wrong options separated by |   (multiple choice)
+#               Leave "wrong" out for a typed answer: indices such as (1 1 0) or
+#               [1 1 0], or a number such as 14 or 2.34 Å (a number with decimals
+#               may be 1 % off). negative-ok: yes also accepts indices with every
+#               sign flipped.
+#   [words]     Pieces of text the program puts into the questions below.
+#
+#   {name}   is filled in by the program: keep the spelling. Each type's names
+#            are listed below; {answer} (the right answer) works in every type.
+#   $...$    is a formula (LaTeX), e.g. $d = a/\sqrt{h^2+k^2+l^2}$.
+#            Don't put a {name} inside $...$.
+#   A line that starts with a space continues the line above it.
+#   Lines starting with # are comments. <b>, <i>, <sub> and <br> work.
+#   With "npm run dev" running, saving this file reloads the page.
+# =====================================================================
+
+# QUESTION TYPES IN THIS TOPIC (levels · how it is answered)
+#   params-to-system          easy, medium, hard · multiple choice
+#       {params} the lattice parameters (on easy sometimes the rule itself)
+#       {rule}   the rule of the right system, e.g. a = b ≠ c, α = β = γ = 90°
+#   params-points-to-lattice  medium, hard · multiple choice
+#       {params} {rule} as above · {points} where the lattice points are (words points-…)
+#       {system} the crystal system · {centring} Primitive, Body-centred, …
+#   points-per-cell           medium, hard · multiple choice or typed (a number)
+#       {lattice} the lattice's name · {counting} how the points add up (words count-…)
+#   equivalence-to-system     hard · multiple choice
+#       {plane} the plane the statements are about · {facts} the list of statements
+#       (words same / different) · {why} the right system's rule (words why-…)
+
+[topic]
+name: 3D Bravais lattices
+
+[question]
+type: params-to-system
+level: easy, medium
+text: A crystal has the lattice parameters {params}. Which crystal system is it?
+explain: The parameters follow the rule {rule}, which is the {answer} system.
+
+[question]
+type: params-to-system
+level: hard
+text: A crystal has the lattice parameters {params}. Which crystal system is it? Look closely at every value.
+explain: Values that are nearly equal are still different. The parameters follow the rule {rule}, which is the {answer} system.
+
+[question]
+type: params-points-to-lattice
+text: A lattice has the parameters {params}, with lattice points {points}. Which Bravais lattice is it?
+explain: The rule {rule} gives the {system} system, and the lattice points give the centring: {centring}. Together: {answer}.
+
+[question]
+type: points-per-cell
+text: How many lattice points belong to one conventional unit cell of the {lattice} lattice?
+explain: Corner points are shared by 8 cells and face-centre points by 2: {counting}
+
+[question]
+type: equivalence-to-system
+text: In a crystal, all of these statements about the plane {plane} are true: {facts} Which crystal system is it?
+explain: {why} Only the {answer} system fits every statement.
+
+[words]
+points-P: only at the 8 corners of the cell
+points-I: at the 8 corners and one in the centre of the cell
+points-F: at the 8 corners and in the centre of each of the 6 faces
+points-C: at the 8 corners and in the centres of the two faces perpendicular to c
+count-P: 8 corners × ⅛ = 1.
+count-I: 8 corners × ⅛ + 1 centre point = 2.
+count-F: 8 corners × ⅛ + 6 face centres × ½ = 4.
+count-C: 8 corners × ⅛ + 2 face centres × ½ = 2.
+same: {other} is equivalent to {plane}
+different: {other} is <b>not</b> equivalent to {plane}
+why-cubic: In cubic crystals every reordering of h, k and l, with any signs, gives an equivalent plane.
+why-tetragonal: In tetragonal crystals h and k can swap places and every sign can change, but l stays in its place (c is the unique axis).
+why-orthorhombic: In orthorhombic crystals only the signs can change: a, b and c all differ, so h, k and l never swap places.
+why-hexagonal: In hexagonal crystals, written as (hkil) with i = −(h + k), h, k and i can be reordered and change sign together, and l can change sign on its own.
+why-rhombohedral: On rhombohedral axes h, k and l can be reordered in any way, but their signs only change all together.
+why-monoclinic: In monoclinic crystals (unique axis b) nothing can be reordered: k can change sign on its own, while h and l only change sign together.
+
+# Questions written by hand. Delete them or add your own.
+[fixed]
+level: easy
+text: How many Bravais lattices are there in three dimensions?
+answer: 14
+explain: 14 lattices in 7 crystal systems: cubic (P, I, F), tetragonal (P, I), orthorhombic (P, C, I, F), hexagonal (P), rhombohedral (R), monoclinic (P, C) and triclinic (P).
+
+[fixed]
+level: easy
+text: How many crystal systems are there in three dimensions?
+answer: 7
+explain: Cubic, tetragonal, orthorhombic, hexagonal, rhombohedral (trigonal), monoclinic and triclinic.
+
+[fixed]
+level: easy, medium
+text: Which crystal system has the most Bravais lattices?
+answer: Orthorhombic
+wrong: Cubic | Tetragonal | Monoclinic
+explain: Orthorhombic has four: P, C, I and F. Cubic has three (P, I, F), tetragonal and monoclinic two each.
+
+[fixed]
+level: medium, hard
+text: Which of these is <b>not</b> one of the 14 Bravais lattices?
+answer: Face-centred tetragonal
+wrong: Body-centred tetragonal | Base-centred orthorhombic | Face-centred orthorhombic
+explain: Face-centred tetragonal is the same lattice as body-centred tetragonal, drawn with a bigger cell, so it is not counted separately.
+
+[fixed]
+level: hard
+text: Why is there no base-centred tetragonal Bravais lattice?
+answer: It is the same lattice as simple tetragonal, described with a smaller cell
+wrong: Centring the top and bottom faces would destroy the 4-fold axis | It is the same lattice as body-centred tetragonal | It is the same lattice as face-centred cubic
+explain: The face-centre points make a smaller square net. A cell with edges a/√2 along the face diagonals is primitive and still tetragonal, so the lattice is simple tetragonal.
+
+[fixed]
+level: hard
+text: Why is there no face-centred tetragonal Bravais lattice?
+answer: It is the same lattice as body-centred tetragonal, described with a smaller cell
+wrong: Centring all six faces would destroy the 4-fold axis | It is the same lattice as simple tetragonal | It is the same lattice as face-centred cubic
+explain: Take a new cell with edges a/√2 along the face diagonals of the base. The face-centre points on the side faces then sit at the body centre of this smaller cell: it is body-centred tetragonal.
+
+[fixed]
+level: hard
+text: Why is there no base-centred cubic Bravais lattice?
+answer: Centring only one pair of faces destroys the cubic 3-fold axes, so the lattice is no longer cubic
+wrong: It is the same lattice as simple cubic, described with a smaller cell | It is the same lattice as body-centred cubic | It is the same lattice as face-centred cubic
+explain: With only the top and bottom faces centred, c is no longer equivalent to a and b, so the body diagonals stop being 3-fold axes. The lattice is simple tetragonal (with a smaller cell).

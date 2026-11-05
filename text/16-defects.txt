@@ -8,7 +8,7 @@ topDimLabelDefects: 3D view or 2D slice
 topDim3DTitleDefects: The whole block of atoms in 3D
 topDim2DTitleDefects: One atomic layer, seen straight on
 topPickerTitleDefects: Choose cubic P, I or F
-topAddTitleDefects: Add point defects, dislocations, a Burgers circuit…
+topAddTitleDefects: Add point defects, dislocations, a Burgers circuit, slip on close-packed planes…
 addMenuSubDefects: Everything you add appears in the Objects panel. Point defects ask you to click a lattice point or site.
 
 ## Status line and hint on the canvas

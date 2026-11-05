@@ -186,8 +186,9 @@ export const latticeMethods = {
     if (this.view) this.view.frame({ resetDirection: true });
   },
 
-  lookAlong(cartDir) {
-    if (this.view) this.view.viewAlong(cartDir, this.ctx.lattice.vectors[1]);
+  /** Look down a direction (Cartesian); hint: the vector that points up on screen when that direction is vertical (default b). */
+  lookAlong(cartDir, hint = this.ctx.lattice.vectors[1]) {
+    if (this.view) this.view.viewAlong(cartDir, hint);
   },
 
   setDim(dim) {

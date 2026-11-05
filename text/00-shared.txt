@@ -82,4 +82,5 @@ catDirections: Directions
 catPlanes: Planes
 catCalculations: Calculations
 catIonic: Ionic structures
+catStacking: Close packing
 catSites: Interstitial sites

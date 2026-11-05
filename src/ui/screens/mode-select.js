@@ -1,4 +1,4 @@
-/* Mode select: large "level" cards. Crystal Structures and Defects are open; the others are coming soon. */
+/* Mode select: large "level" cards. Crystal Structures, Defects and Challenge mode are open; the others are coming soon. */
 import { h, restartAnim } from '../dom.js';
 import { icon } from '../icons.js';
 import { themeButton } from '../theme.js';
@@ -34,15 +34,13 @@ const phaseArt = () => `<svg class="mode-svg" viewBox="78 0 320 215" aria-hidden
 
 /** Modes that are shown but not open yet: art is an SVG string or an icon name. */
 const LOCKED = [
-  { mode: 'challenge', name: txt('modesChallengeName'), art: 'paper', tags: [txt('modesChallengeTag1'), txt('modesChallengeTag2'), txt('modesTagCalculations')],
-    desc: txt('modesChallengeDesc') },
   { mode: 'phases', name: txt('modesPhasesName'), art: phaseArt(), tags: [txt('modesPhasesTag1'), txt('modesPhasesTag2'), txt('modesPhasesTag3')],
     desc: txt('modesPhasesDesc') },
   { mode: 'builder', name: txt('modesBuilderName'), art: 'hammer', tags: [txt('modesBuilderTag1')],
     desc: txt('modesBuilderDesc') },
 ];
 
-const OPEN = ['crystal', 'defects'];
+const OPEN = ['crystal', 'defects', 'challenge'];
 
 const lockedCard = (m, i) => `<button type="button" class="mode-card is-locked" data-mode="${m.mode}" aria-disabled="true">
           <span class="mode-num">${String(i + 1 + OPEN.length).padStart(2, '0')}</span>
@@ -86,6 +84,16 @@ export function createModeSelect({ onPick, onHome }) {
             <span class="mode-name">${txt('modesDefectsName')}</span>
             <span class="mode-desc">${txt('modesDefectsDesc')}</span>
             <span class="mode-tags"><span>${txt('modesDefectsTag1')}</span><span>${txt('modesDefectsTag2')}</span><span>${txt('modesDefectsTag3')}</span></span>
+          </span>
+          <span class="mode-cta">${txt('modesPlay')} ${icon('chevronRight')}</span>
+        </button>
+        <button type="button" class="mode-card" data-mode="challenge">
+          <span class="mode-num">03</span>
+          <span class="mode-art">${icon('paper', 'mode-svg')}</span>
+          <span class="mode-body">
+            <span class="mode-name">${txt('modesChallengeName')}</span>
+            <span class="mode-desc">${txt('modesChallengeDesc')}</span>
+            <span class="mode-tags"><span>${txt('modesChallengeTag1')}</span><span>${txt('modesChallengeTag2')}</span><span>${txt('modesTagCalculations')}</span></span>
           </span>
           <span class="mode-cta">${txt('modesPlay')} ${icon('chevronRight')}</span>
         </button>

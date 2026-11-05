@@ -1,0 +1,84 @@
+# Close-packed planes and slip (Defects mode)
+# The card, its + Add entries, the legend on the canvas and its messages. The help topics are in help/11-close-packed-planes.txt.
+
+## + Add category
+catSlip: Close-packed planes
+catSlipBlurb: The densest planes of FCC, BCC and SC, and how a dislocation glides on them
+
+## + Add entries and command help (plain text: no HTML)
+slipMenuFcc: FCC (cubic F): {111} planes
+slipMenuFccDesc: Truly close-packed: each atom touches 6 in its plane. 12 slip systems, {111}⟨110⟩. Switches to cubic F.
+slipMenuBcc: BCC (cubic I): {110} planes
+slipMenuBccDesc: The densest planes, but not close-packed: each atom touches 4. Slip along ⟨111⟩. Switches to cubic I.
+slipMenuSc: SC (cubic P): {100} planes
+slipMenuScDesc: A square net, each atom touching 4. Slip along ⟨100⟩, as for Edge and Screw. Switches to cubic P.
+cmdHelpSlip: Slip on the densest planes, with a dislocation that glides across: FCC, BCC or SC (nothing: the lattice on screen)
+
+## Card
+slipTitle: Slip on a close-packed plane
+slipSC: SC
+slipBCC: BCC
+slipFCC: FCC
+slipIntro: The densest planes of {structure} and the directions it slips along. The layer just below one slip plane is orange, the layer just above it blue.
+slipCubicOnly: Slip planes are drawn in cubic P, I and F, and {lattice} is on screen. Switch to one of them:
+slipCubicShort: Cubic P, I and F only
+slipBefore: No dislocation in the crystal yet, so it is perfect. Press <b>Glide across</b> to send one over the plane, or drag the slider.
+slipIn: Where the line has passed, the layer above has slipped by <b>b</b> over the layer below; ahead of it, not yet. Only the atoms near the line are out of place.
+slipInPartials: The leading partial moves the atoms above by <b>b₁</b> into the empty hollows next door, the trailing one on by <b>b₂</b>. Between the two lines (green) the stacking is wrong: a stacking fault.
+slipAfter: The dislocation has crossed: everything above the plane has slipped by b = {b} Å, the crystal is perfect again, and a step of that height shows on each side.
+slipSystem: Slip system
+slipSystemsCount: {count} systems ({planes} planes × {dirs} directions)
+slipPlaneSpacing: Slip plane
+slipInPlane: In the plane
+slipInPlaneValue: each atom touches <b>{n}</b> · {packing} covered
+slipBurgers: Burgers vector
+slipLine: Line along
+slipLineEdge: edge: at right angles to b
+slipLineScrew: screw: along b
+slipPartialsRow: Shockley partials
+slipPlaneLabel: Slip plane (one of {count})
+slipDirLabel: Slip direction b (one of {count} in the plane)
+slipCharacter: Dislocation
+slipEdge: Edge
+slipScrew: Screw
+slipPartials: Split into two Shockley partials
+slipPartialsHint: The atoms above take the easy way, through the empty hollow between the atoms below, in two smaller steps b₁ and b₂.
+slipWidth: Distance between the partials (× |b|)
+slipWidthHint: Set by hand so that both fit in the block; in copper they are about 6 to 12 |b| apart.
+slipWhere: Where the dislocation is
+slipGlide: Glide across
+slipStart: Back to the start
+slipGlideHintEdge: The shear stress τ pushes the line along b: it enters on one side, crosses the plane and leaves a slip step of b.
+slipGlideHintScrew: The shear stress τ pushes the line sideways, at right angles to b: once it has crossed, the two halves have slipped by b along the line.
+slipLook: Look
+slipLookAngle: At an angle
+slipLookPlane: Straight at the plane
+slipLookLine: Along the line
+slipRest: The rest of the crystal
+slipRestShow: Show
+slipRestFaint: Faint
+slipRestHide: Hide
+slipSize: Size of the layer atoms (100 % = touching)
+slipSizeHint: At 100 % the atoms touch as in a real crystal; smaller, the slip plane, the line and the stacking fault show between them.
+slipShowPlane: Show the slip plane
+slipShowPlaneHint: Darker where the dislocation has already passed, so the atoms there have slipped.
+slipShowDirs: Show the close-packed directions
+slipShowDirsHint: Beside the block, in the plane: every direction along which the atoms touch. b is one of them.
+slipRoseLabel: close-packed directions in {plane}
+slipShowPath: Show the path of one atom
+slipShowPathHint: An atom of the layer above moves by b when the dislocation passes.
+slipShowPathHintFcc: An atom of the layer above moves by b; with partials it goes by b₁ and then b₂ (dashed: the straight way, over an atom below).
+slipShowShear: Show the shear stress τ
+slipShowShearHint: The stress on the slip plane, along b, that makes the line glide; Glide turns it on.
+slipAddNote: {structure}: the {plane} slip plane and the layers either side of it. Press Glide across on its card to send a dislocation over it.
+slipAddNoteColour: The atoms are now one colour, so the two layers stand out; change it on the Atoms card.
+slipSummary: {plane} · <i>b</i> = {b} · {kind}
+
+## Legend on the canvas
+slipLegendAbove: Layer above the slip plane
+slipLegendBelow: Layer below
+slipLegendFault: Stacking fault
+slipLegendFoot: <i>b</i> = {b} · {len} Å, from an atom to the one it touches
+
+## Input bar messages
+msgSlipUnknown: I don't know “{name}”. Try FCC, BCC or SC, e.g. Slip(FCC).

@@ -11,7 +11,7 @@ Each line is **name: text**. Open the files in any editor (VS Code, Notepad) and
 
 ## Where to find things
 
-The files follow the screen: `01-start` → `02-modes` → `03-workspace` (top bar, panel, canvas, toolbar, Add cells drawer, ⋯ menu) → `04-lattices` (picker, crystal systems, lattice names, Lattice card) → `05-add-menu` → `06-input-bar` → `07`–`15` one per kind of object card → `16-defects` (all of Defects mode: top bar, Atoms, every defect card, its messages and formulas) → `20-messages` (toasts and every error). `00-shared.txt` holds text that appears in several places. The help topics are in `help/`, one heading per topic, in the order Popover → SEE MORE: Derivation → SEE MORE: Your lattice. Pictures and 3D highlight captions are in `help/08-pictures.txt`; the Defects topics and their pictures are in `help/09-defects.txt`.
+The files follow the screen: `01-start` → `02-modes` → `03-workspace` (top bar, panel, canvas, toolbar, Add cells drawer, ⋯ menu) → `04-lattices` (picker, crystal systems, lattice names, Lattice card) → `05-add-menu` → `06-input-bar` → `07`–`15` one per kind of object card → `16-defects` (all of Defects mode: top bar, Atoms, every defect card, its messages and formulas) → `17-stacking` (the close-packed stacking card) → `18-close-packed-planes` (Defects mode: slip on close-packed planes) → `19-challenge` (Challenge mode: setup, test, results, review) → `20-messages` (toasts and every error). `00-shared.txt` holds text that appears in several places. The help topics are in `help/`, one heading per topic, in the order Popover → SEE MORE: Derivation → SEE MORE: Your lattice. Pictures and 3D highlight captions are in `help/08-pictures.txt`; the Defects topics and their pictures are in `help/09-defects.txt`, and those on close-packed planes and Shockley partials in `help/11-close-packed-planes.txt`.
 
 To find a sentence, search the folder for a few words you see on screen.
 
@@ -39,3 +39,4 @@ To find a sentence, search the folder for a few words you see on screen.
 - Numbers, indices with overbars and other notation the program builds from the values on screen.
 - The names of the self-check tests (shown only in the browser console with `npm run dev`), in `src/verification/cases.js`.
 - The page title, description and "needs JavaScript" line in `index.html`, shown before the app has loaded.
+- The Challenge mode questions and their solutions: they are in `challenge_templates/` (see its README.md).

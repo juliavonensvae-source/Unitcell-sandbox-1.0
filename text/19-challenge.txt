@@ -1,0 +1,77 @@
+# Challenge mode
+# The questions themselves are not here: they are in challenge_templates/ (see its README.md).
+
+tabTitleChallenge: Challenge mode · Unit Cell Explorer
+
+## Setup
+chKicker: Challenge mode
+chTitle: Practice test
+chIntro: Pick a subject, topics and a difficulty. Every test is new, because the numbers are random each time, and nothing is saved.
+chSubject: Subject
+chTopics: Topics
+chTopicsAll: All topics ({count})
+chTopicsSome: {count} of {total} topics
+chTopicsNone: No topics chosen
+chSelectAll: Select all
+chSelectNone: Clear
+chDifficulty: Difficulty
+chEasy: Easy
+chMedium: Medium
+chHard: Hard
+chCount: Number of questions
+chCountHint: 1 to 100
+chTime: Time limit (minutes)
+chTimeHint: 1 to 120 minutes
+chStart: Start test
+chErrTopics: Choose at least one topic.
+chErrCount: The number of questions must be a whole number from 1 to 100.
+chErrTime: The time limit must be a whole number of minutes from 1 to 120.
+chErrEmpty: These topics have no questions at this difficulty. Try another difficulty or more topics.
+
+## During the test
+chCounter: {n} / {total}
+chQuestionOf: Question {n} of {total}
+chTimeLeft: Time left
+chSubmit: Submit
+chBack: Back
+chNext: Next
+chQuestionList: Questions
+chYourAnswer: Your answer
+chTypeIndices: Type the indices, e.g. 1 -1 0
+chTypeNumber: Type a number, e.g. 2.34
+chReadsAs: Reads as {value}
+chCantRead: Can't read this yet: type whole numbers, e.g. 1 -1 0 or (1-10).
+chCantReadNumber: Can't read this yet: type a number such as 2.34.
+chSubmitTitle: Submit the test?
+chSubmitBody: {count} of {total} questions have no answer yet. They count as wrong.
+chSubmitKeep: Keep going
+chLeaveTitle: Leave the test?
+chLeaveBody: Your answers will be lost.
+chLeave: Leave
+chTimeUp: Time is up: the test has been submitted.
+
+## Results
+chResultsTitle: Results
+chRight: Right
+chWrong: Wrong
+chBlank: Not answered
+chScoreLine: {right} of {total} right
+chReview: Review answers
+chDone: Done
+chResultsNote: Nothing is saved: when you click Done, the results are gone.
+
+## Review
+chReviewTitle: Review
+chDoneReview: Done with review
+chCorrectAnswer: Correct answer
+chNoAnswer: No answer
+chSolution: Solution
+chHintReduce: Right idea, but reduce it to the smallest whole numbers: {answer}.
+chHintReversedDir: That points the opposite way: every sign is flipped.
+chHintReversedPlane: That is the parallel plane on the other side of the origin: the signs must follow the intercepts.
+chHintCount: The answer has {count} indices.
+chHintFormat: This could not be read as an answer.
+
+## Read aloud by screen readers
+chScreenLabel: Challenge mode
+chOptionsLabel: Answer options

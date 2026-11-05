@@ -140,3 +140,7 @@ msgFitRadiusRange: Pick a radius between 0 and {max} Å (the radius R of the lat
 msgIonClicked: <b>{ion}</b> at {pos} · {cn} {other} around it at {d} Å
 msgIonicUnknown: I don't know the structure “{name}”. Try {names}.
 msgIonicUnknownEg: I don't know the structure “{name}”. Try {names}, e.g. Ionic(NaCl).
+
+## Close-packed stacking
+msgStackClicked: Layer <b>{letter}</b> atom at {pos} · {cn} nearest neighbours: {inLayer} in its own layer, {above} above and {below} below
+msgStackUnknown: I don't know the stacking “{name}”. Try ABAB, ABC or FCC, e.g. Stacking(ABC).

@@ -1,0 +1,73 @@
+# =====================================================================
+# CHALLENGE MODE · Crystallography · Topic B: 2D Bravais lattices (the 5 types)
+#
+# HOW THIS FILE WORKS
+#   [topic]     The topic's name in the Topics list (one per file).
+#   [question]  One wording of a question type. The program fills in random
+#               numbers each time. Copy a block to add another wording of the
+#               same type (one is picked at random); delete or comment out a
+#               block to stop that type from appearing.
+#                 type:    which question type (see the list below; new types need code)
+#                 level:   easy, medium, hard (one or more; leave it out for all)
+#                 text:    the question
+#                 explain: the short solution shown in the review
+#   [fixed]     A question you write yourself, with fixed numbers:
+#                 text, answer, level and explain as above, and
+#                 wrong: three wrong options separated by |   (multiple choice)
+#               Leave "wrong" out for a typed answer: indices such as (1 1 0) or
+#               [1 1 0], or a number such as 14 or 2.34 Å (a number with decimals
+#               may be 1 % off). negative-ok: yes also accepts indices with every
+#               sign flipped.
+#   [words]     Pieces of text the program puts into the questions below.
+#
+#   {name}   is filled in by the program: keep the spelling. Each type's names
+#            are listed below; {answer} (the right answer) works in every type.
+#   $...$    is a formula (LaTeX), e.g. $d = a/\sqrt{h^2+k^2+l^2}$.
+#            Don't put a {name} inside $...$.
+#   A line that starts with a space continues the line above it.
+#   Lines starting with # are comments. <b>, <i>, <sub> and <br> work.
+#   With "npm run dev" running, saving this file reloads the page.
+# =====================================================================
+
+# QUESTION TYPES IN THIS TOPIC (levels · how it is answered)
+#   identify-2d    easy, medium, hard · multiple choice, with a picture of the points
+#       easy: one unit cell is outlined · medium: points only · hard: points only, turned,
+#       lengths and angles closer to the special values
+#       {why} why it is the right lattice (words why-mp, why-op, why-oc, why-tp, why-hp)
+
+[topic]
+name: 2D Bravais lattices
+
+[question]
+type: identify-2d
+level: easy
+text: The picture shows a 2D lattice of points with one unit cell outlined. Which 2D Bravais lattice is it?
+explain: {why}
+
+[question]
+type: identify-2d
+level: medium, hard
+text: Which 2D Bravais lattice do these lattice points form?
+explain: {why}
+
+[words]
+picture: A two-dimensional lattice of points
+why-mp: Oblique: the shortest lattice vectors have different lengths, the angle between them is neither 90° nor 120°, and no rectangle with a centre point fits the pattern. There are no mirror lines.
+why-op: Rectangular: the points form rectangles (90° angles, two different side lengths) with no point in the middle.
+why-oc: Centred rectangular: the points form rectangles with an extra point in the middle of each. The primitive cell is a rhombus: equal sides, but an angle that is not 60°, 90° or 120°.
+why-tp: Square: equal sides at 90°.
+why-hp: Hexagonal: equal sides at 120°. Every point has six nearest neighbours at the same distance.
+
+# Questions written by hand. Delete them or add your own.
+[fixed]
+level: easy
+text: How many Bravais lattices are there in two dimensions?
+answer: 5
+explain: Oblique, rectangular, centred rectangular, square and hexagonal.
+
+[fixed]
+level: hard
+text: Why is there no centred square lattice in 2D?
+answer: It is the same lattice as a primitive square lattice with a smaller cell, turned by 45°
+wrong: The centre point would destroy the 4-fold symmetry | It is the same lattice as the hexagonal lattice | It is the same lattice as the centred rectangular lattice
+explain: Joining each centre point to its nearest corners gives smaller squares with sides a/√2, so the lattice is still primitive square.
